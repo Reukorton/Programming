@@ -68,6 +68,7 @@ namespace Programming.View
             // 
             // EnumsTabPage
             // 
+            this.EnumsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.EnumsTabPage.Controls.Add(this.HandleGroupBox);
             this.EnumsTabPage.Controls.Add(this.ParsingGroupBox);
             this.EnumsTabPage.Controls.Add(this.EnumsValuesGroupBox);
@@ -77,10 +78,10 @@ namespace Programming.View
             this.EnumsTabPage.Size = new System.Drawing.Size(808, 553);
             this.EnumsTabPage.TabIndex = 0;
             this.EnumsTabPage.Text = "Enums";
-            this.EnumsTabPage.UseVisualStyleBackColor = true;
             // 
             // HandleGroupBox
             // 
+            this.HandleGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.HandleGroupBox.Controls.Add(this.SeasonLabel);
             this.HandleGroupBox.Controls.Add(this.ChooseSeasonComboBox);
             this.HandleGroupBox.Controls.Add(this.label5);
@@ -131,6 +132,7 @@ namespace Programming.View
             // 
             // ParsingGroupBox
             // 
+            this.ParsingGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.ParsingGroupBox.Controls.Add(this.WriteLabel);
             this.ParsingGroupBox.Controls.Add(this.label4);
             this.ParsingGroupBox.Controls.Add(this.ParseButton);
@@ -179,6 +181,7 @@ namespace Programming.View
             // 
             // EnumsValuesGroupBox
             // 
+            this.EnumsValuesGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.EnumsValuesGroupBox.Controls.Add(this.label3);
             this.EnumsValuesGroupBox.Controls.Add(this.label2);
             this.EnumsValuesGroupBox.Controls.Add(this.label1);

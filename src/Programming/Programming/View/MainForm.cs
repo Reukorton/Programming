@@ -85,13 +85,12 @@ namespace Programming.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EnumsTabPage.BackColor = ParsingGroupBox.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
             var item = ChooseSeasonComboBox.SelectedItem;
 
             switch (item)
             {
                 case Seasons.Winter:
-                    ParsingGroupBox.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    ParsingGroupBox.BackColor = EnumsTabPage.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
@@ -100,7 +99,7 @@ namespace Programming.View
                     MessageBox.Show(@"Урааааа! Лето!");
                     break;
                 case Seasons.Autumn:
-                    EnumsTabPage.BackColor = ColorTranslator.FromHtml("#D2691E");
+                    EnumsControl.BackColor = ColorTranslator.FromHtml("#D2691E");
                     MessageBox.Show(@"Советую взять зонтик :(");
                     break;
                 case Seasons.Spring:
