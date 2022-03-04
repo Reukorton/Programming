@@ -15,6 +15,14 @@ namespace Programming.View
             {
                 EnumsListBox.Items.Add(enums);
             }
+
+            EnumsListBox.SelectedIndex = 0;
+            var values = Enum.GetValues(typeof(Seasons));
+
+            foreach (var value in values)
+            {
+                ChooseSeasonComboBox.Items.Add(value);
+            }
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,11 +75,39 @@ namespace Programming.View
 
             if (Enum.TryParse(text, out day) & !Int32.TryParse(text, out num))
             {
-                WriteLabel.Text = $"Это день недели ({day} = {(int)day})";
+                WriteLabel.Text = $"Это день недели ({day} = {(int)day+1})";
             }
             else
             {
                 WriteLabel.Text = "Нет такого дня недели!";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EnumsTabPage.BackColor = ParsingGroupBox.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+            var item = ChooseSeasonComboBox.SelectedItem;
+
+            switch (item)
+            {
+                case Seasons.Winter:
+                    ParsingGroupBox.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    MessageBox.Show(@"Бррр! Холодно!");
+                    break;
+                case Seasons.Summer:
+                    EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#00FFFF");
+                    ParsingGroupBox.BackColor = HandleGroupBox.BackColor = ColorTranslator.FromHtml("#008000");
+                    MessageBox.Show(@"Урааааа! Лето!");
+                    break;
+                case Seasons.Autumn:
+                    EnumsTabPage.BackColor = ColorTranslator.FromHtml("#D2691E");
+                    MessageBox.Show(@"Советую взять зонтик :(");
+                    break;
+                case Seasons.Spring:
+                    MessageBox.Show(@"Запахло весной");
+                    break;
+                default:
+                    break;
             }
         }
     }
