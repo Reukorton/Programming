@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Color.cs" />
+    <Compile Include="Model\Colors.cs" />
     <Compile Include="Model\EducationForm.cs" />
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Manufactures.cs" />
