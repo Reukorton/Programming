@@ -75,31 +75,39 @@ namespace Programming.View
 
             if (Enum.TryParse(text, out day) & !Int32.TryParse(text, out num))
             {
-                WriteLabel.Text = $"Это день недели ({day} = {(int)day+1})";
+                WriteLabelWeekday.Text = $"Это день недели ({day} = {(int)day})";
             }
             else
             {
-                WriteLabel.Text = "Нет такого дня недели!";
+                WriteLabelWeekday.Text = "Нет такого дня недели!";
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void GoButton_Click_1(object sender, EventArgs e)
         {
             var item = ChooseSeasonComboBox.SelectedItem;
+            WriteLabelSeason.Text = "";
 
             switch (item)
             {
                 case Seasons.Winter:
-                    ParsingGroupBox.BackColor = EnumsTabPage.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    ParsingGroupBox.BackColor = 
+                        EnumsTabPage.BackColor = 
+                        HandleGroupBox.BackColor = 
+                        EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
                     EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#00FFFF");
-                    ParsingGroupBox.BackColor = HandleGroupBox.BackColor = ColorTranslator.FromHtml("#008000");
+                    EnumsTabPage.BackColor = 
+                        ParsingGroupBox.BackColor = 
+                            HandleGroupBox.BackColor = ColorTranslator.FromHtml("#008000");
                     MessageBox.Show(@"Урааааа! Лето!");
                     break;
                 case Seasons.Autumn:
-                    ParsingGroupBox.BackColor = EnumsTabPage.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    ParsingGroupBox.BackColor = 
+                        EnumsTabPage.BackColor =
+                        HandleGroupBox.BackColor = 
+                        EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     EnumsTabPage.BackColor = ColorTranslator.FromHtml("#ea8900");
                     MessageBox.Show(@"Советую взять зонтик :(");
                     break;
@@ -107,6 +115,7 @@ namespace Programming.View
                     MessageBox.Show(@"Запахло весной");
                     break;
                 default:
+                    WriteLabelSeason.Text = "Выберите время года";
                     break;
             }
         }

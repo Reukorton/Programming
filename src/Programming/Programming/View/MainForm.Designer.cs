@@ -32,13 +32,14 @@ namespace Programming.View
             this.EnumsControl = new System.Windows.Forms.TabControl();
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
             this.HandleGroupBox = new System.Windows.Forms.GroupBox();
+            this.WriteLabelSeason = new System.Windows.Forms.Label();
             this.SeasonLabel = new System.Windows.Forms.Label();
             this.ChooseSeasonComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.GoButton = new System.Windows.Forms.Button();
             this.ParsingGroupBox = new System.Windows.Forms.GroupBox();
-            this.WriteLabel = new System.Windows.Forms.Label();
+            this.WriteLabelWeekday = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ParseButton = new System.Windows.Forms.Button();
             this.WeekdayForParsingTextBox = new System.Windows.Forms.TextBox();
@@ -82,6 +83,7 @@ namespace Programming.View
             // HandleGroupBox
             // 
             this.HandleGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.HandleGroupBox.Controls.Add(this.WriteLabelSeason);
             this.HandleGroupBox.Controls.Add(this.SeasonLabel);
             this.HandleGroupBox.Controls.Add(this.ChooseSeasonComboBox);
             this.HandleGroupBox.Controls.Add(this.label5);
@@ -93,6 +95,14 @@ namespace Programming.View
             this.HandleGroupBox.TabIndex = 15;
             this.HandleGroupBox.TabStop = false;
             this.HandleGroupBox.Text = "Season Handle";
+            // 
+            // WriteLabelSeason
+            // 
+            this.WriteLabelSeason.AutoSize = true;
+            this.WriteLabelSeason.Location = new System.Drawing.Point(13, 96);
+            this.WriteLabelSeason.Name = "WriteLabelSeason";
+            this.WriteLabelSeason.Size = new System.Drawing.Size(0, 17);
+            this.WriteLabelSeason.TabIndex = 11;
             // 
             // SeasonLabel
             // 
@@ -123,9 +133,9 @@ namespace Programming.View
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 17);
+            this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Chose season";
+            this.label6.Text = "Choose season:";
             // 
             // GoButton
             // 
@@ -136,12 +146,12 @@ namespace Programming.View
             this.GoButton.TabIndex = 13;
             this.GoButton.Text = "Go!";
             this.GoButton.UseVisualStyleBackColor = false;
-            this.GoButton.Click += new System.EventHandler(this.button1_Click);
+            this.GoButton.Click += new System.EventHandler(this.GoButton_Click_1);
             // 
             // ParsingGroupBox
             // 
             this.ParsingGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.ParsingGroupBox.Controls.Add(this.WriteLabel);
+            this.ParsingGroupBox.Controls.Add(this.WriteLabelWeekday);
             this.ParsingGroupBox.Controls.Add(this.label4);
             this.ParsingGroupBox.Controls.Add(this.ParseButton);
             this.ParsingGroupBox.Controls.Add(this.WeekdayForParsingTextBox);
@@ -152,13 +162,13 @@ namespace Programming.View
             this.ParsingGroupBox.TabStop = false;
             this.ParsingGroupBox.Text = "Weekday Parsing";
             // 
-            // WriteLabel
+            // WriteLabelWeekday
             // 
-            this.WriteLabel.AutoSize = true;
-            this.WriteLabel.Location = new System.Drawing.Point(7, 96);
-            this.WriteLabel.Name = "WriteLabel";
-            this.WriteLabel.Size = new System.Drawing.Size(0, 17);
-            this.WriteLabel.TabIndex = 12;
+            this.WriteLabelWeekday.AutoSize = true;
+            this.WriteLabelWeekday.Location = new System.Drawing.Point(7, 96);
+            this.WriteLabelWeekday.Name = "WriteLabelWeekday";
+            this.WriteLabelWeekday.Size = new System.Drawing.Size(0, 17);
+            this.WriteLabelWeekday.TabIndex = 12;
             // 
             // label4
             // 
@@ -208,27 +218,27 @@ namespace Programming.View
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(424, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Int value";
+            this.label3.Text = "Int value:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(226, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Chose value";
+            this.label2.Text = "Choose value:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 17);
+            this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Chose enumaration:";
+            this.label1.Text = "Choose enumaration:";
             // 
             // IntValue
             // 
@@ -264,9 +274,10 @@ namespace Programming.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 582);
             this.Controls.Add(this.EnumsControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Text = "Form1";
+            this.Text = "ProgrammingDemo";
             this.EnumsControl.ResumeLayout(false);
             this.EnumsTabPage.ResumeLayout(false);
             this.HandleGroupBox.ResumeLayout(false);
@@ -291,7 +302,7 @@ namespace Programming.View
         private System.Windows.Forms.ListBox ValuesListBox;
         private System.Windows.Forms.ListBox EnumsListBox;
         private System.Windows.Forms.GroupBox ParsingGroupBox;
-        private System.Windows.Forms.Label WriteLabel;
+        private System.Windows.Forms.Label WriteLabelWeekday;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button ParseButton;
         private System.Windows.Forms.TextBox WeekdayForParsingTextBox;
@@ -301,6 +312,7 @@ namespace Programming.View
         private System.Windows.Forms.Button GoButton;
         private System.Windows.Forms.ComboBox ChooseSeasonComboBox;
         private System.Windows.Forms.Label SeasonLabel;
+        private System.Windows.Forms.Label WriteLabelSeason;
     }
 }
 
