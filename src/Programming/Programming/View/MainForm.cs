@@ -99,7 +99,8 @@ namespace Programming.View
                     MessageBox.Show(@"Урааааа! Лето!");
                     break;
                 case Seasons.Autumn:
-                    EnumsControl.BackColor = ColorTranslator.FromHtml("#D2691E");
+                    ParsingGroupBox.BackColor = EnumsTabPage.BackColor = HandleGroupBox.BackColor = EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    EnumsTabPage.BackColor = ColorTranslator.FromHtml("#ea8900");
                     MessageBox.Show(@"Советую взять зонтик :(");
                     break;
                 case Seasons.Spring:

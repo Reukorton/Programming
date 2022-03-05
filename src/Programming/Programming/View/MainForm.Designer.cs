@@ -32,6 +32,7 @@ namespace Programming.View
             this.EnumsControl = new System.Windows.Forms.TabControl();
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
             this.HandleGroupBox = new System.Windows.Forms.GroupBox();
+            this.SeasonLabel = new System.Windows.Forms.Label();
             this.ChooseSeasonComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@ namespace Programming.View
             this.IntValue = new System.Windows.Forms.TextBox();
             this.ValuesListBox = new System.Windows.Forms.ListBox();
             this.EnumsListBox = new System.Windows.Forms.ListBox();
-            this.SeasonLabel = new System.Windows.Forms.Label();
             this.EnumsControl.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.HandleGroupBox.SuspendLayout();
@@ -93,6 +93,14 @@ namespace Programming.View
             this.HandleGroupBox.TabIndex = 15;
             this.HandleGroupBox.TabStop = false;
             this.HandleGroupBox.Text = "Season Handle";
+            // 
+            // SeasonLabel
+            // 
+            this.SeasonLabel.AutoSize = true;
+            this.SeasonLabel.Location = new System.Drawing.Point(6, 96);
+            this.SeasonLabel.Name = "SeasonLabel";
+            this.SeasonLabel.Size = new System.Drawing.Size(0, 17);
+            this.SeasonLabel.TabIndex = 16;
             // 
             // ChooseSeasonComboBox
             // 
@@ -250,14 +258,6 @@ namespace Programming.View
             this.EnumsListBox.TabIndex = 5;
             this.EnumsListBox.SelectedIndexChanged += new System.EventHandler(this.EnumsListBox_SelectedIndexChanged);
             // 
-            // SeasonLabel
-            // 
-            this.SeasonLabel.AutoSize = true;
-            this.SeasonLabel.Location = new System.Drawing.Point(6, 96);
-            this.SeasonLabel.Name = "SeasonLabel";
-            this.SeasonLabel.Size = new System.Drawing.Size(0, 17);
-            this.SeasonLabel.TabIndex = 16;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,6 +265,7 @@ namespace Programming.View
             this.ClientSize = new System.Drawing.Size(816, 582);
             this.Controls.Add(this.EnumsControl);
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "Form1";
             this.EnumsControl.ResumeLayout(false);
             this.EnumsTabPage.ResumeLayout(false);
