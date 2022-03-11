@@ -115,7 +115,7 @@ namespace Programming.View
             // ChooseSeasonComboBox
             // 
             this.ChooseSeasonComboBox.FormattingEnabled = true;
-            this.ChooseSeasonComboBox.Location = new System.Drawing.Point(36, 57);
+            this.ChooseSeasonComboBox.Location = new System.Drawing.Point(26, 62);
             this.ChooseSeasonComboBox.Name = "ChooseSeasonComboBox";
             this.ChooseSeasonComboBox.Size = new System.Drawing.Size(244, 24);
             this.ChooseSeasonComboBox.TabIndex = 15;
@@ -131,7 +131,7 @@ namespace Programming.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 37);
+            this.label6.Location = new System.Drawing.Point(23, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 14;
@@ -140,7 +140,7 @@ namespace Programming.View
             // GoButton
             // 
             this.GoButton.BackColor = System.Drawing.Color.White;
-            this.GoButton.Location = new System.Drawing.Point(301, 59);
+            this.GoButton.Location = new System.Drawing.Point(276, 61);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(75, 23);
             this.GoButton.TabIndex = 13;
@@ -182,7 +182,7 @@ namespace Programming.View
             // ParseButton
             // 
             this.ParseButton.BackColor = System.Drawing.Color.White;
-            this.ParseButton.Location = new System.Drawing.Point(287, 59);
+            this.ParseButton.Location = new System.Drawing.Point(277, 62);
             this.ParseButton.Name = "ParseButton";
             this.ParseButton.Size = new System.Drawing.Size(75, 23);
             this.ParseButton.TabIndex = 13;
@@ -192,7 +192,7 @@ namespace Programming.View
             // 
             // WeekdayForParsingTextBox
             // 
-            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(27, 60);
+            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(27, 62);
             this.WeekdayForParsingTextBox.Name = "WeekdayForParsingTextBox";
             this.WeekdayForParsingTextBox.Size = new System.Drawing.Size(244, 22);
             this.WeekdayForParsingTextBox.TabIndex = 12;
