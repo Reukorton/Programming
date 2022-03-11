@@ -73,7 +73,7 @@ namespace Programming.View
             Weekday day;
             int num;
 
-            if (Enum.TryParse(text, out day) & !Int32.TryParse(text, out num))
+            if (Enum.TryParse(text, out day))
             {
                 WriteLabelWeekday.Text = $"Это день недели ({day} = {(int)day})";
             }
@@ -112,6 +112,10 @@ namespace Programming.View
                     MessageBox.Show(@"Советую взять зонтик :(");
                     break;
                 case Seasons.Spring:
+                    ParsingGroupBox.BackColor =
+                        EnumsTabPage.BackColor =
+                        HandleGroupBox.BackColor =
+                        EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Запахло весной");
                     break;
                 default:
