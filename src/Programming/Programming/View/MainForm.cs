@@ -71,7 +71,6 @@ namespace Programming.View
         {
             var text = WeekdayForParsingTextBox.Text;
             Weekday day;
-            int num;
 
             if (Enum.TryParse(text, out day))
             {
@@ -82,6 +81,7 @@ namespace Programming.View
                 WriteLabelWeekday.Text = "Нет такого дня недели!";
             }
         }
+
         private void GoButton_Click_1(object sender, EventArgs e)
         {
             var item = ChooseSeasonComboBox.SelectedItem;
@@ -90,23 +90,23 @@ namespace Programming.View
             switch (item)
             {
                 case Seasons.Winter:
-                    ParsingGroupBox.BackColor = 
-                        EnumsTabPage.BackColor = 
-                        HandleGroupBox.BackColor = 
+                    ParsingGroupBox.BackColor =
+                        EnumsTabPage.BackColor =
+                        HandleGroupBox.BackColor =
                         EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
                     EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#00FFFF");
-                    EnumsTabPage.BackColor = 
-                        ParsingGroupBox.BackColor = 
+                    EnumsTabPage.BackColor =
+                        ParsingGroupBox.BackColor =
                             HandleGroupBox.BackColor = ColorTranslator.FromHtml("#008000");
                     MessageBox.Show(@"Урааааа! Лето!");
                     break;
                 case Seasons.Autumn:
-                    ParsingGroupBox.BackColor = 
+                    ParsingGroupBox.BackColor =
                         EnumsTabPage.BackColor =
-                        HandleGroupBox.BackColor = 
+                        HandleGroupBox.BackColor =
                         EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     EnumsTabPage.BackColor = ColorTranslator.FromHtml("#ea8900");
                     MessageBox.Show(@"Советую взять зонтик :(");

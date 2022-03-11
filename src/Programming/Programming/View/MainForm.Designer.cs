@@ -238,7 +238,7 @@ namespace Programming.View
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Choose enumaration:";
+            this.label1.Text = "Choose enumeration:";
             // 
             // IntValue
             // 
