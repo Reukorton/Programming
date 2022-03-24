@@ -74,18 +74,18 @@ namespace Programming.View
 
             if (Enum.TryParse(text, out day))
             {
-                WriteLabelWeekday.Text = $"Это день недели ({day} = {(int)day})";
+                WriteWeekdayLabel.Text = $"Это день недели ({day} = {(int)day})";
             }
             else
             {
-                WriteLabelWeekday.Text = "Нет такого дня недели!";
+                WriteWeekdayLabel.Text = "Нет такого дня недели!";
             }
         }
 
-        private void GoButton_Click_1(object sender, EventArgs e)
+        private void GoButton_Click(object sender, EventArgs e)
         {
             var item = ChooseSeasonComboBox.SelectedItem;
-            WriteLabelSeason.Text = "";
+            WriteSeasonLabel.Text = "";
 
             switch (item)
             {
@@ -119,7 +119,7 @@ namespace Programming.View
                     MessageBox.Show(@"Запахло весной");
                     break;
                 default:
-                    WriteLabelSeason.Text = "Выберите время года";
+                    WriteSeasonLabel.Text = "Выберите время года";
                     break;
             }
         }
