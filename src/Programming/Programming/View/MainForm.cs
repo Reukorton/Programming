@@ -118,9 +118,11 @@ namespace Programming.View
                         EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Запахло весной");
                     break;
-                default:
+                case null:
                     WriteSeasonLabel.Text = "Выберите время года";
                     break;
+                default:
+                    throw new NotImplementedException();
             }
         }
     }

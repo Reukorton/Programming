@@ -142,7 +142,7 @@ namespace Programming.View
             this.GoButton.BackColor = System.Drawing.Color.White;
             this.GoButton.Location = new System.Drawing.Point(286, 68);
             this.GoButton.Name = "GoButton";
-            this.GoButton.Size = new System.Drawing.Size(75, 28);
+            this.GoButton.Size = new System.Drawing.Size(75, 29);
             this.GoButton.TabIndex = 13;
             this.GoButton.Text = "Go!";
             this.GoButton.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@ namespace Programming.View
             this.ParseButton.BackColor = System.Drawing.Color.White;
             this.ParseButton.Location = new System.Drawing.Point(280, 68);
             this.ParseButton.Name = "ParseButton";
-            this.ParseButton.Size = new System.Drawing.Size(75, 28);
+            this.ParseButton.Size = new System.Drawing.Size(75, 29);
             this.ParseButton.TabIndex = 13;
             this.ParseButton.Text = "Parse";
             this.ParseButton.UseVisualStyleBackColor = false;
