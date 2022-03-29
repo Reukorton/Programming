@@ -89,6 +89,9 @@ namespace Programming.View
 
             switch (item)
             {
+                case null:
+                    WriteSeasonLabel.Text = "Выберите время года";
+                    break;
                 case Seasons.Winter:
                     ParsingGroupBox.BackColor =
                         EnumsTabPage.BackColor =
@@ -117,9 +120,6 @@ namespace Programming.View
                         HandleGroupBox.BackColor =
                         EnumsValuesGroupBox.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     MessageBox.Show(@"Запахло весной");
-                    break;
-                case null:
-                    WriteSeasonLabel.Text = "Выберите время года";
                     break;
                 default:
                     throw new NotImplementedException();
