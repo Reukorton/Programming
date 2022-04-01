@@ -12,6 +12,8 @@ namespace Programming.Model.Classes
         private int _minutes;
         private int _seconds;
 
+        public Time() { }
+
         public Time(int hours, int minutes, int seconds)
         {
             Hours = hours;

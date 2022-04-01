@@ -12,6 +12,8 @@ namespace Programming.Model.Classes
         private double _width;
 
         public string Color { get; set; }
+
+        public Rectangle() { }
         
         public Rectangle(double length, double width, string color)
         {

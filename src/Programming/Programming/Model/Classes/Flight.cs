@@ -14,6 +14,8 @@ namespace Programming.Model.Classes
 
         public string Destination { get; set; }
 
+        public Flight() { }
+
         public Flight(int flightTimeMinutes, string departure, string destination)
         {
             FlightTimeMinutes = flightTimeMinutes;

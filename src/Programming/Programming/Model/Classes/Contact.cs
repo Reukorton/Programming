@@ -14,6 +14,8 @@ namespace Programming.Model.Classes
 
         public string LastName { get; set; }
 
+        public Contact() { }
+
         public Contact(string phoneNumber, string firstName, string lastName)
         {
             PhoneNumber = phoneNumber;

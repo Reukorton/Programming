@@ -16,6 +16,8 @@ namespace Programming.Model.Classes
 
         public string LastNameTeacher { get; set; }
 
+        public Subject() { }
+
         public Subject(string title, int mark, string firstNameTeacher, string lastNameTeacher)
         {
             Title = title;
