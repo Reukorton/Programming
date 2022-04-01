@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programming.Model.Classes
+{
+    public class Rectangle
+    {
+        private double _length;
+        private double _width;
+        private string _color;
+    }
+}
