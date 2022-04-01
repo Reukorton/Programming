@@ -10,6 +10,7 @@ namespace Programming.Model.Classes
     {
         private double _length;
         private double _width;
+        public string Color { get; set; }
 
         public double Length
         {
@@ -46,7 +47,5 @@ namespace Programming.Model.Classes
                 _width = value;
             }
         }
-
-        public string Color { get; set; }
     }
 }
