@@ -9,9 +9,7 @@ namespace Programming.Model.Classes
     class Time
     {
         private int _hours;
-
         private int _minutes;
-
         private int _seconds;
     }
 }
