@@ -14,6 +14,13 @@ namespace Programming.Model.Classes
 
         public string LastName { get; set; }
 
+        public Contact(string phoneNumber, string firstName, string lastName)
+        {
+            PhoneNumber = phoneNumber;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
         public string PhoneNumber
         {
             get
@@ -36,5 +43,7 @@ namespace Programming.Model.Classes
                 _phoneNumber = value;
             }
         }
+
+        
     }
 }
