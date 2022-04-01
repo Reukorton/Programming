@@ -8,13 +8,13 @@ namespace Programming.Model.Classes
 {
     class Flight
     {
-        private string _flightTimeMinutes;
+        private int _flightTimeMinutes;
 
         public string Departure { get; set; }
 
         public string Destination { get; set; }
 
-        public string FlightTimeInMinutes
+        public int FlightTimeInMinutes
         {
             get
             {
@@ -22,10 +22,10 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (!int.TryParse(value, out int result))
+                if (value < 0)
                 {
                     throw new ArgumentException(
-                        "Неверные символы во времени полета");
+                        "Неверная длительность полета");
                 }
 
                 _flightTimeMinutes = value;
