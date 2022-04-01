@@ -16,6 +16,14 @@ namespace Programming.Model.Classes
 
         public string Description { get; set; }
 
+        public Song(string title, string author, int seconds, string description)
+        {
+            Title = title;
+            Author = author;
+            Seconds = seconds;
+            Description = description;
+        }
+
         public int Seconds
         {
             get
