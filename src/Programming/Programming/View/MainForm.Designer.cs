@@ -91,7 +91,7 @@ namespace Programming.View
             this.HandleGroupBox.Controls.Add(this.GoButton);
             this.HandleGroupBox.Location = new System.Drawing.Point(399, 371);
             this.HandleGroupBox.Name = "HandleGroupBox";
-            this.HandleGroupBox.Size = new System.Drawing.Size(390, 150);
+            this.HandleGroupBox.Size = new System.Drawing.Size(395, 155);
             this.HandleGroupBox.TabIndex = 15;
             this.HandleGroupBox.TabStop = false;
             this.HandleGroupBox.Text = "Season Handle";
@@ -157,7 +157,7 @@ namespace Programming.View
             this.ParsingGroupBox.Controls.Add(this.WeekdayForParsingTextBox);
             this.ParsingGroupBox.Location = new System.Drawing.Point(8, 371);
             this.ParsingGroupBox.Name = "ParsingGroupBox";
-            this.ParsingGroupBox.Size = new System.Drawing.Size(385, 150);
+            this.ParsingGroupBox.Size = new System.Drawing.Size(385, 155);
             this.ParsingGroupBox.TabIndex = 11;
             this.ParsingGroupBox.TabStop = false;
             this.ParsingGroupBox.Text = "Weekday Parsing";
@@ -182,7 +182,7 @@ namespace Programming.View
             // ParseButton
             // 
             this.ParseButton.BackColor = System.Drawing.Color.White;
-            this.ParseButton.Location = new System.Drawing.Point(280, 68);
+            this.ParseButton.Location = new System.Drawing.Point(277, 68);
             this.ParseButton.Name = "ParseButton";
             this.ParseButton.Size = new System.Drawing.Size(75, 29);
             this.ParseButton.TabIndex = 13;
@@ -193,7 +193,7 @@ namespace Programming.View
             // WeekdayForParsingTextBox
             // 
             this.WeekdayForParsingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(30, 70);
+            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(27, 70);
             this.WeekdayForParsingTextBox.Multiline = true;
             this.WeekdayForParsingTextBox.Name = "WeekdayForParsingTextBox";
             this.WeekdayForParsingTextBox.Size = new System.Drawing.Size(244, 24);
@@ -208,9 +208,9 @@ namespace Programming.View
             this.EnumsValuesGroupBox.Controls.Add(this.IntValue);
             this.EnumsValuesGroupBox.Controls.Add(this.ValuesListBox);
             this.EnumsValuesGroupBox.Controls.Add(this.EnumsListBox);
-            this.EnumsValuesGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.EnumsValuesGroupBox.Location = new System.Drawing.Point(8, 3);
             this.EnumsValuesGroupBox.Name = "EnumsValuesGroupBox";
-            this.EnumsValuesGroupBox.Size = new System.Drawing.Size(781, 348);
+            this.EnumsValuesGroupBox.Size = new System.Drawing.Size(786, 350);
             this.EnumsValuesGroupBox.TabIndex = 4;
             this.EnumsValuesGroupBox.TabStop = false;
             this.EnumsValuesGroupBox.Text = "Enumerations";
