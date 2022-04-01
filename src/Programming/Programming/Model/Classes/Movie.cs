@@ -10,8 +10,9 @@ namespace Programming.Model.Classes
     {
         private int _duration;
         private int _releaseYear;
-        private string _genre;
         private double _rating;
+
+        public string Genre { get; set; }
 
         public string Title { get; set; }
 
@@ -23,10 +24,49 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (!int.TryParse(value, ))
+                if (value < 0)
                 {
-
+                    throw new ArgumentException(
+                        "Неверная длительность фильма");
                 }
+
+                _duration = value;
+            }
+        }
+
+        public int ReleaseYear
+        {
+            get
+            {
+                return _releaseYear;
+            }
+            set
+            {
+                if (value < 1900 || value > DateTime.Now.Year)
+                {
+                    throw new ArgumentException(
+                        "Неверная дата фильма");
+                }
+
+                _duration = value;
+            }
+        }
+
+        public double Rating
+        {
+            get
+            {
+                return _rating;
+            }
+            set
+            {
+                if (value < 0 || value > 10)
+                {
+                    throw new ArgumentException(
+                        "Неверный рейтинг");
+                }
+
+                _rating = value;
             }
         }
     }
