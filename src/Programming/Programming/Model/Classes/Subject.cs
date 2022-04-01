@@ -8,15 +8,33 @@ namespace Programming.Model.Classes
 {
     class Subject
     {
-        public string Title { get; set; }
+        private int _mark;
 
-        public int Mark { get; set; }
+        public string Title { get; set; }
 
         public string FirstNameTeacher { get; set; }
 
         public string MiddleNameTeacher { get; set; }
 
         public string LastNameTeacher { get; set; }
+
+        public int Mark
+        {
+            get
+            {
+                return _mark;
+            }
+            set
+            {
+                if (value < 0 || value > 5)
+                {
+                    throw new ArgumentException(
+                        "Неверная оценка");
+                }
+
+                _mark = value;
+            }
+        }
         
     }
 }
