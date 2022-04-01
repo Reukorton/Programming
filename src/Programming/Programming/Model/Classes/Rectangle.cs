@@ -10,7 +10,6 @@ namespace Programming.Model.Classes
     {
         private double _length;
         private double _width;
-        private string _color;
 
         public double Length
         {
