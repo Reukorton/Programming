@@ -27,7 +27,7 @@ namespace Programming.Model.Classes
                 if (value < 0)
                 {
                     throw new ArgumentException(
-                        "Неверное время воспроизведения.");
+                        "Неверное время воспроизведения");
                 }
 
                 _seconds = value;
