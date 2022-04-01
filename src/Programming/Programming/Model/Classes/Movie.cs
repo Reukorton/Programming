@@ -16,6 +16,15 @@ namespace Programming.Model.Classes
 
         public string Title { get; set; }
 
+        public Movie(string title, int duration, int releaseYear, double rating, string genre)
+        {
+            Title = title;
+            Duration = duration;
+            ReleaseYear = releaseYear;
+            Rating = rating;
+            Genre = genre;
+        }
+
         public int Duration
         {
             get
