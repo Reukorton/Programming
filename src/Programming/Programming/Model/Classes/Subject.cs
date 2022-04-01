@@ -14,9 +14,15 @@ namespace Programming.Model.Classes
 
         public string FirstNameTeacher { get; set; }
 
-        public string MiddleNameTeacher { get; set; }
-
         public string LastNameTeacher { get; set; }
+
+        public Subject(string title, int mark, string firstNameTeacher, string lastNameTeacher)
+        {
+            Title = title;
+            Mark = mark;
+            FirstNameTeacher = firstNameTeacher;
+            LastNameTeacher = lastNameTeacher;
+        }
 
         public int Mark
         {

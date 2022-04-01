@@ -14,14 +14,14 @@ namespace Programming.Model.Classes
 
         public string Destination { get; set; }
 
-        public Flight(int flightTime, string departure, string destination)
+        public Flight(int flightTimeMinutes, string departure, string destination)
         {
-            FlightTimeInMinutes = flightTime;
+            FlightTimeMinutes = flightTimeMinutes;
             Departure = departure;
             Destination = destination;
         }
 
-        public int FlightTimeInMinutes
+        public int FlightTimeMinutes
         {
             get
             {
