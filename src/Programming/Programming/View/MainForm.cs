@@ -2,11 +2,21 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
+using Programming.Model.Classes;
+using Rectangle = Programming.Model.Classes.Rectangle;
 
 namespace Programming.View
 {
     public partial class MainForm : Form
     {
+        private Rectangle[] _rectangles;
+            
+        private Rectangle _currentRectangle;
+        
+        private string[] _colors;
+
+        Random _random = new Random();
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,6 +32,20 @@ namespace Programming.View
             foreach (var value in values)
             {
                 ChooseSeasonComboBox.Items.Add(value);
+            }
+
+            //------------------------------------------------------
+
+            _colors = Enum.GetNames(typeof(Colors));
+            _rectangles = new Rectangle[5];
+
+            for (int i = 0; i < _rectangles.Length; i++)
+            {
+                _rectangles[i] = new Rectangle(
+                    _random.Next(0, 1000), 
+                    _random.Next(0, 1000), 
+                    _colors[_random.Next(_colors.Length)]);
+                RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
         }
 
@@ -124,6 +148,18 @@ namespace Programming.View
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+
+        //------------------------------------------------------
+
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = RectanglesListBox.SelectedIndex;
+            _currentRectangle = _rectangles[selectedIndex];
+            LengthTextBox.Text = _currentRectangle.Length.ToString();
+            WidthTextBox.Text = _currentRectangle.Length.ToString();
+            ColorTextBox.Text = _currentRectangle.Color;
         }
     }
 }
