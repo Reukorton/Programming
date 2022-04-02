@@ -15,11 +15,7 @@ namespace Programming.Model.Classes
 
         public string Color { get; set; }
 
-        public Rectangle() 
-        {
-            _count++;
-        }
-            
+        public Rectangle() { } 
         public Rectangle(double length, double width, string color)
         {
             Length = length;

@@ -15,7 +15,7 @@ namespace Programming.View
         
         private string[] _colors;
 
-        Random _random = new Random();
+        Random random = new Random();
 
         public MainForm()
         {
@@ -42,13 +42,12 @@ namespace Programming.View
             for (int i = 0; i < _rectangles.Length; i++)
             {
                 _rectangles[i] = new Rectangle(
-                    _random.Next(0, 1000), 
-                    _random.Next(0, 1000), 
-                    _colors[_random.Next(_colors.Length)]);
+                    random.Next(1, 1000), 
+                    random.Next(1, 1000), 
+                    _colors[random.Next(_colors.Length)]);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
         }
-
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ValuesListBox.Items.Clear();
@@ -158,7 +157,7 @@ namespace Programming.View
             int selectedIndex = RectanglesListBox.SelectedIndex;
             _currentRectangle = _rectangles[selectedIndex];
             LengthTextBox.Text = _currentRectangle.Length.ToString();
-            WidthTextBox.Text = _currentRectangle.Length.ToString();
+            WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
         }
     }
