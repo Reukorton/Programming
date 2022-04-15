@@ -9,14 +9,14 @@ namespace Programming.Model.Classes
     public class Rectangle
     {
         private static int _count = 0;
-        private double _length;
-        private double _width;
+        private int _length;
+        private int _width;
         private int _id;
 
         public string Color { get; set; }
 
         public Rectangle() { } 
-        public Rectangle(double length, double width, string color)
+        public Rectangle(int length, int width, string color)
         {
             Length = length;
             Width = width;
@@ -25,7 +25,7 @@ namespace Programming.Model.Classes
             Id = _count;
         }
 
-        public double Length
+        public int Length
         {
             get
             {
@@ -43,7 +43,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public double Width
+        public int Width
         {
             get
             {

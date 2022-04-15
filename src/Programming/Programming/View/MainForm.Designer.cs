@@ -161,7 +161,7 @@ namespace Programming.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 40);
+            this.label6.Location = new System.Drawing.Point(19, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 14;
@@ -204,7 +204,7 @@ namespace Programming.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 40);
+            this.label4.Location = new System.Drawing.Point(19, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 17);
             this.label4.TabIndex = 14;
@@ -269,7 +269,7 @@ namespace Programming.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 27);
+            this.label1.Location = new System.Drawing.Point(19, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 8;
@@ -353,7 +353,7 @@ namespace Programming.View
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(211, 297);
+            this.label13.Location = new System.Drawing.Point(211, 298);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 17);
             this.label13.TabIndex = 15;
@@ -371,7 +371,7 @@ namespace Programming.View
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(211, 234);
+            this.label14.Location = new System.Drawing.Point(211, 235);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 17);
             this.label14.TabIndex = 13;
@@ -475,6 +475,7 @@ namespace Programming.View
             this.FindRectanglesButton.TabIndex = 16;
             this.FindRectanglesButton.Text = "Find";
             this.FindRectanglesButton.UseVisualStyleBackColor = false;
+            this.FindRectanglesButton.Click += new System.EventHandler(this.FindRectanglesButton_Click);
             // 
             // label9
             // 
@@ -511,6 +512,7 @@ namespace Programming.View
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(165, 27);
             this.WidthTextBox.TabIndex = 4;
+            this.WidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
             // 
             // label7
             // 
@@ -529,6 +531,7 @@ namespace Programming.View
             this.LengthTextBox.Name = "LengthTextBox";
             this.LengthTextBox.Size = new System.Drawing.Size(165, 27);
             this.LengthTextBox.TabIndex = 2;
+            this.LengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
             // 
             // RectanglesListBox
             // 
