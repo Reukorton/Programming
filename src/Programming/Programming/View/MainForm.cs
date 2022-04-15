@@ -69,8 +69,9 @@ namespace Programming.View
                     _titleMovies[i],
                     _random.Next(90, 210),
                     _random.Next(1900, DateTime.Now.Year),
-                    _random.NextDouble() * 10,
-                    _genre[_random.Next(0, _genre.Length)]);
+                    Math.Round(_random.NextDouble() * 10, 1),
+                    _genre[_random.Next(0, _genre.Length)]
+                    ); ;
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
         }
@@ -182,8 +183,8 @@ namespace Programming.View
 
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedIndex = RectanglesListBox.SelectedIndex;
-            _currentRectangle = _rectangles[selectedIndex];
+            int indexRectangle = RectanglesListBox.SelectedIndex;
+            _currentRectangle = _rectangles[indexRectangle];
             LengthTextBox.Text = _currentRectangle.Length.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
@@ -233,6 +234,23 @@ namespace Programming.View
             return index;
         }
 
+        private int FindRectangleWithMaxRating(Movie[] movies)
+        {
+            var index = 0;
+            double maxRating = 0;
+
+            for (int i = 0; i < movies.Length; i++)
+            {
+                if (movies[i].Rating > maxRating)
+                {
+                    maxRating = movies[i].Rating;
+                    index = i;
+                }
+            }
+
+            return index;
+        }
+
         private void FindRectanglesButton_Click(object sender, EventArgs e)
         {
             RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
@@ -240,13 +258,59 @@ namespace Programming.View
 
         private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedIndex = RectanglesListBox.SelectedIndex;
-            _currentMovie = _movies[selectedIndex];
+            int indexMovie = MoviesListBox.SelectedIndex;
+            _currentMovie = _movies[indexMovie];
             TitleTextBox.Text = _currentMovie.Title;
             DurationTextBox.Text = _currentMovie.Duration.ToString();
             YearTextBox.Text = _currentMovie.ReleaseYear.ToString();
             GenreTextBox.Text = _currentMovie.Genre.ToString();
             RatingTextBox.Text = _currentMovie.Rating.ToString();
+        }
+
+        private void DurationTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentMovie.Duration = int.Parse(DurationTextBox.Text);
+                DurationTextBox.BackColor = _correctColor;
+            }
+            catch
+            {
+
+                DurationTextBox.BackColor = _errorColor;
+            }
+        }
+
+        private void YearTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentMovie.ReleaseYear = int.Parse(YearTextBox.Text);
+                YearTextBox.BackColor = _correctColor;
+            }
+            catch
+            {
+                YearTextBox.BackColor = _errorColor;
+            }
+        }
+
+        private void RatingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentMovie.Rating = double.Parse(RatingTextBox.Text);
+                RatingTextBox.BackColor = _correctColor;
+            }
+            catch
+            {
+
+                RatingTextBox.BackColor = _errorColor;
+            }
+        }
+
+        private void FindMoviesButton_Click(object sender, EventArgs e)
+        {
+            MoviesListBox.SelectedIndex = FindRectangleWithMaxRating(_movies);
         }
     }
 }

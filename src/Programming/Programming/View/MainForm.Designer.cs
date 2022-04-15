@@ -349,11 +349,12 @@ namespace Programming.View
             this.FindMoviesButton.TabIndex = 17;
             this.FindMoviesButton.Text = "Find";
             this.FindMoviesButton.UseVisualStyleBackColor = false;
+            this.FindMoviesButton.Click += new System.EventHandler(this.FindMoviesButton_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(211, 298);
+            this.label13.Location = new System.Drawing.Point(211, 235);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 17);
             this.label13.TabIndex = 15;
@@ -362,16 +363,17 @@ namespace Programming.View
             // RatingTextBox
             // 
             this.RatingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RatingTextBox.Location = new System.Drawing.Point(214, 318);
+            this.RatingTextBox.Location = new System.Drawing.Point(214, 255);
             this.RatingTextBox.Multiline = true;
             this.RatingTextBox.Name = "RatingTextBox";
             this.RatingTextBox.Size = new System.Drawing.Size(165, 27);
             this.RatingTextBox.TabIndex = 14;
+            this.RatingTextBox.TextChanged += new System.EventHandler(this.RatingTextBox_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(211, 235);
+            this.label14.Location = new System.Drawing.Point(211, 109);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 17);
             this.label14.TabIndex = 13;
@@ -380,11 +382,12 @@ namespace Programming.View
             // DurationTextBox
             // 
             this.DurationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DurationTextBox.Location = new System.Drawing.Point(214, 255);
+            this.DurationTextBox.Location = new System.Drawing.Point(214, 129);
             this.DurationTextBox.Multiline = true;
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(165, 27);
             this.DurationTextBox.TabIndex = 12;
+            this.DurationTextBox.TextChanged += new System.EventHandler(this.DurationTextBox_TextChanged);
             // 
             // label11
             // 
@@ -403,11 +406,12 @@ namespace Programming.View
             this.YearTextBox.Name = "YearTextBox";
             this.YearTextBox.Size = new System.Drawing.Size(165, 27);
             this.YearTextBox.TabIndex = 10;
+            this.YearTextBox.TextChanged += new System.EventHandler(this.YearTextBox_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(211, 109);
+            this.label12.Location = new System.Drawing.Point(211, 298);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 9;
@@ -416,7 +420,7 @@ namespace Programming.View
             // GenreTextBox
             // 
             this.GenreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GenreTextBox.Location = new System.Drawing.Point(214, 129);
+            this.GenreTextBox.Location = new System.Drawing.Point(214, 318);
             this.GenreTextBox.Multiline = true;
             this.GenreTextBox.Name = "GenreTextBox";
             this.GenreTextBox.Size = new System.Drawing.Size(165, 27);

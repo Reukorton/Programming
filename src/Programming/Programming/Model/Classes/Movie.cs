@@ -63,7 +63,7 @@ namespace Programming.Model.Classes
                         "Неверная дата фильма");
                 }
 
-                _duration = value;
+                _releaseYear = value;
             }
         }
 
