@@ -34,7 +34,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 & value > 59)
+                if ((value < 0) || (value > 59))
                 {
                     throw new ArgumentException(
                         "Неверное время воспроизведения");

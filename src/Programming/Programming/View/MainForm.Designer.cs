@@ -161,7 +161,7 @@ namespace Programming.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 49);
+            this.label6.Location = new System.Drawing.Point(20, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 14;
@@ -204,7 +204,7 @@ namespace Programming.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 49);
+            this.label4.Location = new System.Drawing.Point(20, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 17);
             this.label4.TabIndex = 14;
@@ -225,7 +225,7 @@ namespace Programming.View
             // WeekdayForParsingTextBox
             // 
             this.WeekdayForParsingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(23, 68);
+            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(22, 68);
             this.WeekdayForParsingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeekdayForParsingTextBox.Multiline = true;
             this.WeekdayForParsingTextBox.Name = "WeekdayForParsingTextBox";
@@ -251,7 +251,7 @@ namespace Programming.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(417, 27);
+            this.label3.Location = new System.Drawing.Point(418, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 10;
@@ -278,7 +278,7 @@ namespace Programming.View
             // IntValue
             // 
             this.IntValue.Enabled = false;
-            this.IntValue.Location = new System.Drawing.Point(420, 46);
+            this.IntValue.Location = new System.Drawing.Point(421, 46);
             this.IntValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IntValue.Name = "IntValue";
             this.IntValue.Size = new System.Drawing.Size(100, 22);
