@@ -15,11 +15,20 @@ namespace Programming.View
         
         private string[] _colors;
 
+        private string[] _genre;
+
         Random _random = new Random();
 
         private readonly Color _errorColor = Color.LightPink;
 
         private readonly Color _correctColor = Color.White;
+
+        private Movie[] _movies;
+
+        private Movie _currentMovie;
+
+        private string[] _titleMovies = { "Big Momma's House", "The Green Mile",
+                                          "Interstellar", "Finch", "Insidious" };
 
         public MainForm()
         {
@@ -41,8 +50,8 @@ namespace Programming.View
             //------------------------------------------------------
 
             _colors = Enum.GetNames(typeof(Colors));
-
             _rectangles = new Rectangle[5];
+
             for (int i = 0; i < _rectangles.Length; i++)
             {
                 _rectangles[i] = new Rectangle(
@@ -50,6 +59,19 @@ namespace Programming.View
                     _random.Next(1, 1000), 
                     _colors[_random.Next(_colors.Length)]);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
+            }
+
+            _movies = new Movie[5];
+            _genre = Enum.GetNames(typeof(Genre));
+            for (int i = 0; i < _movies.Length; i++)
+            {
+                _movies[i] = new Movie(
+                    _titleMovies[i],
+                    _random.Next(90, 210),
+                    _random.Next(1900, DateTime.Now.Year),
+                    _random.NextDouble() * 10,
+                    _genre[_random.Next(0, _genre.Length)]);
+                MoviesListBox.Items.Add(_movies[i].ToString());
             }
         }
 
@@ -214,6 +236,17 @@ namespace Programming.View
         private void FindRectanglesButton_Click(object sender, EventArgs e)
         {
             RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+        }
+
+        private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = RectanglesListBox.SelectedIndex;
+            _currentMovie = _movies[selectedIndex];
+            TitleTextBox.Text = _currentMovie.Title;
+            DurationTextBox.Text = _currentMovie.Duration.ToString();
+            YearTextBox.Text = _currentMovie.ReleaseYear.ToString();
+            GenreTextBox.Text = _currentMovie.Genre.ToString();
+            RatingTextBox.Text = _currentMovie.Rating.ToString();
         }
     }
 }

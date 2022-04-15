@@ -11,6 +11,8 @@ namespace Programming.Model.Classes
         private int _duration;
         private int _releaseYear;
         private double _rating;
+        private int _id;
+        private static int _count = 0;
 
         public string Genre { get; set; }
 
@@ -25,6 +27,8 @@ namespace Programming.Model.Classes
             ReleaseYear = releaseYear;
             Rating = rating;
             Genre = genre;
+            _count++;
+            Id = _count;
         }
 
         public int Duration
@@ -79,6 +83,17 @@ namespace Programming.Model.Classes
 
                 _rating = value;
             }
+        }
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        public override string ToString()
+        {
+            return $"Movie {_id}";
         }
     }
 }
