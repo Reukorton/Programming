@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Classes
 {
-    class Subject
+    public class Subject
     {
         private int _mark;
 

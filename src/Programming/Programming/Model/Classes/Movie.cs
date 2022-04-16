@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Classes
 {
-    class Movie
+    public class Movie
     {
         private int _duration;
         private int _releaseYear;

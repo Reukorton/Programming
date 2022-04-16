@@ -9,6 +9,10 @@ namespace Programming.View
 {
     public partial class MainForm : Form
     {
+        private readonly Color _errorColor = Color.LightPink;
+
+        private readonly Color _correctColor = Color.White;
+
         private Rectangle[] _rectangles;
             
         private Rectangle _currentRectangle;
@@ -18,10 +22,6 @@ namespace Programming.View
         private string[] _genre;
 
         Random _random = new Random();
-
-        private readonly Color _errorColor = Color.LightPink;
-
-        private readonly Color _correctColor = Color.White;
 
         private Movie[] _movies;
 
@@ -47,20 +47,32 @@ namespace Programming.View
                 ChooseSeasonComboBox.Items.Add(value);
             }
 
+            _rectangles = CreateRectangle(5);
+            _movies = CreateMovie(5);
+        }
+
+        private Rectangle[] CreateRectangle(int count)
+        {
             _colors = Enum.GetNames(typeof(Colors));
-            _rectangles = new Rectangle[5];
+            _rectangles = new Rectangle[count];
 
             for (int i = 0; i < _rectangles.Length; i++)
             {
                 _rectangles[i] = new Rectangle(
-                    _random.Next(1, 1000), 
-                    _random.Next(1, 1000), 
+                    _random.Next(1, 1000),
+                    _random.Next(1, 1000),
                     _colors[_random.Next(_colors.Length)]);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
 
-            _movies = new Movie[5];
+            return _rectangles;
+        }
+
+        private Movie[] CreateMovie(int count)
+        {
+            _movies = new Movie[count];
             _genre = Enum.GetNames(typeof(Genre));
+
             for (int i = 0; i < _movies.Length; i++)
             {
                 _movies[i] = new Movie(
@@ -69,12 +81,14 @@ namespace Programming.View
                     _random.Next(1900, DateTime.Now.Year),
                     Math.Round(_random.NextDouble() * 10, 1),
                     _genre[_random.Next(0, _genre.Length)]
-                    ); ;
+                    ); 
                 MoviesListBox.Items.Add(_movies[i].ToString());
             }
+
+            return _movies;
         }
 
-        public void CorrectionColorWhiteSmoke()
+        private void SetColorWhiteSmoke()
         {
             ParsingGroupBox.BackColor =
                         EnumsTabPage.BackColor =
@@ -150,7 +164,7 @@ namespace Programming.View
                     WriteSeasonLabel.Text = "Выберите время года";
                     break;
                 case Seasons.Winter:
-                    CorrectionColorWhiteSmoke();
+                    SetColorWhiteSmoke();
                     MessageBox.Show(@"Бррр! Холодно!");
                     break;
                 case Seasons.Summer:
@@ -161,12 +175,12 @@ namespace Programming.View
                     MessageBox.Show(@"Урааааа! Лето!");
                     break;
                 case Seasons.Autumn:
-                    CorrectionColorWhiteSmoke();
+                    SetColorWhiteSmoke();
                     EnumsTabPage.BackColor = ColorTranslator.FromHtml("#ea8900");
                     MessageBox.Show(@"Советую взять зонтик :(");
                     break;
                 case Seasons.Spring:
-                    CorrectionColorWhiteSmoke();
+                    SetColorWhiteSmoke();
                     MessageBox.Show(@"Запахло весной");
                     break;
                 default:
@@ -205,7 +219,6 @@ namespace Programming.View
             }
             catch
             {
-
                 WidthTextBox.BackColor = _errorColor;
             }
         }

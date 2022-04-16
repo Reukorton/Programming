@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Classes
 {
-    class Flight
+    public class Flight
     {
         private int _flightTimeMinutes;
 

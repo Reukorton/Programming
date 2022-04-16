@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Classes
 {
-    class Contact
+    public class Contact
     {
         private string _phoneNumber;
 
@@ -41,11 +41,8 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Неверные символы номера");
                 }
-
                 _phoneNumber = value;
             }
         }
-
-        
     }
 }

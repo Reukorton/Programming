@@ -15,7 +15,11 @@ namespace Programming.Model.Classes
 
         public string Color { get; set; }
 
-        public Rectangle() { } 
+        public Rectangle() {
+            _count++;
+            Id = _count;
+        } 
+
         public Rectangle(int length, int width, string color)
         {
             Length = length;
@@ -38,7 +42,6 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Длина не может быть меньше нуля");
                 }
-
                 _length = value;
             }
         }
@@ -56,7 +59,6 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Ширина не может быть меньше нуля");
                 }
-
                 _width = value;
             }
         }
