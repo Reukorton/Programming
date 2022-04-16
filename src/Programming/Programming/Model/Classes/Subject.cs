@@ -12,9 +12,9 @@ namespace Programming.Model.Classes
 
         public string Title { get; set; }
 
-        public string FirstNameTeacher { get; set; }
+        public string TeacherFirstName { get; set; }
 
-        public string LastNameTeacher { get; set; }
+        public string TeacherLastName { get; set; }
 
         public Subject() { }
 
@@ -22,8 +22,8 @@ namespace Programming.Model.Classes
         {
             Title = title;
             Mark = mark;
-            FirstNameTeacher = firstNameTeacher;
-            LastNameTeacher = lastNameTeacher;
+            TeacherFirstName = firstNameTeacher;
+            TeacherLastName = lastNameTeacher;
         }
 
         public int Mark
