@@ -9,8 +9,11 @@ namespace Programming.Model.Classes
     public class Rectangle
     {
         private static int _count = 0;
+
         private int _length;
+
         private int _width;
+
         private int _id;
 
         public string Color { get; set; }
@@ -42,6 +45,7 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Длина не может быть меньше нуля");
                 }
+
                 _length = value;
             }
         }
@@ -59,6 +63,7 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Ширина не может быть меньше нуля");
                 }
+
                 _width = value;
             }
         }

@@ -47,7 +47,7 @@ namespace Programming.View
                 ChooseSeasonComboBox.Items.Add(value);
             }
 
-            _rectangles = CreateRectangle(5);
+            _rectangles = CreateRectangle(10);
             _movies = CreateMovie(5);
         }
 

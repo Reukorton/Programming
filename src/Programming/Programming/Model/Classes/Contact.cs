@@ -41,6 +41,7 @@ namespace Programming.Model.Classes
                     throw new ArgumentException(
                         "Неверные символы номера");
                 }
+
                 _phoneNumber = value;
             }
         }

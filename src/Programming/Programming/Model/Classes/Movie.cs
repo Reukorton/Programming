@@ -9,9 +9,13 @@ namespace Programming.Model.Classes
     public class Movie
     {
         private int _duration;
+
         private int _releaseYear;
+
         private double _rating;
+
         private int _id;
+
         private static int _count = 0;
 
         public string Genre { get; set; }
