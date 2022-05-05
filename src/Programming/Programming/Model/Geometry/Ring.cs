@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Geometry
 {
-    internal class Ring
+    public class Ring
     {
         private double _outerRadius;
 
@@ -46,6 +46,14 @@ namespace Programming.Model.Geometry
                 Validator.AssertOnPositiveValue(value, nameof(InnerRadius));
                 Validator.AssertValueInRange(value, 0, _outerRadius, nameof(InnerRadius));
                 _innerRadius = value;
+            }
+        }
+
+        public double Area
+        {
+            get
+            {
+                return Math.PI * (Math.Pow(_outerRadius, 2) - Math.Pow(_innerRadius, 2));
             }
         }
     }
