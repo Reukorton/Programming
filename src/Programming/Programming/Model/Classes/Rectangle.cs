@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Programming.Model.Geometry;
 
 namespace Programming.Model.Classes
 {
@@ -23,13 +24,14 @@ namespace Programming.Model.Classes
             Id = _count;
         } 
 
-        public Rectangle(int length, int width, string color)
+        public Rectangle(int length, int width, string color, Point2D center)
         {
             Length = length;
             Width = width;
             Color = color;
             _count++;
             Id = _count;
+            Center = center;
         }
 
         public int Length
@@ -68,5 +70,7 @@ namespace Programming.Model.Classes
         {
             return $"Rectangle {_id}";
         }
+
+        public Point2D Center { get; set; }
     }
 }

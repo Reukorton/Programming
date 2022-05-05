@@ -73,6 +73,10 @@ namespace Programming.View
             this.label7 = new System.Windows.Forms.Label();
             this.LengthTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
+            this.YTextBox = new System.Windows.Forms.TextBox();
+            this.XTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.EnumsControl.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.HandleGroupBox.SuspendLayout();
@@ -130,7 +134,7 @@ namespace Programming.View
             this.WriteSeasonLabel.AutoSize = true;
             this.WriteSeasonLabel.Location = new System.Drawing.Point(33, 97);
             this.WriteSeasonLabel.Name = "WriteSeasonLabel";
-            this.WriteSeasonLabel.Size = new System.Drawing.Size(0, 17);
+            this.WriteSeasonLabel.Size = new System.Drawing.Size(0, 16);
             this.WriteSeasonLabel.TabIndex = 11;
             // 
             // SeasonLabel
@@ -138,7 +142,7 @@ namespace Programming.View
             this.SeasonLabel.AutoSize = true;
             this.SeasonLabel.Location = new System.Drawing.Point(5, 97);
             this.SeasonLabel.Name = "SeasonLabel";
-            this.SeasonLabel.Size = new System.Drawing.Size(0, 17);
+            this.SeasonLabel.Size = new System.Drawing.Size(0, 16);
             this.SeasonLabel.TabIndex = 16;
             // 
             // ChooseSeasonComboBox
@@ -155,7 +159,7 @@ namespace Programming.View
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(7, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.Size = new System.Drawing.Size(0, 16);
             this.label5.TabIndex = 12;
             // 
             // label6
@@ -163,7 +167,7 @@ namespace Programming.View
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(20, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 17);
+            this.label6.Size = new System.Drawing.Size(105, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Choose season:";
             // 
@@ -198,7 +202,7 @@ namespace Programming.View
             this.WriteWeekdayLabel.AutoSize = true;
             this.WriteWeekdayLabel.Location = new System.Drawing.Point(27, 97);
             this.WriteWeekdayLabel.Name = "WriteWeekdayLabel";
-            this.WriteWeekdayLabel.Size = new System.Drawing.Size(0, 17);
+            this.WriteWeekdayLabel.Size = new System.Drawing.Size(0, 16);
             this.WriteWeekdayLabel.TabIndex = 12;
             // 
             // label4
@@ -206,7 +210,7 @@ namespace Programming.View
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 17);
+            this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Type value for parsing:";
             // 
@@ -253,7 +257,7 @@ namespace Programming.View
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(418, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Int value:";
             // 
@@ -262,7 +266,7 @@ namespace Programming.View
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(211, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 17);
+            this.label2.Size = new System.Drawing.Size(93, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Choose value:";
             // 
@@ -271,7 +275,7 @@ namespace Programming.View
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 17);
+            this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Choose enumeration:";
             // 
@@ -356,7 +360,7 @@ namespace Programming.View
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(211, 235);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 17);
+            this.label13.Size = new System.Drawing.Size(49, 16);
             this.label13.TabIndex = 15;
             this.label13.Text = "Rating:";
             // 
@@ -375,7 +379,7 @@ namespace Programming.View
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(211, 109);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 17);
+            this.label14.Size = new System.Drawing.Size(60, 16);
             this.label14.TabIndex = 13;
             this.label14.Text = "Duration:";
             // 
@@ -394,7 +398,7 @@ namespace Programming.View
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(211, 172);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 17);
+            this.label11.Size = new System.Drawing.Size(39, 16);
             this.label11.TabIndex = 11;
             this.label11.Text = "Year:";
             // 
@@ -413,7 +417,7 @@ namespace Programming.View
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(211, 298);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 17);
+            this.label12.Size = new System.Drawing.Size(47, 16);
             this.label12.TabIndex = 9;
             this.label12.Text = "Genre:";
             // 
@@ -431,7 +435,7 @@ namespace Programming.View
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(211, 46);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 17);
+            this.label10.Size = new System.Drawing.Size(36, 16);
             this.label10.TabIndex = 5;
             this.label10.Text = "Title:";
             // 
@@ -456,6 +460,10 @@ namespace Programming.View
             // 
             // RectanglesGroupBox
             // 
+            this.RectanglesGroupBox.Controls.Add(this.label16);
+            this.RectanglesGroupBox.Controls.Add(this.label15);
+            this.RectanglesGroupBox.Controls.Add(this.XTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.YTextBox);
             this.RectanglesGroupBox.Controls.Add(this.FindRectanglesButton);
             this.RectanglesGroupBox.Controls.Add(this.label9);
             this.RectanglesGroupBox.Controls.Add(this.ColorTextBox);
@@ -487,7 +495,7 @@ namespace Programming.View
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(211, 172);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 17);
+            this.label9.Size = new System.Drawing.Size(42, 16);
             this.label9.TabIndex = 7;
             this.label9.Text = "Color:";
             // 
@@ -505,7 +513,7 @@ namespace Programming.View
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(211, 109);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.Size = new System.Drawing.Size(44, 16);
             this.label8.TabIndex = 5;
             this.label8.Text = "Width:";
             // 
@@ -524,7 +532,7 @@ namespace Programming.View
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(211, 46);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.Size = new System.Drawing.Size(50, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Length:";
             // 
@@ -547,6 +555,44 @@ namespace Programming.View
             this.RectanglesListBox.Size = new System.Drawing.Size(165, 404);
             this.RectanglesListBox.TabIndex = 2;
             this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
+            // 
+            // YTextBox
+            // 
+            this.YTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.YTextBox.Location = new System.Drawing.Point(307, 254);
+            this.YTextBox.Multiline = true;
+            this.YTextBox.Name = "YTextBox";
+            this.YTextBox.ReadOnly = true;
+            this.YTextBox.Size = new System.Drawing.Size(72, 27);
+            this.YTextBox.TabIndex = 18;
+            // 
+            // XTextBox
+            // 
+            this.XTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XTextBox.Location = new System.Drawing.Point(214, 255);
+            this.XTextBox.Multiline = true;
+            this.XTextBox.Name = "XTextBox";
+            this.XTextBox.ReadOnly = true;
+            this.XTextBox.Size = new System.Drawing.Size(72, 27);
+            this.XTextBox.TabIndex = 19;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(211, 235);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 16);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "X";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(304, 235);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 16);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Y";
             // 
             // MainForm
             // 
@@ -623,6 +669,10 @@ namespace Programming.View
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TitleTextBox;
         private System.Windows.Forms.Button FindRectanglesButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox XTextBox;
+        private System.Windows.Forms.TextBox YTextBox;
     }
 }
 

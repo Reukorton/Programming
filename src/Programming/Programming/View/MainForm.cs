@@ -61,7 +61,8 @@ namespace Programming.View
                 _rectangles[i] = new Rectangle(
                     _random.Next(1, 1000),
                     _random.Next(1, 1000),
-                    _colors[_random.Next(_colors.Length)]);
+                    _colors[_random.Next(_colors.Length)],
+                    null);
                 RectanglesListBox.Items.Add(_rectangles[i].ToString());
             }
 
