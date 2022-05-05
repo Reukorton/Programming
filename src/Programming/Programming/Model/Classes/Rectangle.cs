@@ -40,12 +40,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException(
-                        "Длина не может быть меньше нуля");
-                }
-
+                Validator.AssertOnPositiveValue(value, nameof(Length));                                                                        
                 _length = value;
             }
         }
@@ -58,12 +53,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException(
-                        "Ширина не может быть меньше нуля");
-                }
-
+                Validator.AssertOnPositiveValue(value, nameof(Width));
                 _width = value;
             }
         }

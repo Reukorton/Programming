@@ -31,12 +31,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException(
-                        "Неверная длительность полета");
-                }
-
+                Validator.AssertOnPositiveValue(value, nameof(FlightTimeMinutes));
                 _flightTimeMinutes = value;
             }
         } 

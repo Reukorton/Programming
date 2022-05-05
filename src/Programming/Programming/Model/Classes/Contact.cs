@@ -10,9 +10,9 @@ namespace Programming.Model.Classes
     {
         private string _phoneNumber;
 
-        public string FirstName { get; set; }
+        private string _firstName;
 
-        public string LastName { get; set; }
+        private string _lastName;
 
         public Contact() { }
 
@@ -43,6 +43,42 @@ namespace Programming.Model.Classes
                 }
 
                 _phoneNumber = value;
+            }
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                return _firstName;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(value, nameof(FirstName));
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(value, nameof(LastName));
+            }
+        }
+
+        private void AssertStringContainsOnlyLetters(string value, string propertyName)
+        {
+            foreach (var i in value)
+            {
+                if (!char.IsLetter(i))
+                {
+                    throw new ArgumentException(
+                        $"{propertyName} должно состоять только из букв английского алфавита");
+                }
             }
         }
     }
