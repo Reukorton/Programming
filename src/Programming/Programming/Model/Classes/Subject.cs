@@ -34,15 +34,9 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 || value > 5)
-                {
-                    throw new ArgumentException(
-                        "Неверная оценка");
-                }
-
+                Validator.AssertValueInRange(value, 0, 59, nameof(Mark));
                 _mark = value;
             }
         }
-        
     }
 }

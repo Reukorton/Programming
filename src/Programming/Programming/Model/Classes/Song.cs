@@ -34,12 +34,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if ((value < 0) || (value > 59))
-                {
-                    throw new ArgumentException(
-                        "Неверное время воспроизведения");
-                }
-
+                Validator.AssertValueInRange(value, 0, 59, nameof(Seconds));
                 _seconds = value;
             }
         }

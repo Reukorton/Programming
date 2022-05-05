@@ -56,12 +56,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 1900 || value > DateTime.Now.Year)
-                {
-                    throw new ArgumentException(
-                        "Неверная дата фильма");
-                }
-
+                Validator.AssertValueInRange(value, 1900, DateTime.Now.Year, nameof(ReleaseYear));
                 _releaseYear = value;
             }
         }
@@ -74,12 +69,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 || value > 10)
-                {
-                    throw new ArgumentException(
-                        "Неверный рейтинг");
-                }
-
+                Validator.AssertValueInRange(value, 0, 10, nameof(Rating));
                 _rating = value;
             }
         }
