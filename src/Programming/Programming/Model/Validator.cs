@@ -34,7 +34,8 @@ namespace Programming.Model
                     $"{propertyName} должно быть в диапозоне от {min} до {max}");
             }
 
-        }public static void AssertValueInRange(double value, int min, int max, string propertyName)
+        }
+        public static void AssertValueInRange(double value, double min, double max, string propertyName)
         {
             if ((value < min) || (value > max))
             {
