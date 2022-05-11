@@ -59,6 +59,7 @@
     <Compile Include="Model\Enums\Manufactures.cs" />
     <Compile Include="Model\Enums\Seasons.cs" />
     <Compile Include="Model\Enums\Weekday.cs" />
+    <Compile Include="Model\Geometry\CollisionManager.cs" />
     <Compile Include="Model\Geometry\Point2D.cs" />
     <Compile Include="Model\Geometry\Ring.cs" />
     <Compile Include="Model\Validator.cs" />

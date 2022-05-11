@@ -65,6 +65,10 @@ namespace Programming.View
             this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.MoviesListBox = new System.Windows.Forms.ListBox();
             this.RectanglesGroupBox = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.XRectanglesTextBox = new System.Windows.Forms.TextBox();
+            this.YRectanglesTextBox = new System.Windows.Forms.TextBox();
             this.FindRectanglesButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.ColorTextBox = new System.Windows.Forms.TextBox();
@@ -73,10 +77,6 @@ namespace Programming.View
             this.label7 = new System.Windows.Forms.Label();
             this.LengthTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
-            this.YTextBox = new System.Windows.Forms.TextBox();
-            this.XTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.EnumsControl.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.HandleGroupBox.SuspendLayout();
@@ -208,7 +208,7 @@ namespace Programming.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 49);
+            this.label4.Location = new System.Drawing.Point(19, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 14;
@@ -229,7 +229,7 @@ namespace Programming.View
             // WeekdayForParsingTextBox
             // 
             this.WeekdayForParsingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(22, 68);
+            this.WeekdayForParsingTextBox.Location = new System.Drawing.Point(23, 68);
             this.WeekdayForParsingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeekdayForParsingTextBox.Multiline = true;
             this.WeekdayForParsingTextBox.Name = "WeekdayForParsingTextBox";
@@ -462,8 +462,8 @@ namespace Programming.View
             // 
             this.RectanglesGroupBox.Controls.Add(this.label16);
             this.RectanglesGroupBox.Controls.Add(this.label15);
-            this.RectanglesGroupBox.Controls.Add(this.XTextBox);
-            this.RectanglesGroupBox.Controls.Add(this.YTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.XRectanglesTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.YRectanglesTextBox);
             this.RectanglesGroupBox.Controls.Add(this.FindRectanglesButton);
             this.RectanglesGroupBox.Controls.Add(this.label9);
             this.RectanglesGroupBox.Controls.Add(this.ColorTextBox);
@@ -478,6 +478,44 @@ namespace Programming.View
             this.RectanglesGroupBox.TabIndex = 0;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(304, 235);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 16);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Y";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(211, 235);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 16);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "X";
+            // 
+            // XRectanglesTextBox
+            // 
+            this.XRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XRectanglesTextBox.Location = new System.Drawing.Point(214, 255);
+            this.XRectanglesTextBox.Multiline = true;
+            this.XRectanglesTextBox.Name = "XRectanglesTextBox";
+            this.XRectanglesTextBox.ReadOnly = true;
+            this.XRectanglesTextBox.Size = new System.Drawing.Size(72, 27);
+            this.XRectanglesTextBox.TabIndex = 19;
+            // 
+            // YRectanglesTextBox
+            // 
+            this.YRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.YRectanglesTextBox.Location = new System.Drawing.Point(307, 254);
+            this.YRectanglesTextBox.Multiline = true;
+            this.YRectanglesTextBox.Name = "YRectanglesTextBox";
+            this.YRectanglesTextBox.ReadOnly = true;
+            this.YRectanglesTextBox.Size = new System.Drawing.Size(72, 27);
+            this.YRectanglesTextBox.TabIndex = 18;
             // 
             // FindRectanglesButton
             // 
@@ -556,44 +594,6 @@ namespace Programming.View
             this.RectanglesListBox.TabIndex = 2;
             this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
-            // YTextBox
-            // 
-            this.YTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.YTextBox.Location = new System.Drawing.Point(307, 254);
-            this.YTextBox.Multiline = true;
-            this.YTextBox.Name = "YTextBox";
-            this.YTextBox.ReadOnly = true;
-            this.YTextBox.Size = new System.Drawing.Size(72, 27);
-            this.YTextBox.TabIndex = 18;
-            // 
-            // XTextBox
-            // 
-            this.XTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XTextBox.Location = new System.Drawing.Point(214, 255);
-            this.XTextBox.Multiline = true;
-            this.XTextBox.Name = "XTextBox";
-            this.XTextBox.ReadOnly = true;
-            this.XTextBox.Size = new System.Drawing.Size(72, 27);
-            this.XTextBox.TabIndex = 19;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(211, 235);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 16);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "X";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(304, 235);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 16);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "Y";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -671,8 +671,8 @@ namespace Programming.View
         private System.Windows.Forms.Button FindRectanglesButton;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox XTextBox;
-        private System.Windows.Forms.TextBox YTextBox;
+        private System.Windows.Forms.TextBox XRectanglesTextBox;
+        private System.Windows.Forms.TextBox YRectanglesTextBox;
     }
 }
 

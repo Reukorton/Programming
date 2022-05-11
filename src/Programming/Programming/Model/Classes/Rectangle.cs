@@ -9,28 +9,31 @@ namespace Programming.Model.Classes
 {
     public class Rectangle
     {
-        private static int _count = 0;
+        private static int _allRectanglesCount;
+
+        private readonly int _id;
 
         private int _length;
 
         private int _width;
 
-        private int _id;
-
         public string Color { get; set; }
 
-        public Rectangle() {
-            _count++;
-            Id = _count;
-        } 
+        public Point2D Center { get; set; }
+
+        public Rectangle() 
+        {
+            _allRectanglesCount++;
+            _id = _allRectanglesCount;
+        }
 
         public Rectangle(int length, int width, string color, Point2D center)
         {
             Length = length;
             Width = width;
             Color = color;
-            _count++;
-            Id = _count;
+            _allRectanglesCount++;
+            _id = _allRectanglesCount;
             Center = center;
         }
 
@@ -42,7 +45,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                Validator.AssertOnPositiveValue(value, nameof(Length));                                                                        
+                Validator.AssertOnPositiveValue(value, nameof(Length));
                 _length = value;
             }
         }
@@ -63,7 +66,6 @@ namespace Programming.Model.Classes
         public int Id
         {
             get { return _id; }
-            set { _id = value; }
         }
 
         public override string ToString()
@@ -71,6 +73,12 @@ namespace Programming.Model.Classes
             return $"Rectangle {_id}";
         }
 
-        public Point2D Center { get; set; }
+        public static int AllRectanglesCount
+        {
+            get
+            {
+                return _allRectanglesCount;
+            }
+        }
     }
 }
