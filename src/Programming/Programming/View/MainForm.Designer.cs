@@ -75,7 +75,7 @@ namespace Programming.View
             this.label8 = new System.Windows.Forms.Label();
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.LengthTextBox = new System.Windows.Forms.TextBox();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
             this.RectanglesTabPage = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@ namespace Programming.View
             this.RemoveRectangleButton = new System.Windows.Forms.Button();
             this.AddRectangleButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.RectanglesPaintListBox = new System.Windows.Forms.ListBox();
+            this.RectanglesPanelListBox = new System.Windows.Forms.ListBox();
             this.IdTextBox.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.HandleGroupBox.SuspendLayout();
@@ -489,7 +489,7 @@ namespace Programming.View
             this.RectanglesGroupBox.Controls.Add(this.label8);
             this.RectanglesGroupBox.Controls.Add(this.WidthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.label7);
-            this.RectanglesGroupBox.Controls.Add(this.LengthTextBox);
+            this.RectanglesGroupBox.Controls.Add(this.HeightTextBox);
             this.RectanglesGroupBox.Controls.Add(this.RectanglesListBox);
             this.RectanglesGroupBox.Location = new System.Drawing.Point(8, 7);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
@@ -589,19 +589,19 @@ namespace Programming.View
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(211, 46);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 16);
+            this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Length:";
+            this.label7.Text = "Height:";
             // 
-            // LengthTextBox
+            // HeightTextBox
             // 
-            this.LengthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LengthTextBox.Location = new System.Drawing.Point(214, 66);
-            this.LengthTextBox.Multiline = true;
-            this.LengthTextBox.Name = "LengthTextBox";
-            this.LengthTextBox.Size = new System.Drawing.Size(165, 27);
-            this.LengthTextBox.TabIndex = 2;
-            this.LengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
+            this.HeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeightTextBox.Location = new System.Drawing.Point(214, 66);
+            this.HeightTextBox.Multiline = true;
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.Size = new System.Drawing.Size(165, 27);
+            this.HeightTextBox.TabIndex = 2;
+            this.HeightTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
             // 
             // RectanglesListBox
             // 
@@ -630,7 +630,7 @@ namespace Programming.View
             this.RectanglesTabPage.Controls.Add(this.RemoveRectangleButton);
             this.RectanglesTabPage.Controls.Add(this.AddRectangleButton);
             this.RectanglesTabPage.Controls.Add(this.label17);
-            this.RectanglesTabPage.Controls.Add(this.RectanglesPaintListBox);
+            this.RectanglesTabPage.Controls.Add(this.RectanglesPanelListBox);
             this.RectanglesTabPage.Location = new System.Drawing.Point(4, 25);
             this.RectanglesTabPage.Name = "RectanglesTabPage";
             this.RectanglesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -755,6 +755,7 @@ namespace Programming.View
             this.RemoveRectangleButton.TabIndex = 2;
             this.RemoveRectangleButton.Text = "button2";
             this.RemoveRectangleButton.UseVisualStyleBackColor = true;
+            this.RemoveRectangleButton.Click += new System.EventHandler(this.RemoveRectangleButton_Click);
             // 
             // AddRectangleButton
             // 
@@ -765,6 +766,7 @@ namespace Programming.View
             this.AddRectangleButton.TabIndex = 1;
             this.AddRectangleButton.Text = "button1";
             this.AddRectangleButton.UseVisualStyleBackColor = true;
+            this.AddRectangleButton.Click += new System.EventHandler(this.AddRectangleButton_Click);
             // 
             // label17
             // 
@@ -775,14 +777,13 @@ namespace Programming.View
             this.label17.TabIndex = 1;
             this.label17.Text = "Rectangles:";
             // 
-            // RectanglesPaintListBox
+            // RectanglesPanelListBox
             // 
-            this.RectanglesPaintListBox.FormattingEnabled = true;
-            this.RectanglesPaintListBox.ItemHeight = 16;
-            this.RectanglesPaintListBox.Location = new System.Drawing.Point(31, 53);
-            this.RectanglesPaintListBox.Name = "RectanglesPaintListBox";
-            this.RectanglesPaintListBox.Size = new System.Drawing.Size(269, 180);
-            this.RectanglesPaintListBox.TabIndex = 0;
+            this.RectanglesPanelListBox.ItemHeight = 16;
+            this.RectanglesPanelListBox.Location = new System.Drawing.Point(31, 53);
+            this.RectanglesPanelListBox.Name = "RectanglesPanelListBox";
+            this.RectanglesPanelListBox.Size = new System.Drawing.Size(270, 180);
+            this.RectanglesPanelListBox.TabIndex = 15;
             // 
             // MainForm
             // 
@@ -848,7 +849,7 @@ namespace Programming.View
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox WidthTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox LengthTextBox;
+        private System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Button FindMoviesButton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox RatingTextBox;
@@ -866,7 +867,7 @@ namespace Programming.View
         private System.Windows.Forms.TextBox XRectanglesTextBox;
         private System.Windows.Forms.TextBox YRectanglesTextBox;
         private System.Windows.Forms.TabPage RectanglesTabPage;
-        private System.Windows.Forms.ListBox RectanglesPaintListBox;
+        private System.Windows.Forms.ListBox RectanglesPanelListBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button AddRectangleButton;
         private System.Windows.Forms.Button RemoveRectangleButton;

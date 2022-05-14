@@ -27,6 +27,7 @@ namespace Programming.Model.Geometry
             set
             {
                 Validator.AssertOnPositiveValue(value, nameof(X));
+                _x = value;
             }
         }
 
@@ -39,6 +40,7 @@ namespace Programming.Model.Geometry
             set
             {
                 Validator.AssertOnPositiveValue(value, nameof(Y));
+                _y = value;
             }
         }
     }
