@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Programming.Model.Enums;
 using Programming.Model.Classes;
 using Rectangle = Programming.Model.Classes.Rectangle;
+using System.Collections.Generic;
 
 namespace Programming.View
 {
@@ -29,6 +30,8 @@ namespace Programming.View
 
         private string[] _titleMovies = { "Big Momma's House", "The Green Mile",
                                           "Interstellar", "Finch", "Insidious" };
+
+        private List<Rectangle> _rectanglesPanel = new List<Rectangle>();
 
         public MainForm()
         {
@@ -67,6 +70,22 @@ namespace Programming.View
             }
 
             return _rectangles;
+        }
+        private List<Rectangle> CreateRectangleList(int count)
+        {
+            _colors = Enum.GetNames(typeof(Colors));
+
+            for (int i = 0; i < _rectangles.Length; i++)
+            {
+                _rectanglesPanel.Add(new Rectangle(
+                    _random.Next(1, 1000),
+                    _random.Next(1, 1000),
+                    _colors[_random.Next(_colors.Length)],
+                    null));
+                RectanglesListBox.Items.Add(_rectangles[i].ToString());
+            }
+
+            return _rectanglesPanel;
         }
 
         private Movie[] CreateMovie(int count)

@@ -29,7 +29,7 @@ namespace Programming.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.EnumsControl = new System.Windows.Forms.TabControl();
+            this.IdTextBox = new System.Windows.Forms.TabControl();
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
             this.HandleGroupBox = new System.Windows.Forms.GroupBox();
             this.WriteSeasonLabel = new System.Windows.Forms.Label();
@@ -77,7 +77,24 @@ namespace Programming.View
             this.label7 = new System.Windows.Forms.Label();
             this.LengthTextBox = new System.Windows.Forms.TextBox();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
-            this.EnumsControl.SuspendLayout();
+            this.RectanglesTabPage = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.XTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CanvasPanel = new System.Windows.Forms.Panel();
+            this.RemoveRectangleButton = new System.Windows.Forms.Button();
+            this.AddRectangleButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.RectanglesPaintListBox = new System.Windows.Forms.ListBox();
+            this.IdTextBox.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.HandleGroupBox.SuspendLayout();
             this.ParsingGroupBox.SuspendLayout();
@@ -85,19 +102,21 @@ namespace Programming.View
             this.ClassesTabPage.SuspendLayout();
             this.MoviesGroupBox.SuspendLayout();
             this.RectanglesGroupBox.SuspendLayout();
+            this.RectanglesTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // EnumsControl
+            // IdTextBox
             // 
-            this.EnumsControl.Controls.Add(this.EnumsTabPage);
-            this.EnumsControl.Controls.Add(this.ClassesTabPage);
-            this.EnumsControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EnumsControl.Location = new System.Drawing.Point(0, 0);
-            this.EnumsControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.EnumsControl.Name = "EnumsControl";
-            this.EnumsControl.SelectedIndex = 0;
-            this.EnumsControl.Size = new System.Drawing.Size(812, 562);
-            this.EnumsControl.TabIndex = 0;
+            this.IdTextBox.Controls.Add(this.EnumsTabPage);
+            this.IdTextBox.Controls.Add(this.ClassesTabPage);
+            this.IdTextBox.Controls.Add(this.RectanglesTabPage);
+            this.IdTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IdTextBox.Location = new System.Drawing.Point(0, 0);
+            this.IdTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IdTextBox.Name = "IdTextBox";
+            this.IdTextBox.SelectedIndex = 0;
+            this.IdTextBox.Size = new System.Drawing.Size(812, 562);
+            this.IdTextBox.TabIndex = 0;
             // 
             // EnumsTabPage
             // 
@@ -594,19 +613,190 @@ namespace Programming.View
             this.RectanglesListBox.TabIndex = 2;
             this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
+            // RectanglesTabPage
+            // 
+            this.RectanglesTabPage.Controls.Add(this.label23);
+            this.RectanglesTabPage.Controls.Add(this.label22);
+            this.RectanglesTabPage.Controls.Add(this.label21);
+            this.RectanglesTabPage.Controls.Add(this.label20);
+            this.RectanglesTabPage.Controls.Add(this.label19);
+            this.RectanglesTabPage.Controls.Add(this.textBox5);
+            this.RectanglesTabPage.Controls.Add(this.textBox4);
+            this.RectanglesTabPage.Controls.Add(this.textBox3);
+            this.RectanglesTabPage.Controls.Add(this.XTextBox);
+            this.RectanglesTabPage.Controls.Add(this.textBox1);
+            this.RectanglesTabPage.Controls.Add(this.label18);
+            this.RectanglesTabPage.Controls.Add(this.CanvasPanel);
+            this.RectanglesTabPage.Controls.Add(this.RemoveRectangleButton);
+            this.RectanglesTabPage.Controls.Add(this.AddRectangleButton);
+            this.RectanglesTabPage.Controls.Add(this.label17);
+            this.RectanglesTabPage.Controls.Add(this.RectanglesPaintListBox);
+            this.RectanglesTabPage.Location = new System.Drawing.Point(4, 25);
+            this.RectanglesTabPage.Name = "RectanglesTabPage";
+            this.RectanglesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.RectanglesTabPage.Size = new System.Drawing.Size(804, 533);
+            this.RectanglesTabPage.TabIndex = 2;
+            this.RectanglesTabPage.Text = "Rectangles";
+            this.RectanglesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Location = new System.Drawing.Point(27, 464);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 20);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Height:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(34, 436);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(57, 20);
+            this.label22.TabIndex = 13;
+            this.label22.Text = "Width:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(66, 408);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(24, 20);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Y:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(66, 378);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(25, 20);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "X:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(64, 352);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 20);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "Id:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(98, 462);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 9;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Location = new System.Drawing.Point(98, 434);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(97, 406);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 7;
+            // 
+            // XTextBox
+            // 
+            this.XTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XTextBox.Location = new System.Drawing.Point(97, 378);
+            this.XTextBox.Name = "XTextBox";
+            this.XTextBox.Size = new System.Drawing.Size(100, 22);
+            this.XTextBox.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(97, 350);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(28, 331);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(129, 16);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Selected Rectangle:";
+            // 
+            // CanvasPanel
+            // 
+            this.CanvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CanvasPanel.Location = new System.Drawing.Point(321, 6);
+            this.CanvasPanel.Name = "CanvasPanel";
+            this.CanvasPanel.Size = new System.Drawing.Size(475, 521);
+            this.CanvasPanel.TabIndex = 3;
+            // 
+            // RemoveRectangleButton
+            // 
+            this.RemoveRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveRectangleButton.Location = new System.Drawing.Point(195, 248);
+            this.RemoveRectangleButton.Name = "RemoveRectangleButton";
+            this.RemoveRectangleButton.Size = new System.Drawing.Size(50, 50);
+            this.RemoveRectangleButton.TabIndex = 2;
+            this.RemoveRectangleButton.Text = "button2";
+            this.RemoveRectangleButton.UseVisualStyleBackColor = true;
+            // 
+            // AddRectangleButton
+            // 
+            this.AddRectangleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddRectangleButton.Location = new System.Drawing.Point(75, 248);
+            this.AddRectangleButton.Name = "AddRectangleButton";
+            this.AddRectangleButton.Size = new System.Drawing.Size(50, 50);
+            this.AddRectangleButton.TabIndex = 1;
+            this.AddRectangleButton.Text = "button1";
+            this.AddRectangleButton.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(28, 34);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 16);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Rectangles:";
+            // 
+            // RectanglesPaintListBox
+            // 
+            this.RectanglesPaintListBox.FormattingEnabled = true;
+            this.RectanglesPaintListBox.ItemHeight = 16;
+            this.RectanglesPaintListBox.Location = new System.Drawing.Point(31, 53);
+            this.RectanglesPaintListBox.Name = "RectanglesPaintListBox";
+            this.RectanglesPaintListBox.Size = new System.Drawing.Size(269, 180);
+            this.RectanglesPaintListBox.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 562);
-            this.Controls.Add(this.EnumsControl);
+            this.Controls.Add(this.IdTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "ProgrammingDemo";
-            this.EnumsControl.ResumeLayout(false);
+            this.IdTextBox.ResumeLayout(false);
             this.EnumsTabPage.ResumeLayout(false);
             this.HandleGroupBox.ResumeLayout(false);
             this.HandleGroupBox.PerformLayout();
@@ -619,13 +809,15 @@ namespace Programming.View
             this.MoviesGroupBox.PerformLayout();
             this.RectanglesGroupBox.ResumeLayout(false);
             this.RectanglesGroupBox.PerformLayout();
+            this.RectanglesTabPage.ResumeLayout(false);
+            this.RectanglesTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl EnumsControl;
+        private System.Windows.Forms.TabControl IdTextBox;
         private System.Windows.Forms.TabPage EnumsTabPage;
         private System.Windows.Forms.GroupBox EnumsValuesGroupBox;
         private System.Windows.Forms.Label label3;
@@ -673,6 +865,23 @@ namespace Programming.View
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox XRectanglesTextBox;
         private System.Windows.Forms.TextBox YRectanglesTextBox;
+        private System.Windows.Forms.TabPage RectanglesTabPage;
+        private System.Windows.Forms.ListBox RectanglesPaintListBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button AddRectangleButton;
+        private System.Windows.Forms.Button RemoveRectangleButton;
+        private System.Windows.Forms.Panel CanvasPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox XTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }
 
