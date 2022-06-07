@@ -28,7 +28,9 @@ namespace Programming.View
         private string[] _titleMovies = { "Big Momma's House", "The Green Mile",
                                           "Interstellar", "Finch", "Insidious" };
 
-        private List<Rectangle> _rectanglesPanel = new List<Rectangle>();
+        private List<Rectangle> _rectangles = new List<Rectangle>();
+
+        private List<Panel> _rectanglePanels = new List<Panel>();
 
         public MainForm()
         {
@@ -116,8 +118,10 @@ namespace Programming.View
 
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ValuesListBox.SelectedItem == null) return;
+
             int item = (int)ValuesListBox.SelectedItem;
-            IntValue.Text = item.ToString();
+            IntValueTextBox.Text = item.ToString();
         }
 
         private void ParseButton_Click(object sender, EventArgs e)
@@ -172,17 +176,19 @@ namespace Programming.View
 
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int indexRectangle = RectanglesListBox.SelectedIndex;
-            _currentRectangle = _rectanglesPanel[indexRectangle];
+            if (RectanglesListBox.SelectedItem == null) return;
+
             HeightTextBox.Text = _currentRectangle.Height.ToString();
             WidthTextBox.Text = _currentRectangle.Width.ToString();
             ColorTextBox.Text = _currentRectangle.Color;
-            XRectanglesTextBox.Text = _currentRectangle.Center.X.ToString();
-            YRectanglesTextBox.Text = _currentRectangle.Center.Y.ToString();
+            XTextBox.Text = _currentRectangle.Center.X.ToString();
+            YTextBox.Text = _currentRectangle.Center.Y.ToString();
         }
 
         private void LengthTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (RectanglesListBox.SelectedItem == null) return;
+
             try
             {
                 _currentRectangle.Height = int.Parse(HeightTextBox.Text);
@@ -196,6 +202,8 @@ namespace Programming.View
 
         private void WidthTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (RectanglesListBox.SelectedItem == null) return;
+
             try
             {
                 _currentRectangle.Width = int.Parse(WidthTextBox.Text);
@@ -243,15 +251,15 @@ namespace Programming.View
 
         private void FindRectanglesButton_Click(object sender, EventArgs e)
         {
-            try 
-            { 
-                RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectanglesPanel); 
-            }
-            catch { }
+            if (_rectangles.Count == 0) return;
+
+            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
         }
 
         private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (MoviesListBox.SelectedItem == null) return;
+
             int indexMovie = MoviesListBox.SelectedIndex;
             _currentMovie = _movies[indexMovie];
             TitleTextBox.Text = _currentMovie.Title;
@@ -263,6 +271,8 @@ namespace Programming.View
 
         private void DurationTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (MoviesListBox.SelectedItem == null) return;
+
             try
             {
                 _currentMovie.Duration = int.Parse(DurationTextBox.Text);
@@ -277,6 +287,8 @@ namespace Programming.View
 
         private void YearTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (MoviesListBox.SelectedItem == null) return;
+
             try
             {
                 _currentMovie.ReleaseYear = int.Parse(YearTextBox.Text);
@@ -290,6 +302,8 @@ namespace Programming.View
 
         private void RatingTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (MoviesListBox.SelectedItem == null) return;
+
             try
             {
                 _currentMovie.Rating = double.Parse(RatingTextBox.Text);
@@ -311,14 +325,32 @@ namespace Programming.View
         { 
             var colors = Enum.GetValues(typeof(Colors));
 
-            _currentRectangle = new Rectangle();
-            _currentRectangle.Width = _random.Next(1, 100);
-            _currentRectangle.Height = _random.Next(1, 100);
-            _currentRectangle.Color = colors.GetValue(_random.Next(0, colors.Length)).ToString();
-            _currentRectangle.Center = new Point2D(_random.Next(1, 100), _random.Next(1, 100));
-            _rectanglesPanel.Add(_currentRectangle);
+            Rectangle _currentRectangle = new Rectangle
+            {
+                Width = _random.Next(CanvasPanel.Width),
+                Height = _random.Next(CanvasPanel.Height),
+                Color = colors.GetValue(_random.Next(0, colors.Length)).ToString(),
+                Center = new Point2D(_random.Next(1, 100), _random.Next(1, 100))
+            };
+
+            _rectangles.Add(_currentRectangle);
             RectanglesPanelListBox.Items.Add($"{_currentRectangle.Id}: (X: {_currentRectangle.Center.X}; Y: {_currentRectangle.Center.Y}; W: {_currentRectangle.Width}; H: {_currentRectangle.Height})");
             RectanglesListBox.Items.Add($"Rectangle {_currentRectangle.Id}");
+            
+            Panel rectanglePanel = InitPanel(_currentRectangle);
+            _rectanglePanels.Add(rectanglePanel);
+            CanvasPanel.Controls.Add(rectanglePanel);
+        }
+
+        private Panel InitPanel(Rectangle rectangle)
+        {
+            Panel rectanglePanel = new Panel();
+            rectanglePanel.Width = rectangle.Width;
+            rectanglePanel.Height = rectangle.Height;
+            rectanglePanel.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
+            rectanglePanel.BackColor = Color.FromArgb(127, 127, 255, 127);
+
+            return rectanglePanel;
         }
 
         private void RemoveRectangleButton_Click(object sender, EventArgs e)
@@ -326,15 +358,145 @@ namespace Programming.View
             if (RectanglesPanelListBox.SelectedIndex == -1) return;
 
             var selectedItem = RectanglesPanelListBox.SelectedIndex;
-            _rectanglesPanel.RemoveAt(selectedItem);
+            _rectangles.RemoveAt(selectedItem);
             RectanglesPanelListBox.Items.Clear();
             RectanglesListBox.Items.Clear();
 
-            foreach (var rectangle in _rectanglesPanel)
+            foreach (var rectangle in _rectangles)
             {
                 RectanglesPanelListBox.Items.Add($"{rectangle.Id}: (X: {rectangle.Center.X}; Y: {rectangle.Center.Y}; W: {rectangle.Width}; H: {rectangle.Height})");
                 RectanglesListBox.Items.Add($"Rectangle {rectangle.Id}");
+                RectanglesPanelListBox.SelectedIndex = 0;
             }
+
+            ClearRectangleInfo();
+        }
+
+        private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RectanglesPanelListBox.SelectedIndex == -1) return;
+
+            _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
+            IdRectanglesTextBox.Text = _currentRectangle.Id.ToString();
+            XRectanglesTextBox.Text = _currentRectangle.Center.X.ToString();
+            YRectanglesTextBox.Text = _currentRectangle.Center.Y.ToString();
+            WidthRectanglesTextBox.Text = _currentRectangle.Width.ToString();
+            HeightRectanglesTextBox.Text = _currentRectangle.Height.ToString();
+        }
+
+        private void ClearRectangleInfo()
+        {
+            IdRectanglesTextBox.Clear();
+            XRectanglesTextBox.Clear();
+            YRectanglesTextBox.Clear();
+            WidthRectanglesTextBox.Clear();
+            HeightRectanglesTextBox.Clear();
+        }
+
+        private string RectangleParameters(Rectangle rectangle)
+        {
+            return $"{rectangle.Id}: " +
+                   $"(X: {rectangle.Center.X};" +
+                   $" Y: {rectangle.Center.Y};" +
+                   $" W: {rectangle.Width};" +
+                   $" H: {rectangle.Height})";
+        }
+
+        private void UpdateRectangleInfo(Rectangle rectangle)
+        {
+            int index = RectanglesPanelListBox.FindString(rectangle.Id.ToString());
+
+            if (index == -1) return;
+
+            RectanglesPanelListBox.Items[index] = RectangleParameters(rectangle);
+        }
+
+        private void XRectanglesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (XRectanglesTextBox.Text == "") return;
+            if (RectanglesPanelListBox.SelectedItem == null) return;
+
+            try
+            {
+                string curretnXRectangle = XRectanglesTextBox.Text;
+                int XValue = int.Parse(curretnXRectangle);
+                _currentRectangle.Center.X = XValue;
+
+                UpdateRectangleInfo(_currentRectangle);
+            }
+            catch
+            {
+
+                XRectanglesTextBox.BackColor = _errorColor;
+                return;
+            }
+            XRectanglesTextBox.BackColor = _correctColor;
+        }
+
+        private void YRectanglesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (YRectanglesTextBox.Text == "") return;
+            if (RectanglesPanelListBox.SelectedItem == null) return;
+
+            try
+            {
+                string curretnYRectangle = YRectanglesTextBox.Text;
+                int YValue = int.Parse(curretnYRectangle);
+                _currentRectangle.Center.Y = YValue;
+
+                UpdateRectangleInfo(_currentRectangle);
+            }
+            catch
+            {
+
+                YRectanglesTextBox.BackColor = _errorColor;
+                return;
+            }
+            YRectanglesTextBox.BackColor = _correctColor;
+        }
+
+        private void WidthRectanglesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (WidthRectanglesTextBox.Text == "") return;
+            if (RectanglesPanelListBox.SelectedItem == null) return;
+
+            try
+            {
+                string curretnWidthRectangle = WidthRectanglesTextBox.Text;
+                int WidthValue = int.Parse(curretnWidthRectangle);
+                _currentRectangle.Width = WidthValue;
+
+                UpdateRectangleInfo(_currentRectangle);
+            }
+            catch
+            {
+
+                WidthRectanglesTextBox.BackColor = _errorColor;
+                return;
+            }
+            WidthRectanglesTextBox.BackColor = _correctColor;
+        }
+
+        private void HeightRectanglesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (HeightRectanglesTextBox.Text == "") return;
+            if (RectanglesPanelListBox.SelectedItem == null) return;
+
+            try
+            {
+                string curretnHeightRectangle = HeightRectanglesTextBox.Text;
+                int HeightValue = int.Parse(curretnHeightRectangle);
+                _currentRectangle.Height = HeightValue;
+
+                UpdateRectangleInfo(_currentRectangle);
+            }
+            catch
+            {
+
+                HeightRectanglesTextBox.BackColor = _errorColor;
+                return;
+            }
+            HeightRectanglesTextBox.BackColor = _correctColor;
         }
     }
 }
