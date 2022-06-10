@@ -22,7 +22,11 @@ namespace Programming.Model.Classes
 
         public string Title { get; set; }
 
-        public Movie() { }
+        public Movie() 
+        {
+            _count++;
+            _id = _count;
+        }
 
         public Movie(string title, int duration, int releaseYear, double rating, string genre)
         {

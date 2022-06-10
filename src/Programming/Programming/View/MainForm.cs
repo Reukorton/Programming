@@ -53,28 +53,6 @@ namespace Programming.View
             {
                 ChooseSeasonComboBox.Items.Add(value);
             }
-
-            _movies = CreateMovie(5);
-        }
-
-        private Movie[] CreateMovie(int count)
-        {
-            _movies = new Movie[count];
-            _genre = Enum.GetNames(typeof(Genre));
-
-            for (int i = 0; i < _movies.Length; i++)
-            {
-                _movies[i] = new Movie(
-                    _titleMovies[i],
-                    _random.Next(90, 210),
-                    _random.Next(1900, DateTime.Now.Year),
-                    Math.Round(_random.NextDouble() * 10, 1),
-                    _genre[_random.Next(0, _genre.Length)]
-                    ); 
-                MoviesListBox.Items.Add(_movies[i].ToString());
-            }
-
-            return _movies;
         }
 
         private void SetColorWhiteSmoke()
@@ -211,71 +189,6 @@ namespace Programming.View
             }
 
             return index;
-        }
-
-        private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (MoviesListBox.SelectedItem == null) return;
-
-            int indexMovie = MoviesListBox.SelectedIndex;
-            _currentMovie = _movies[indexMovie];
-            TitleTextBox.Text = _currentMovie.Title;
-            DurationTextBox.Text = _currentMovie.Duration.ToString();
-            YearTextBox.Text = _currentMovie.ReleaseYear.ToString();
-            GenreTextBox.Text = _currentMovie.Genre.ToString();
-            RatingTextBox.Text = _currentMovie.Rating.ToString();
-        }
-
-        private void DurationTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (MoviesListBox.SelectedItem == null) return;
-
-            try
-            {
-                _currentMovie.Duration = int.Parse(DurationTextBox.Text);
-                DurationTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-
-                DurationTextBox.BackColor = _errorColor;
-            }
-        }
-
-        private void YearTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (MoviesListBox.SelectedItem == null) return;
-
-            try
-            {
-                _currentMovie.ReleaseYear = int.Parse(YearTextBox.Text);
-                YearTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-                YearTextBox.BackColor = _errorColor;
-            }
-        }
-
-        private void RatingTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (MoviesListBox.SelectedItem == null) return;
-
-            try
-            {
-                _currentMovie.Rating = double.Parse(RatingTextBox.Text);
-                RatingTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-
-                RatingTextBox.BackColor = _errorColor;
-            }
-        }
-
-        private void FindMoviesButton_Click(object sender, EventArgs e)
-        {
-            MoviesListBox.SelectedIndex = FindRectangleWithMaxRating(_movies);
         }
     }
 }
