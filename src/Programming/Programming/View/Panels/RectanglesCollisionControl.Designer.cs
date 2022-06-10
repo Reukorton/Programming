@@ -67,9 +67,10 @@
             // CanvasPanel
             // 
             this.CanvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CanvasPanel.Location = new System.Drawing.Point(319, 6);
+            this.CanvasPanel.Location = new System.Drawing.Point(319, 15);
+            this.CanvasPanel.Margin = new System.Windows.Forms.Padding(15);
             this.CanvasPanel.Name = "CanvasPanel";
-            this.CanvasPanel.Size = new System.Drawing.Size(475, 521);
+            this.CanvasPanel.Size = new System.Drawing.Size(470, 503);
             this.CanvasPanel.TabIndex = 19;
             // 
             // label18
@@ -226,6 +227,7 @@
             this.Controls.Add(this.AddRectangleButton);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.RectanglesPanelListBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RectanglesCollisionControl";
             this.Size = new System.Drawing.Size(804, 533);
             this.ResumeLayout(false);

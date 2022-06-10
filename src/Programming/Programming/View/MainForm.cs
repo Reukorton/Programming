@@ -179,53 +179,6 @@ namespace Programming.View
             }
         }
 
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (RectanglesListBox.SelectedItem == null) return;
-
-            _currentRectangleClasses = _rectangles[RectanglesListBox.SelectedIndex];
-            UpdatingInformationClasses(_currentRectangleClasses);
-        }
-
-        private void UpdatingInformationClasses(Rectangle rectangle)
-        {
-            HeightTextBox.Text = rectangle.Height.ToString();
-            WidthTextBox.Text = rectangle.Width.ToString();
-            ColorTextBox.Text = rectangle.Color;
-            XTextBox.Text = rectangle.Center.X.ToString();
-            YTextBox.Text = rectangle.Center.Y.ToString();
-        }
-
-        private void LengthTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (RectanglesListBox.SelectedItem == null) return;
-
-            try
-            {
-                _currentRectangleClasses.Height = int.Parse(HeightTextBox.Text);
-                HeightTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-                HeightTextBox.BackColor = _errorColor;
-            }   
-        }
-
-        private void WidthTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (RectanglesListBox.SelectedItem == null) return;
-
-            try
-            {
-                _currentRectangleClasses.Width = int.Parse(WidthTextBox.Text);
-                WidthTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-                WidthTextBox.BackColor = _errorColor;
-            }
-        }
-
         private int FindRectangleWithMaxRating(Movie[] movies)
         {
             var index = 0;
@@ -258,13 +211,6 @@ namespace Programming.View
             }
 
             return index;
-        }
-
-        private void FindRectanglesButton_Click(object sender, EventArgs e)
-        {
-            if (_rectangles.Count == 0) return;
-
-            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
         }
 
         private void MoviesListBox_SelectedIndexChanged(object sender, EventArgs e)
