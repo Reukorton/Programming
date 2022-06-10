@@ -49,7 +49,7 @@
     <Compile Include="Model\Classes\Contact.cs" />
     <Compile Include="Model\Classes\Flight.cs" />
     <Compile Include="Model\Classes\Movie.cs" />
-    <Compile Include="Model\Classes\Rectangle.cs" />
+    <Compile Include="Model\Geometry\Rectangle.cs" />
     <Compile Include="Model\Classes\Song.cs" />
     <Compile Include="Model\Classes\Subject.cs" />
     <Compile Include="Model\Classes\Time.cs" />
@@ -61,6 +61,7 @@
     <Compile Include="Model\Enums\Weekday.cs" />
     <Compile Include="Model\Geometry\CollisionManager.cs" />
     <Compile Include="Model\Geometry\Point2D.cs" />
+    <Compile Include="Model\Geometry\RectangleFactory.cs" />
     <Compile Include="Model\Geometry\Ring.cs" />
     <Compile Include="Model\Validator.cs" />
     <Compile Include="View\Enums.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

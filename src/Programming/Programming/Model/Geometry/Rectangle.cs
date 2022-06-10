@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Programming.Model.Geometry;
 
-namespace Programming.Model.Classes
+namespace Programming.Model.Geometry
 {
     public class Rectangle
     {
