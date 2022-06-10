@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Drawing;
 using Programming.Model.Geometry;
 using System.Windows.Forms;
 using Rectangle = Programming.Model.Geometry.Rectangle;
+using Programming.Model.Classes;
 
 
 namespace Programming.View.Panels
@@ -15,10 +15,6 @@ namespace Programming.View.Panels
         private Rectangle[] _rectangles;
 
         private Rectangle _currentRectangle;
-
-        private readonly Color _errorColor = Color.LightPink;
-
-        private readonly Color _correctColor = Color.White;
 
         public RectanglesControl()
         {
@@ -54,11 +50,11 @@ namespace Programming.View.Panels
             try
             {
                 _currentRectangle.Height = int.Parse(HeightTextBox.Text);
-                HeightTextBox.BackColor = _correctColor;
+                HeightTextBox.BackColor = AllColors.CorrectColor;
             }
             catch
             {
-                HeightTextBox.BackColor = _errorColor;
+                HeightTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 
@@ -69,11 +65,11 @@ namespace Programming.View.Panels
             try
             {
                 _currentRectangle.Width = int.Parse(WidthTextBox.Text);
-                WidthTextBox.BackColor = _correctColor;
+                WidthTextBox.BackColor = AllColors.CorrectColor;
             }
             catch
             {
-                WidthTextBox.BackColor = _errorColor;
+                WidthTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 

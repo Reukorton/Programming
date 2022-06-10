@@ -85,7 +85,7 @@
             // IdRectanglesTextBox
             // 
             this.IdRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IdRectanglesTextBox.Location = new System.Drawing.Point(104, 350);
+            this.IdRectanglesTextBox.Location = new System.Drawing.Point(113, 350);
             this.IdRectanglesTextBox.Name = "IdRectanglesTextBox";
             this.IdRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.IdRectanglesTextBox.TabIndex = 21;
@@ -93,7 +93,7 @@
             // XRectanglesTextBox
             // 
             this.XRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XRectanglesTextBox.Location = new System.Drawing.Point(104, 378);
+            this.XRectanglesTextBox.Location = new System.Drawing.Point(113, 378);
             this.XRectanglesTextBox.Name = "XRectanglesTextBox";
             this.XRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.XRectanglesTextBox.TabIndex = 22;
@@ -102,7 +102,7 @@
             // YRectanglesTextBox
             // 
             this.YRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.YRectanglesTextBox.Location = new System.Drawing.Point(104, 406);
+            this.YRectanglesTextBox.Location = new System.Drawing.Point(113, 406);
             this.YRectanglesTextBox.Name = "YRectanglesTextBox";
             this.YRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.YRectanglesTextBox.TabIndex = 23;
@@ -111,7 +111,7 @@
             // WidthRectanglesTextBox
             // 
             this.WidthRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WidthRectanglesTextBox.Location = new System.Drawing.Point(104, 434);
+            this.WidthRectanglesTextBox.Location = new System.Drawing.Point(113, 434);
             this.WidthRectanglesTextBox.Name = "WidthRectanglesTextBox";
             this.WidthRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.WidthRectanglesTextBox.TabIndex = 24;
@@ -120,7 +120,7 @@
             // HeightRectanglesTextBox
             // 
             this.HeightRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HeightRectanglesTextBox.Location = new System.Drawing.Point(104, 462);
+            this.HeightRectanglesTextBox.Location = new System.Drawing.Point(113, 462);
             this.HeightRectanglesTextBox.Name = "HeightRectanglesTextBox";
             this.HeightRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.HeightRectanglesTextBox.TabIndex = 25;
@@ -130,7 +130,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(62, 352);
+            this.label19.Location = new System.Drawing.Point(71, 350);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(27, 20);
             this.label19.TabIndex = 26;
@@ -140,7 +140,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(64, 378);
+            this.label20.Location = new System.Drawing.Point(73, 378);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(25, 20);
             this.label20.TabIndex = 27;
@@ -150,7 +150,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(64, 408);
+            this.label21.Location = new System.Drawing.Point(74, 406);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(24, 20);
             this.label21.TabIndex = 28;
@@ -160,7 +160,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(32, 436);
+            this.label22.Location = new System.Drawing.Point(41, 434);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 20);
             this.label22.TabIndex = 29;
@@ -170,7 +170,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(25, 464);
+            this.label23.Location = new System.Drawing.Point(35, 462);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(63, 20);
             this.label23.TabIndex = 30;
@@ -211,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Drawing;
-using Programming.Model;
 using Programming.Model.Enums;
 using System.Windows.Forms;
 using Programming.Model.Classes;
-using System.Collections.Generic;
 
 namespace Programming.View.Panels
 {
@@ -20,19 +17,10 @@ namespace Programming.View.Panels
 
         private Movie[] _movies;
 
-        private Array _genres;
-
-        private readonly Color _errorColor = Color.LightPink;
-
-        private readonly Color _correctColor = Color.White;
-
-
-
         public MoviesControl()
         {
             InitializeComponent();
 
-            _genres = Enum.GetNames(typeof(Genre));
             _movies = CreateMovie(NumberMovies);
         }
 
@@ -74,12 +62,12 @@ namespace Programming.View.Panels
             try
             {
                 _currentMovie.Rating = double.Parse(RatingTextBox.Text);
-                RatingTextBox.BackColor = _correctColor;
+                RatingTextBox.BackColor = AllColors.CorrectColor;
             }
             catch
             {
 
-                RatingTextBox.BackColor = _errorColor;
+                RatingTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 
@@ -90,11 +78,11 @@ namespace Programming.View.Panels
             try
             {
                 _currentMovie.ReleaseYear = int.Parse(YearTextBox.Text);
-                YearTextBox.BackColor = _correctColor;
+                YearTextBox.BackColor = AllColors.CorrectColor;
             }
             catch
             {
-                YearTextBox.BackColor = _errorColor;
+                YearTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 
@@ -105,12 +93,12 @@ namespace Programming.View.Panels
             try
             {
                 _currentMovie.Duration = int.Parse(DurationTextBox.Text);
-                DurationTextBox.BackColor = _correctColor;
+                DurationTextBox.BackColor = AllColors.CorrectColor;
             }
             catch
             {
 
-                DurationTextBox.BackColor = _errorColor;
+                DurationTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 

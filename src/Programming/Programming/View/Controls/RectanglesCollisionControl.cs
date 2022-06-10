@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Rectangle = Programming.Model.Geometry.Rectangle;
 using Programming.Model.Enums;
+using Programming.Model.Classes;
+using Programming.Model;
 
 namespace Programming.View.Panels
 {
@@ -17,10 +19,6 @@ namespace Programming.View.Panels
         private Rectangle _currentRectangle;
 
         Random _random = new Random();
-
-        private readonly Color _errorColor = Color.LightPink;
-
-        private readonly Color _correctColor = Color.White;
 
         Array colors = Enum.GetValues(typeof(Colors));
 
@@ -159,6 +157,8 @@ namespace Programming.View.Panels
 
             try
             {
+                Validator.AssertOnPositiveValue(int.Parse(XRectanglesTextBox.Text));
+
                 _currentRectangle.Center.X = int.Parse(XRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Location =
@@ -170,10 +170,10 @@ namespace Programming.View.Panels
             catch
             {
 
-                XRectanglesTextBox.BackColor = _errorColor;
+                XRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
-            XRectanglesTextBox.BackColor = _correctColor;
+            XRectanglesTextBox.BackColor = AllColors.CorrectColor;
         }
 
         private void YRectanglesTextBox_TextChanged(object sender, EventArgs e)
@@ -182,6 +182,8 @@ namespace Programming.View.Panels
 
             try
             {
+                Validator.AssertOnPositiveValue(int.Parse(YRectanglesTextBox.Text));
+
                 _currentRectangle.Center.Y = int.Parse(YRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Location =
@@ -193,10 +195,10 @@ namespace Programming.View.Panels
             catch
             {
 
-                YRectanglesTextBox.BackColor = _errorColor;
+                YRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
-            YRectanglesTextBox.BackColor = _correctColor;
+            YRectanglesTextBox.BackColor = AllColors.CorrectColor;
         }
 
         private void WidthRectanglesTextBox_TextChanged(object sender, EventArgs e)
@@ -205,6 +207,8 @@ namespace Programming.View.Panels
 
             try
             {
+                Validator.AssertOnPositiveValue(int.Parse(WidthRectanglesTextBox.Text));
+
                 _currentRectangle.Width = int.Parse(WidthRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Width = _currentRectangle.Width;
@@ -215,10 +219,10 @@ namespace Programming.View.Panels
             catch
             {
 
-                WidthRectanglesTextBox.BackColor = _errorColor;
+                WidthRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
-            WidthRectanglesTextBox.BackColor = _correctColor;
+            WidthRectanglesTextBox.BackColor = AllColors.CorrectColor;
         }
 
         private void HeightRectanglesTextBox_TextChanged(object sender, EventArgs e)
@@ -227,6 +231,8 @@ namespace Programming.View.Panels
 
             try
             {
+                Validator.AssertOnPositiveValue(int.Parse(HeightRectanglesTextBox.Text));
+
                 _currentRectangle.Height = int.Parse(HeightRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Height = _currentRectangle.Height;
@@ -237,10 +243,10 @@ namespace Programming.View.Panels
             catch
             {
 
-                HeightRectanglesTextBox.BackColor = _errorColor;
+                HeightRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
-            HeightRectanglesTextBox.BackColor = _correctColor;
+            HeightRectanglesTextBox.BackColor = AllColors.CorrectColor;
         }
 
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)

@@ -10,10 +10,19 @@ namespace Programming.Model
     {
         public static void AssertOnPositiveValue(int value, string propertyName)
         {
-            if (value < 0)
+            if ((value < 0) && (value > 700))
             {
                 throw new ArgumentException(
-                    $"{propertyName} не должно быть меньше 0");
+                    $"{propertyName} не должно быть меньше 0, либо число слишком большое");
+            }
+        }
+
+        public static void AssertOnPositiveValue(int value)
+        {
+            if ((value < 0) || (value > 700))
+            {
+                throw new Exception(
+                   $"не должно быть меньше 0, либо число слишком большое");
             }
         }
 
