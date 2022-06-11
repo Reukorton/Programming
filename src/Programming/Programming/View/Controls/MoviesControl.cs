@@ -7,14 +7,25 @@ namespace Programming.View.Panels
 {
     public partial class MoviesControl : UserControl
     {
-
+        /// <summary>
+        /// Количество фильмов.
+        /// </summary>
         private const int NumberMovies = 10;
 
+        /// <summary>
+        /// Выбранный фильм.
+        /// </summary>
         private Movie _currentMovie;
 
+        /// <summary>
+        /// Массив названий фильмов.
+        /// </summary>
         private string[] _titleMovies = { "Big Momma's House", "The Green Mile",
                                           "Interstellar", "Finch", "Insidious" };
 
+        /// <summary>
+        /// Массив фильмов.
+        /// </summary>
         private Movie[] _movies;
 
         public MoviesControl()

@@ -4,8 +4,14 @@ using Programming.Model.Enums;
 
 namespace Programming.View.Panels
 {
+    /// <summary>
+    /// Реализация перечислений.
+    /// </summary>
     public partial class EnumerationControl : UserControl
     {
+        /// <summary>
+        /// Созает экземпляр класса <see cref="EnumerationControl"/>.
+        /// </summary>
         public EnumerationControl()
         {
             InitializeComponent();

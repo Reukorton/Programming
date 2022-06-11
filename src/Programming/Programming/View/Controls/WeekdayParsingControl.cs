@@ -4,8 +4,14 @@ using Programming.Model.Enums;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Поиск дня недели по его номеру.
+    /// </summary>
     public partial class WeekdayParsingControl : UserControl
     {
+        /// <summary>
+        /// Создание экзепляра класса <see cref="WeekdayParsingControl"/>.
+        /// </summary>
         public WeekdayParsingControl()
         {
             InitializeComponent();
@@ -28,6 +34,11 @@ namespace Programming.View.Controls
             }
         }
 
+        /// <summary>
+        /// Проверка строчки на то, что она является числом.
+        /// </summary>
+        /// <param name="text">Срока - День недели.</param>
+        /// <returns>True, если строка является числом. В противном случае False.</returns>
         private bool IsDigit(string text)
         {
             try

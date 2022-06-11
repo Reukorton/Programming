@@ -12,12 +12,24 @@ namespace Programming.View.Panels
 {
     public partial class RectanglesCollisionControl : UserControl
     {
+        /// <summary>
+        /// Список прямоугольников.
+        /// </summary>
         private List<Rectangle> _rectangles;
 
+        /// <summary>
+        /// Список прямоугольников на панеле
+        /// </summary>
         private List<Panel> _rectanglePanels;
 
+        /// <summary>
+        /// Выбранный прямоугольник из всех.
+        /// </summary>
         private Rectangle _currentRectangle;
 
+        /// <summary>
+        /// Создание экзепляра класса <see cref="RectanglesCollisionControl"/>.
+        /// </summary>
         public RectanglesCollisionControl()
         {
             InitializeComponent();
@@ -26,6 +38,9 @@ namespace Programming.View.Panels
             _rectanglePanels = new List<Panel>();
         } 
 
+        /// <summary>
+        /// Обновление информации о прямоугольниках в текст боксах в зависимости от выбранного прямоугольника.
+        /// </summary>
         private void UpdatingInformationRectangles()
         {
             IdRectanglesTextBox.Text = _currentRectangle.Id.ToString();
@@ -35,6 +50,9 @@ namespace Programming.View.Panels
             HeightRectanglesTextBox.Text = _currentRectangle.Height.ToString();
         }
 
+        /// <summary>
+        /// Очиста текст боксов с информацией о прямоугольнике.
+        /// </summary>
         private void ClearRectangleInfo()
         {
             RectanglesPanelListBox.Items.Clear();
@@ -45,6 +63,11 @@ namespace Programming.View.Panels
             HeightRectanglesTextBox.Clear();
         }
 
+        /// <summary>
+        /// Создание строки с полной информацией о прямоугольнике.
+        /// </summary>
+        /// <param name="rectangle">Объект Rectangle</param>
+        /// <returns>Значение типа string</returns>
         private string RectangleParameters(Rectangle rectangle)
         {
             return $"{rectangle.Id}: " +
@@ -54,6 +77,10 @@ namespace Programming.View.Panels
                    $" H: {rectangle.Height})";
         }
 
+        /// <summary>
+        /// Обновление строки с информацией о прямоугольнике.
+        /// </summary>
+        /// <param name="rectangle"></param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
             int index = RectanglesPanelListBox.FindString(rectangle.Id.ToString());
@@ -63,6 +90,11 @@ namespace Programming.View.Panels
             RectanglesPanelListBox.Items[index] = RectangleParameters(rectangle);
         }
 
+        /// <summary>
+        /// Создание элемента для панели.
+        /// </summary>
+        /// <param name="rectangle">Объект Rectangle</param>
+        /// <returns>Значение типа Panel</returns>
         private Panel InitPanel(Rectangle rectangle)
         {
             Panel rectanglePanel = new Panel();
@@ -74,6 +106,9 @@ namespace Programming.View.Panels
             return rectanglePanel;
         }
 
+        /// <summary>
+        /// Поиск пересекаемых прямоугольников.
+        /// </summary>
         private void FindCollisions()
         {
             for (int i = 0; i < _rectangles.Count; i++)
