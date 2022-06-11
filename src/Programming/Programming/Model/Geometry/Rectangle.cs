@@ -25,7 +25,6 @@
             Height = height;
             Width = width;
             Color = color;
-            _allRectanglesCount++;
             _id = _allRectanglesCount;
             Center = center;
         }

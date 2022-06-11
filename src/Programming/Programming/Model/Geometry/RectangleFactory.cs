@@ -18,6 +18,7 @@ namespace Programming.Model.Geometry
         {
             var colors = Enum.GetValues(typeof(Colors));
             Rectangle rectangle = new Rectangle();
+
             rectangle.Width = _random.Next(30, 101);
             rectangle.Height = _random.Next(30, 101);
             rectangle.Center = new Point2D(_random.Next(1, 300), _random.Next(1, 300));

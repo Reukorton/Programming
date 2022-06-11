@@ -10,7 +10,7 @@ namespace Programming.Model
     {
         public static void AssertOnPositiveValue(int value, string propertyName)
         {
-            if ((value < 0) && (value > 700))
+            if (value < 0)
             {
                 throw new ArgumentException(
                     $"{propertyName} не должно быть меньше 0, либо число слишком большое");
@@ -50,6 +50,32 @@ namespace Programming.Model
             {
                 throw new ArgumentException(
                     $"{propertyName} должно быть в диапозоне от {min} до {max}");
+            }
+        }
+
+        public static void AssertStringContainsOnlyLetters(string value, string propertyName)
+        {
+            foreach (var i in value)
+            {
+                if (!char.IsLetter(i))
+                {
+                    throw new ArgumentException(
+                        $"{propertyName} должно состоять только из букв английского алфавита");
+                }
+            }
+        }
+
+        public static void AssertStringNumberIsCorrect(string value, string propertyName)
+        {
+            if (propertyName.Length != 11)
+            {
+                throw new ArgumentException(
+                    "Неверная длина номера");
+            }
+            if (!int.TryParse(propertyName, out int newValue))
+            {
+                throw new ArgumentException(
+                    "Неверные символы номера");
             }
         }
     }

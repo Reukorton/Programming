@@ -18,10 +18,6 @@ namespace Programming.View.Panels
 
         private Rectangle _currentRectangle;
 
-        Random _random = new Random();
-
-        Array colors = Enum.GetValues(typeof(Colors));
-
         public RectanglesCollisionControl()
         {
             InitializeComponent();
@@ -73,7 +69,7 @@ namespace Programming.View.Panels
             rectanglePanel.Width = rectangle.Width;
             rectanglePanel.Height = rectangle.Height;
             rectanglePanel.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-            rectanglePanel.BackColor = Color.FromArgb(127, 127, 255, 127);
+            rectanglePanel.BackColor = AllColors.UnContact;
 
             return rectanglePanel;
         }
@@ -82,7 +78,7 @@ namespace Programming.View.Panels
         {
             for (int i = 0; i < _rectangles.Count; i++)
             {
-                CanvasPanel.Controls[i].BackColor = Color.FromArgb(127, 127, 255, 127);
+                CanvasPanel.Controls[i].BackColor = AllColors.UnContact;
             }
 
             for (int i = 0; i < _rectangles.Count - 1; i++)
@@ -91,8 +87,8 @@ namespace Programming.View.Panels
                 {
                     if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]) && (_rectangles[i] != _rectangles[j]))
                     {
-                        CanvasPanel.Controls[i].BackColor = Color.FromArgb(127, 255, 127, 127);
-                        CanvasPanel.Controls[j].BackColor = Color.FromArgb(127, 255, 127, 127);
+                        CanvasPanel.Controls[i].BackColor = AllColors.InContact;
+                        CanvasPanel.Controls[j].BackColor = AllColors.InContact;
                     }
                 }
             }

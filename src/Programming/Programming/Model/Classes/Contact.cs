@@ -1,21 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Classes
+﻿namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о человеке.
+    /// </summary>
     public class Contact
     {
+        /// <summary>
+        /// Номер телефона человека.
+        /// </summary>
         private string _phoneNumber;
 
+        /// <summary>
+        /// Имя человека.
+        /// </summary>
         private string _firstName;
 
+        /// <summary>
+        /// Фамилия человка.
+        /// </summary>
         private string _lastName;
 
+
+        /// <summary>
+        /// Создает пустой экземпляр класса <see cref="Contact"/>.
+        /// </summary>
         public Contact() { }
 
+
+        /// <summary>
+        /// Создает экземпляр класса <see cref="Contact"/>.
+        /// </summary>
+        /// <param name="phoneNumber">Номер телефона.<br/> 
+        /// Должен состоять только из цифр.<br/> 
+        /// Должно быть быть длиной ровно 11 символов.</param>
+        /// <param name="firstName">Имя. Должно состоять только из букв английского алфавита.</param>
+        /// <param name="lastName">Фамилия. Должна состоять только из букв английского алфавита.</param>
         public Contact(string phoneNumber, string firstName, string lastName)
         {
             PhoneNumber = phoneNumber;
@@ -23,6 +42,11 @@ namespace Programming.Model.Classes
             LastName = lastName;
         }
 
+        /// <summary>
+        /// Возвращает и задает номер телефона.<br/> 
+        /// Должно состоять только из цифр.<br/>
+        /// Должно быть длиной ровно 11 символов.
+        /// </summary>
         public string PhoneNumber
         {
             get
@@ -31,21 +55,16 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (_phoneNumber.Length != 11)
-                {
-                    throw new ArgumentException(
-                        "Неверная длина номера");
-                }
-                if (!int.TryParse(value, out int result))
-                {
-                    throw new ArgumentException(
-                        "Неверные символы номера");
-                }
+                Validator.AssertStringNumberIsCorrect(_phoneNumber, nameof(PhoneNumber));
 
                 _phoneNumber = value;
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает имя.<br/>
+        /// Должно состоять только из букв английского алфавита.
+        /// </summary>
         public string FirstName
         {
             get
@@ -54,10 +73,16 @@ namespace Programming.Model.Classes
             }
             set
             {
-                AssertStringContainsOnlyLetters(value, nameof(FirstName));
+                Validator.AssertStringContainsOnlyLetters(value, nameof(FirstName));
+
+                _firstName = value;
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает фамилию.<br/>
+        /// Должно состоять только из букв английского алфавита.
+        /// </summary>
         public string LastName
         {
             get
@@ -66,19 +91,9 @@ namespace Programming.Model.Classes
             }
             set
             {
-                AssertStringContainsOnlyLetters(value, nameof(LastName));
-            }
-        }
+                Validator.AssertStringContainsOnlyLetters(value, nameof(LastName));
 
-        private void AssertStringContainsOnlyLetters(string value, string propertyName)
-        {
-            foreach (var i in value)
-            {
-                if (!char.IsLetter(i))
-                {
-                    throw new ArgumentException(
-                        $"{propertyName} должно состоять только из букв английского алфавита");
-                }
+                _lastName = value;
             }
         }
     }
