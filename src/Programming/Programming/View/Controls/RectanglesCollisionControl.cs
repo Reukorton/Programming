@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Rectangle = Programming.Model.Geometry.Rectangle;
-using Programming.Model.Enums;
 using Programming.Model.Classes;
-using Programming.Model;
 
 namespace Programming.View.Panels
 {
