@@ -53,7 +53,7 @@
             this.RectanglesPanelListBox.Name = "RectanglesPanelListBox";
             this.RectanglesPanelListBox.Size = new System.Drawing.Size(270, 180);
             this.RectanglesPanelListBox.TabIndex = 31;
-            this.RectanglesPanelListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesPanelListBox_SelectedIndexChanged_1);
+            this.RectanglesPanelListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesPanelListBox_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -66,6 +66,9 @@
             // 
             // CanvasPanel
             // 
+            this.CanvasPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CanvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CanvasPanel.Location = new System.Drawing.Point(319, 15);
             this.CanvasPanel.Margin = new System.Windows.Forms.Padding(15);
@@ -209,8 +212,7 @@
             // 
             // RectanglesCollisionControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);

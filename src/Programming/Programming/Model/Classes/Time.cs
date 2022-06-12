@@ -74,6 +74,9 @@ namespace Programming.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает количество секунд.<br/>. Значение должно быть от 0 до 59.
+        /// </summary>
         public int Seconds
         {
             get

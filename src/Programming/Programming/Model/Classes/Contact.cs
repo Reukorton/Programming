@@ -20,12 +20,10 @@
         /// </summary>
         private string _lastName;
 
-
         /// <summary>
         /// Создает пустой экземпляр класса <see cref="Contact"/>.
         /// </summary>
         public Contact() { }
-
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Contact"/>.

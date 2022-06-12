@@ -31,14 +31,14 @@ namespace Programming.View
         {
             this.IdTextBox = new System.Windows.Forms.TabControl();
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
-            this.ClassesTabPage = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.seasonsHandleControl1 = new Programming.View.Controls.SeasonsHandleControl();
+            this.weekdayParsingControl1 = new Programming.View.Controls.WeekdayParsingControl();
             this.enumerationControl1 = new Programming.View.Panels.EnumerationControl();
+            this.ClassesTabPage = new System.Windows.Forms.TabPage();
             this.moviesControl1 = new Programming.View.Panels.MoviesControl();
             this.rectanglesControl1 = new Programming.View.Panels.RectanglesControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rectanglesCollisionControl1 = new Programming.View.Panels.RectanglesCollisionControl();
-            this.weekdayParsingControl1 = new Programming.View.Controls.WeekdayParsingControl();
-            this.seasonsHandleControl1 = new Programming.View.Controls.SeasonsHandleControl();
             this.IdTextBox.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.ClassesTabPage.SuspendLayout();
@@ -72,6 +72,27 @@ namespace Programming.View
             this.EnumsTabPage.TabIndex = 0;
             this.EnumsTabPage.Text = "Enums";
             // 
+            // seasonsHandleControl1
+            // 
+            this.seasonsHandleControl1.Location = new System.Drawing.Point(406, 370);
+            this.seasonsHandleControl1.Name = "seasonsHandleControl1";
+            this.seasonsHandleControl1.Size = new System.Drawing.Size(390, 155);
+            this.seasonsHandleControl1.TabIndex = 18;
+            // 
+            // weekdayParsingControl1
+            // 
+            this.weekdayParsingControl1.Location = new System.Drawing.Point(8, 370);
+            this.weekdayParsingControl1.Name = "weekdayParsingControl1";
+            this.weekdayParsingControl1.Size = new System.Drawing.Size(390, 155);
+            this.weekdayParsingControl1.TabIndex = 17;
+            // 
+            // enumerationControl1
+            // 
+            this.enumerationControl1.Location = new System.Drawing.Point(8, 7);
+            this.enumerationControl1.Name = "enumerationControl1";
+            this.enumerationControl1.Size = new System.Drawing.Size(787, 357);
+            this.enumerationControl1.TabIndex = 16;
+            // 
             // ClassesTabPage
             // 
             this.ClassesTabPage.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -84,24 +105,6 @@ namespace Programming.View
             this.ClassesTabPage.Size = new System.Drawing.Size(804, 533);
             this.ClassesTabPage.TabIndex = 1;
             this.ClassesTabPage.Text = "Classes";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.rectanglesCollisionControl1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 533);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Rectangles";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // enumerationControl1
-            // 
-            this.enumerationControl1.Location = new System.Drawing.Point(8, 7);
-            this.enumerationControl1.Name = "enumerationControl1";
-            this.enumerationControl1.Size = new System.Drawing.Size(787, 357);
-            this.enumerationControl1.TabIndex = 16;
             // 
             // moviesControl1
             // 
@@ -117,8 +120,20 @@ namespace Programming.View
             this.rectanglesControl1.Size = new System.Drawing.Size(390, 518);
             this.rectanglesControl1.TabIndex = 2;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.rectanglesCollisionControl1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(804, 533);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Rectangles";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // rectanglesCollisionControl1
             // 
+            this.rectanglesCollisionControl1.BackColor = System.Drawing.SystemColors.Control;
             this.rectanglesCollisionControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rectanglesCollisionControl1.Location = new System.Drawing.Point(3, 3);
             this.rectanglesCollisionControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -126,29 +141,15 @@ namespace Programming.View
             this.rectanglesCollisionControl1.Size = new System.Drawing.Size(798, 527);
             this.rectanglesCollisionControl1.TabIndex = 0;
             // 
-            // weekdayParsingControl1
-            // 
-            this.weekdayParsingControl1.Location = new System.Drawing.Point(8, 370);
-            this.weekdayParsingControl1.Name = "weekdayParsingControl1";
-            this.weekdayParsingControl1.Size = new System.Drawing.Size(390, 155);
-            this.weekdayParsingControl1.TabIndex = 17;
-            // 
-            // seasonsHandleControl1
-            // 
-            this.seasonsHandleControl1.Location = new System.Drawing.Point(406, 370);
-            this.seasonsHandleControl1.Name = "seasonsHandleControl1";
-            this.seasonsHandleControl1.Size = new System.Drawing.Size(390, 155);
-            this.seasonsHandleControl1.TabIndex = 18;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 562);
             this.Controls.Add(this.IdTextBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(830, 609);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "ProgrammingDemo";
@@ -157,6 +158,7 @@ namespace Programming.View
             this.ClassesTabPage.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion

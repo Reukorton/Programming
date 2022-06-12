@@ -48,7 +48,6 @@ namespace Programming.View.Controls
             }
             catch
             {
-
                 return false;
             }
         }

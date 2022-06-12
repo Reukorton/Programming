@@ -165,31 +165,12 @@ namespace Programming.View.Panels
             FindCollisions();
         }
 
-        private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (RectanglesPanelListBox.SelectedIndex == -1) return;
-
-            _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
-            UpdatingInformationRectangles();
-        }
-
-        private void RectanglesPanelListBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (RectanglesPanelListBox.SelectedItem == null) return;
-
-            _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
-            UpdatingInformationRectangles();
-        }
-
-
         private void XRectanglesTextBox_TextChanged(object sender, EventArgs e)
         {
             if (RectanglesPanelListBox.SelectedIndex == -1) return;
 
             try
             {
-                Validator.AssertOnPositiveValue(int.Parse(XRectanglesTextBox.Text));
-
                 _currentRectangle.Center.X = int.Parse(XRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Location =
@@ -213,8 +194,6 @@ namespace Programming.View.Panels
 
             try
             {
-                Validator.AssertOnPositiveValue(int.Parse(YRectanglesTextBox.Text));
-
                 _currentRectangle.Center.Y = int.Parse(YRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Location =
@@ -238,8 +217,6 @@ namespace Programming.View.Panels
 
             try
             {
-                Validator.AssertOnPositiveValue(int.Parse(WidthRectanglesTextBox.Text));
-
                 _currentRectangle.Width = int.Parse(WidthRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Width = _currentRectangle.Width;
@@ -262,8 +239,6 @@ namespace Programming.View.Panels
 
             try
             {
-                Validator.AssertOnPositiveValue(int.Parse(HeightRectanglesTextBox.Text));
-
                 _currentRectangle.Height = int.Parse(HeightRectanglesTextBox.Text);
 
                 CanvasPanel.Controls[RectanglesPanelListBox.SelectedIndex].Height = _currentRectangle.Height;
@@ -298,6 +273,14 @@ namespace Programming.View.Panels
         private void RemoveButton_MouseLeave(object sender, EventArgs e)
         {
             RemoveRectangleButton.Image = Properties.Resources.rectangle_remove_24x24_uncolor;
+        }
+
+        private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RectanglesPanelListBox.SelectedItem == null) return;
+
+            _currentRectangle = _rectangles[RectanglesPanelListBox.SelectedIndex];
+            UpdatingInformationRectangles();
         }
     }
 }

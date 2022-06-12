@@ -2,6 +2,9 @@
 
 namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Предоставляет цвета для элементов окна.
+    /// </summary>
     public static class AllColors
     {
         /// <summary>
@@ -13,7 +16,6 @@ namespace Programming.Model.Classes
         /// Цвет некоректного значения.
         /// </summary>
         public static Color ErrorColor = Color.LightPink;
-
 
         /// <summary>
         /// Цвет пересечения фигур.
