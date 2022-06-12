@@ -31,7 +31,7 @@ namespace Programming.Model.Classes
         /// Счетчик фильмов. <br/> <br/>
         /// Нужен для создания идентификатора фильма.
         /// </summary>
-        private static int _count = 0;
+        private static int _count;
 
         /// <summary>
         /// Возвращает и задает жанр фильма.
