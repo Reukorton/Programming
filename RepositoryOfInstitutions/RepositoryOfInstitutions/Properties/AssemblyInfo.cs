@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("Movies")]
+[assembly: AssemblyTitle("RepositoryOfInstitutions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Movies")]
+[assembly: AssemblyProduct("RepositoryOfInstitutions")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("035b1404-f4d6-4ecc-be5c-82ad8be2d748")]
+[assembly: Guid("a84a6c70-bf62-43f7-b7f9-26e331bdc30a")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

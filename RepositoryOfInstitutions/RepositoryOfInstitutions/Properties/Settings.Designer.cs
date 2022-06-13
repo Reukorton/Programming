@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Movies.Properties
+namespace RepositoryOfInstitutions.Properties
 {
 
 
