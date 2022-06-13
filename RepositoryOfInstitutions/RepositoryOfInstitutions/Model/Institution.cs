@@ -1,9 +1,12 @@
 ﻿using System;
-using RepositoryOfInstitutions.Service;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace RepositoryOfInstitutions.Model
 {
-    internal class Institution
+    public class Institution
     {
         private string _title;
 
@@ -11,16 +14,16 @@ namespace RepositoryOfInstitutions.Model
 
         private double _rating;
 
-        private static int _count;
+        public Enum Category { get; set; }
+
+        public static int Count { get; set; }
 
         public int Id { get; set; }
 
-        public Enum Category { get; set; }
-    
         public Institution()
         {
-            _count++;
-            Id = _count;
+            Count++;
+            Id = Count;
         }
 
         public Institution(string title, string address, Enum category, double rating)
@@ -29,7 +32,7 @@ namespace RepositoryOfInstitutions.Model
             Address = address;
             Category = category;
             Rating = rating;
-            Id = _count;
+            Id = Count;
         }
 
         public string Title
@@ -40,7 +43,6 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
-                Validator.AssertStringMaxiCharacters(value, 200, nameof(Title));
                 _title = value;
             }
         }
@@ -53,7 +55,6 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
-                Validator.AssertStringMaxiCharacters(value, 100, nameof(Address));
                 _address = value;
             }
         }
@@ -66,7 +67,6 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
-                Validator.AssertValueInRange(value, 0, 5, nameof(Rating));
                 _rating = value;
             }
         }

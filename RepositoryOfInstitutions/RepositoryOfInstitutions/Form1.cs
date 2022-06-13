@@ -11,19 +11,14 @@ using RepositoryOfInstitutions.Model;
 
 namespace RepositoryOfInstitutions
 {
-    public partial class RepositoryOfInstitutions : Form
+    public partial class Form1 : Form
     {
-        private readonly Color _correctColor = Color.White;
-
-        private readonly Color _errorColor = Color.LightPink;
-
         private List<Institution> _institutions;
 
         private Institution _currentInstitution;
 
         private Array _categories;
-
-        public RepositoryOfInstitutions()
+        public Form1()
         {
             InitializeComponent();
 
@@ -39,14 +34,8 @@ namespace RepositoryOfInstitutions
         private string InstitutionParameters(Institution institution)
         {
             return $"{institution.Id}: " +
-                   $"{institution.Category} -" +
+                   $"{institution.Category} - " +
                    $" {institution.Title};";
-        }
-
-        private void InstitutionsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _currentInstitution = _institutions[InstitutionsListBox.SelectedIndex];
-            UpdatingInformationInstitution();
         }
 
         private void AddInstitutionButton_Click(object sender, EventArgs e)
@@ -68,7 +57,13 @@ namespace RepositoryOfInstitutions
             InstitutionsListBox.Items[index] = InstitutionParameters(institution);
         }
 
-        private void UpdatingInformationInstitution()
+        private void TitleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentInstitution.Title = TitleTextBox.Text;
+            UpdateInstitutionInfo(_currentInstitution);
+        }
+
+        private void UpdatingInformationRectangles()
         {
             TitleTextBox.Text = _currentInstitution.Title;
             AddressTextBox.Text = _currentInstitution.Address;
@@ -76,21 +71,17 @@ namespace RepositoryOfInstitutions
             RatingTextBox.Text = _currentInstitution.Rating.ToString();
         }
 
-        private void TitleTextBox_TextChanged(object sender, EventArgs e)
+        private void InstitutionsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (InstitutionsListBox.SelectedItem == null) return;
 
-            try
-            {
-                _currentInstitution.Title = TitleTextBox.Text;
-                UpdateInstitutionInfo(_currentInstitution);
-            }
-            catch
-            {
-                TitleTextBox.BackColor = _errorColor;
-                return;
-            }
-            TitleTextBox.BackColor = _correctColor;
+            _currentInstitution = _institutions[InstitutionsListBox.SelectedIndex];
+            UpdatingInformationRectangles();
+        }
+
+        private void AddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentInstitution.Address = AddressTextBox.Text;
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
