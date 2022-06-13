@@ -55,5 +55,10 @@ namespace Programming.View.Controls
                     throw new NotImplementedException();
             }
         }
+
+        private void ChooseSeasonsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

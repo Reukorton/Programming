@@ -1,36 +1,39 @@
-﻿namespace Movies.Model
+﻿using Movies.Service;
+using System;
+
+namespace Movies.Model
 {
     public class Movie
     {
-        private string _title;
-
-        private int _releaseYear;
-
         private double _rating;
 
-        private int _duration;
+        private string _title;
 
-        private int _count;
+        private int _duration = 1;
 
-        private int _id;
+        public static int Count { get; set; }
 
-        public string Genre { get; set; }
+        public int ReleaseYear { get; set; }
+
+        public Enum Genre { get; set; }
+
+        public int Id { get; }
+
 
         public Movie()
         {
-            _count++;
-            _id = _count;
+            Count++;
+            Id = Count;
         }
 
-        public Movie(string title, int releaseYear, string genre, double rating, int duration)
+        public Movie(string title, int releaseYear, Enum genre, double rating, int duration)
         {
             Title = title;
             ReleaseYear = releaseYear;
             Genre = genre;
             Rating = rating;
             Duration = duration;
-            _count++;
-            _id = _count;
+            Id = Count;
         }
 
         public string Title
@@ -41,19 +44,8 @@
             }
             set
             {
+                Validator.AssertStringMaxCharacters(value.Length, nameof(Title));
                 _title = value;
-            }
-        }
-
-        public int ReleaseYear
-        {
-            get
-            {
-                return _releaseYear;
-            }
-            set
-            {
-                _releaseYear = value;
             }
         }
 
@@ -65,6 +57,7 @@
             }
             set
             {
+                Validator.AssertValueInRange(value, 0, 10, nameof(Rating));
                 _rating = value;
             }
         }
@@ -77,14 +70,9 @@
             }
             set
             {
+                Validator.AssertValueInRange(value, 1, 300, nameof(Duration));
                 _duration = value;
             }
         }
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }  
     }
 }

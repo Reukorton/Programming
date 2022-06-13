@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.GenreComboBox = new System.Windows.Forms.ComboBox();
             this.DurationTextBox = new System.Windows.Forms.TextBox();
             this.RatingTextBox = new System.Windows.Forms.TextBox();
             this.ReleaseYearTextBox = new System.Windows.Forms.TextBox();
@@ -43,8 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.AddMovieButton = new System.Windows.Forms.Button();
             this.RemoveMovieButton = new System.Windows.Forms.Button();
+            this.AddMovieButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,8 +54,9 @@
             this.MoviesListBox.ItemHeight = 16;
             this.MoviesListBox.Location = new System.Drawing.Point(12, 44);
             this.MoviesListBox.Name = "MoviesListBox";
-            this.MoviesListBox.Size = new System.Drawing.Size(357, 340);
+            this.MoviesListBox.Size = new System.Drawing.Size(562, 340);
             this.MoviesListBox.TabIndex = 0;
+            this.MoviesListBox.SelectedIndexChanged += new System.EventHandler(this.MoviesListBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -68,8 +69,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(405, 44);
+            this.label2.Location = new System.Drawing.Point(580, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 2;
@@ -77,15 +79,17 @@
             // 
             // SearchTextBox
             // 
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchTextBox.Location = new System.Drawing.Point(464, 44);
+            this.SearchTextBox.Location = new System.Drawing.Point(639, 44);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(637, 22);
             this.SearchTextBox.TabIndex = 3;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.GenreComboBox);
             this.groupBox1.Controls.Add(this.DurationTextBox);
             this.groupBox1.Controls.Add(this.RatingTextBox);
             this.groupBox1.Controls.Add(this.ReleaseYearTextBox);
@@ -95,20 +99,21 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(408, 84);
+            this.groupBox1.Location = new System.Drawing.Point(583, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(706, 383);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected movie";
             // 
-            // comboBox1
+            // GenreComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 148);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 24);
-            this.comboBox1.TabIndex = 5;
+            this.GenreComboBox.FormattingEnabled = true;
+            this.GenreComboBox.Location = new System.Drawing.Point(118, 148);
+            this.GenreComboBox.Name = "GenreComboBox";
+            this.GenreComboBox.Size = new System.Drawing.Size(195, 24);
+            this.GenreComboBox.TabIndex = 5;
+            this.GenreComboBox.SelectedIndexChanged += new System.EventHandler(this.GenreComboBox_SelectedIndexChanged);
             // 
             // DurationTextBox
             // 
@@ -118,6 +123,7 @@
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(195, 22);
             this.DurationTextBox.TabIndex = 13;
+            this.DurationTextBox.TextChanged += new System.EventHandler(this.DurationTextBox_TextChanged);
             // 
             // RatingTextBox
             // 
@@ -127,6 +133,7 @@
             this.RatingTextBox.Name = "RatingTextBox";
             this.RatingTextBox.Size = new System.Drawing.Size(195, 22);
             this.RatingTextBox.TabIndex = 12;
+            this.RatingTextBox.TextChanged += new System.EventHandler(this.RatingTextBox_TextChanged);
             // 
             // ReleaseYearTextBox
             // 
@@ -136,6 +143,7 @@
             this.ReleaseYearTextBox.Name = "ReleaseYearTextBox";
             this.ReleaseYearTextBox.Size = new System.Drawing.Size(195, 22);
             this.ReleaseYearTextBox.TabIndex = 11;
+            this.ReleaseYearTextBox.TextChanged += new System.EventHandler(this.ReleaseYearTextBox_TextChanged);
             // 
             // TitaleTextBox
             // 
@@ -145,6 +153,7 @@
             this.TitaleTextBox.Name = "TitaleTextBox";
             this.TitaleTextBox.Size = new System.Drawing.Size(575, 22);
             this.TitaleTextBox.TabIndex = 10;
+            this.TitaleTextBox.TextChanged += new System.EventHandler(this.TitaleTextBox_TextChanged);
             // 
             // label7
             // 
@@ -196,27 +205,44 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Titale:";
             // 
-            // AddMovieButton
-            // 
-            this.AddMovieButton.Location = new System.Drawing.Point(80, 407);
-            this.AddMovieButton.Name = "AddMovieButton";
-            this.AddMovieButton.Size = new System.Drawing.Size(60, 60);
-            this.AddMovieButton.TabIndex = 5;
-            this.AddMovieButton.UseVisualStyleBackColor = true;
-            // 
             // RemoveMovieButton
             // 
-            this.RemoveMovieButton.Location = new System.Drawing.Point(210, 407);
+            this.RemoveMovieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveMovieButton.BackgroundImage = global::Movies.Properties.Resources.RemoveDown;
+            this.RemoveMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RemoveMovieButton.FlatAppearance.BorderSize = 0;
+            this.RemoveMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveMovieButton.Location = new System.Drawing.Point(500, 390);
             this.RemoveMovieButton.Name = "RemoveMovieButton";
             this.RemoveMovieButton.Size = new System.Drawing.Size(60, 60);
             this.RemoveMovieButton.TabIndex = 6;
             this.RemoveMovieButton.UseVisualStyleBackColor = true;
+            this.RemoveMovieButton.Click += new System.EventHandler(this.RemoveMovieButton_Click);
+            this.RemoveMovieButton.MouseEnter += new System.EventHandler(this.RemoveMovieButton_MouseEnter);
+            this.RemoveMovieButton.MouseLeave += new System.EventHandler(this.RemoveMovieButton_MouseLeave);
+            // 
+            // AddMovieButton
+            // 
+            this.AddMovieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddMovieButton.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.AddMovieButton.BackgroundImage = global::Movies.Properties.Resources.AddDown;
+            this.AddMovieButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddMovieButton.FlatAppearance.BorderSize = 0;
+            this.AddMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddMovieButton.Location = new System.Drawing.Point(404, 390);
+            this.AddMovieButton.Name = "AddMovieButton";
+            this.AddMovieButton.Size = new System.Drawing.Size(60, 60);
+            this.AddMovieButton.TabIndex = 5;
+            this.AddMovieButton.UseVisualStyleBackColor = false;
+            this.AddMovieButton.Click += new System.EventHandler(this.AddMovieButton_Click);
+            this.AddMovieButton.MouseEnter += new System.EventHandler(this.AddMovieButton_MouseEnter);
+            this.AddMovieButton.MouseLeave += new System.EventHandler(this.AddMovieButton_MouseLeave);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 479);
+            this.ClientSize = new System.Drawing.Size(1304, 479);
             this.Controls.Add(this.RemoveMovieButton);
             this.Controls.Add(this.AddMovieButton);
             this.Controls.Add(this.groupBox1);
@@ -224,6 +250,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MoviesListBox);
+            this.MinimumSize = new System.Drawing.Size(1322, 526);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -249,7 +276,7 @@
         private System.Windows.Forms.TextBox RatingTextBox;
         private System.Windows.Forms.TextBox ReleaseYearTextBox;
         private System.Windows.Forms.TextBox TitaleTextBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox GenreComboBox;
         private System.Windows.Forms.Button AddMovieButton;
         private System.Windows.Forms.Button RemoveMovieButton;
     }

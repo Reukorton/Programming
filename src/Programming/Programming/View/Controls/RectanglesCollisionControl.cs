@@ -129,7 +129,7 @@ namespace Programming.View.Panels
 
         private void AddRectangleButton_Click(object sender, EventArgs e)
         {
-            Rectangle _currentRectangle = RectangleFactory.Randomize(CanvasPanel.Width, CanvasPanel.Height);
+            _currentRectangle = RectangleFactory.Randomize(CanvasPanel.Width, CanvasPanel.Height);
 
             _rectangles.Add(_currentRectangle);
             RectanglesPanelListBox.Items.Add(RectangleParameters(_currentRectangle));
