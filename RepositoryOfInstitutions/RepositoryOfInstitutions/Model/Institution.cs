@@ -1,4 +1,5 @@
 ﻿using System;
+using RepositoryOfInstitutions.Service;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,7 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
+                Validator.AssertStringMaxСharacters(value, 200, nameof(Title));
                 _title = value;
             }
         }
@@ -55,6 +57,7 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
+                Validator.AssertStringMaxСharacters(value, 100, nameof(Address));
                 _address = value;
             }
         }
@@ -67,6 +70,7 @@ namespace RepositoryOfInstitutions.Model
             }
             set
             {
+                Validator.AssertValueInRange(value, 0, 5, nameof(Rating));
                 _rating = value;
             }
         }

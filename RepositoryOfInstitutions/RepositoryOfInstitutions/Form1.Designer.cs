@@ -86,6 +86,7 @@
             this.RatingTextBox.Name = "RatingTextBox";
             this.RatingTextBox.Size = new System.Drawing.Size(283, 22);
             this.RatingTextBox.TabIndex = 9;
+            this.RatingTextBox.TextChanged += new System.EventHandler(this.RatingTextBox_TextChanged);
             // 
             // label5
             // 
@@ -150,20 +151,34 @@
             // 
             // AddInstitutionButton
             // 
+            this.AddInstitutionButton.BackgroundImage = global::RepositoryOfInstitutions.Properties.Resources.AddDown;
+            this.AddInstitutionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddInstitutionButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AddInstitutionButton.FlatAppearance.BorderSize = 0;
+            this.AddInstitutionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddInstitutionButton.Location = new System.Drawing.Point(556, 415);
             this.AddInstitutionButton.Name = "AddInstitutionButton";
             this.AddInstitutionButton.Size = new System.Drawing.Size(70, 70);
             this.AddInstitutionButton.TabIndex = 10;
             this.AddInstitutionButton.UseVisualStyleBackColor = true;
             this.AddInstitutionButton.Click += new System.EventHandler(this.AddInstitutionButton_Click);
+            this.AddInstitutionButton.MouseEnter += new System.EventHandler(this.AddInstitutionButton_MouseEnter);
+            this.AddInstitutionButton.MouseLeave += new System.EventHandler(this.AddInstitutionButton_MouseLeave);
             // 
             // RemoveInstitutionButton
             // 
+            this.RemoveInstitutionButton.BackgroundImage = global::RepositoryOfInstitutions.Properties.Resources.RemoveDown;
+            this.RemoveInstitutionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RemoveInstitutionButton.FlatAppearance.BorderSize = 0;
+            this.RemoveInstitutionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveInstitutionButton.Location = new System.Drawing.Point(673, 415);
             this.RemoveInstitutionButton.Name = "RemoveInstitutionButton";
             this.RemoveInstitutionButton.Size = new System.Drawing.Size(70, 70);
             this.RemoveInstitutionButton.TabIndex = 11;
             this.RemoveInstitutionButton.UseVisualStyleBackColor = true;
+            this.RemoveInstitutionButton.Click += new System.EventHandler(this.RemoveInstitutionButton_Click);
+            this.RemoveInstitutionButton.MouseEnter += new System.EventHandler(this.RemoveInstitutionButton_MouseEnter);
+            this.RemoveInstitutionButton.MouseLeave += new System.EventHandler(this.RemoveInstitutionButton_MouseLeave);
             // 
             // Form1
             // 

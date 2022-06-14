@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,6 +14,10 @@ namespace RepositoryOfInstitutions
 {
     public partial class Form1 : Form
     {
+        private readonly Color _correctColor = Color.White;
+
+        private readonly Color _errorColor = Color.LightPink;
+
         private List<Institution> _institutions;
 
         private Institution _currentInstitution;
@@ -81,13 +86,74 @@ namespace RepositoryOfInstitutions
 
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
-            _currentInstitution.Address = AddressTextBox.Text;
+            try
+            {
+                _currentInstitution.Address = AddressTextBox.Text;
+            }
+            catch
+            {
+                AddressTextBox.BackColor = _errorColor;
+                return;
+            }
+            AddressTextBox.BackColor = _correctColor;
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (InstitutionsListBox.SelectedItem == null) return;
+
             _currentInstitution.Category = (Enum)CategoryComboBox.SelectedItem;
             UpdateInstitutionInfo(_currentInstitution);
+        }
+
+        private void AddInstitutionButton_MouseEnter(object sender, EventArgs e)
+        {
+            AddInstitutionButton.BackgroundImage = Properties.Resources.AddUp;
+        }
+
+        private void AddInstitutionButton_MouseLeave(object sender, EventArgs e)
+        {
+            AddInstitutionButton.BackgroundImage = Properties.Resources.AddDown;
+        }
+
+        private void RemoveInstitutionButton_MouseEnter(object sender, EventArgs e)
+        {
+            RemoveInstitutionButton.BackgroundImage = Properties.Resources.RemoveUp;
+        }
+
+        private void RemoveInstitutionButton_MouseLeave(object sender, EventArgs e)
+        {
+            RemoveInstitutionButton.BackgroundImage = Properties.Resources.RemoveDown;
+        }
+
+        private void RatingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentInstitution.Rating = double.Parse(RatingTextBox.Text);
+            }
+            catch
+            {
+                RatingTextBox.BackColor = _errorColor;
+                return;
+            }
+            RatingTextBox.BackColor = _correctColor;
+        }
+
+        private void RemoveInstitutionButton_Click(object sender, EventArgs e)
+        {
+            InstitutionsListBox.Items.Clear();
+            _institutions.Remove(_currentInstitution);
+
+            foreach (var item in _institutions)
+            {
+                InstitutionsListBox.Items.Add(InstitutionParameters(item));
+            }
+
+            if (_institutions.Count != 0)
+            {
+                InstitutionsListBox.SelectedIndex = 0;
+            }
         }
     }
 }
