@@ -1,6 +1,6 @@
 ﻿namespace RepositoryOfInstitutions
 {
-    partial class Form1
+    partial class ListOfInstitution
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListOfInstitution));
             this.InstitutionsListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,6 +42,8 @@
             this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.AddInstitutionButton = new System.Windows.Forms.Button();
             this.RemoveInstitutionButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TitleTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(556, 49);
+            this.groupBox1.Location = new System.Drawing.Point(556, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(700, 311);
             this.groupBox1.TabIndex = 2;
@@ -147,6 +150,7 @@
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(566, 22);
             this.TitleTextBox.TabIndex = 0;
+            this.TitleTextBox.Click += new System.EventHandler(this.InstitutionsListBox_SelectedIndexChanged);
             this.TitleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
             // 
             // AddInstitutionButton
@@ -180,18 +184,40 @@
             this.RemoveInstitutionButton.MouseEnter += new System.EventHandler(this.RemoveInstitutionButton_MouseEnter);
             this.RemoveInstitutionButton.MouseLeave += new System.EventHandler(this.RemoveInstitutionButton_MouseLeave);
             // 
-            // Form1
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(589, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Search:";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(661, 43);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(566, 22);
+            this.SearchTextBox.TabIndex = 13;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // ListOfInstitution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 520);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.RemoveInstitutionButton);
             this.Controls.Add(this.AddInstitutionButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.InstitutionsListBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ListOfInstitution";
+            this.Text = "ListOfInstitution";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -214,6 +240,8 @@
         private System.Windows.Forms.TextBox TitleTextBox;
         private System.Windows.Forms.Button AddInstitutionButton;
         private System.Windows.Forms.Button RemoveInstitutionButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }
 

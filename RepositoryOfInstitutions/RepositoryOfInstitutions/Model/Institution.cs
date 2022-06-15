@@ -1,33 +1,56 @@
-﻿using System;
-using RepositoryOfInstitutions.Service;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RepositoryOfInstitutions.Service;
 
 namespace RepositoryOfInstitutions.Model
 {
     public class Institution
     {
-        private string _title;
+        /// <summary>
+        /// Название усреждения.
+        /// </summary>
+        private string _title = "None";
 
-        private string _address;
+        /// <summary>
+        /// Адрес учреждения.
+        /// </summary>
+        private string _address = "None";
 
+        /// <summary>
+        /// Рейтинг учреждения.
+        /// </summary>
         private double _rating;
 
-        public Enum Category { get; set; }
+        /// <summary>
+        /// Категория учреждения.
+        /// </summary>
+        public Categories Category { get; set; }
 
+        /// <summary>
+        /// Количество учреждений.
+        /// </summary>
         public static int Count { get; set; }
 
+        /// <summary>
+        /// Уникальный идентификатор фильма.
+        /// </summary>
         public int Id { get; set; }
 
+        /// <summary>
+        /// Создание пустого экземпляра класса <see cref="Institution"/>.
+        /// </summary>
         public Institution()
         {
             Count++;
             Id = Count;
         }
 
-        public Institution(string title, string address, Enum category, double rating)
+        /// <summary>
+        /// Создание экзепляра класса <see cref="Institution"/>.
+        /// </summary>
+        /// <param name="title">Название.</param>
+        /// <param name="address">Адрес.</param>
+        /// <param name="category">Категория.</param>
+        /// <param name="rating">Рейтинг.</param>
+        public Institution(string title, string address, Categories category, double rating)
         {
             Title = title;
             Address = address;
@@ -35,7 +58,10 @@ namespace RepositoryOfInstitutions.Model
             Rating = rating;
             Id = Count;
         }
-
+        
+        /// <summary>
+        /// Возвращает и задает название учреждения.
+        /// </summary>
         public string Title
         {
             get
@@ -49,6 +75,9 @@ namespace RepositoryOfInstitutions.Model
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает адрес учреждения.
+        /// </summary>
         public string Address
         {
             get
@@ -62,6 +91,9 @@ namespace RepositoryOfInstitutions.Model
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает рейтинг учреждения.
+        /// </summary>
         public double Rating
         {
             get
@@ -73,6 +105,15 @@ namespace RepositoryOfInstitutions.Model
                 Validator.AssertValueInRange(value, 0, 5, nameof(Rating));
                 _rating = value;
             }
+        }
+
+        /// <summary>
+        /// Создание строки из Id, Category и Title класса <see cref="Institution"/>.
+        /// </summary>
+        /// <returns></returns>
+        public string InstitutionParameters()
+        {
+            return $"{Id}: {Category} - {Title}";
         }
     }
 }
