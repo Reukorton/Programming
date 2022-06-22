@@ -1,7 +1,7 @@
 ﻿namespace Programming.Model.Classes
 {
     /// <summary>
-    /// Хранит данные о рйсах самолетов.
+    /// Хранит данные о рейсе самолета.
     /// </summary>
     public class Flight
     {

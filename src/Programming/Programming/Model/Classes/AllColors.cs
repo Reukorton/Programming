@@ -20,7 +20,7 @@ namespace Programming.Model.Classes
         /// <summary>
         /// Цвет пересечения фигур.
         /// </summary>
-        public static Color InCollisions = Color.FromArgb(127, 255, 127, 127);
+        public static Color Collisions = Color.FromArgb(127, 255, 127, 127);
 
         /// <summary>
         /// Цвет не пересекаемых фигур.

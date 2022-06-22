@@ -5,7 +5,7 @@ using Rectangle = Programming.Model.Geometry.Rectangle;
 using Programming.Model.Classes;
 
 
-namespace Programming.View.Panels
+namespace Programming.View.Controls
 {
     /// <summary>
     /// Представление прямоугольников, генерируеммых программой.

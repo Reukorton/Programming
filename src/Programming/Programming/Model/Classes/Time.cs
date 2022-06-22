@@ -1,5 +1,8 @@
 ﻿namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о времени.
+    /// </summary>
     public class Time
     {
         /// <summary>

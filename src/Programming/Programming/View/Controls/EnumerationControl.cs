@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Programming.Model.Enums;
 
-namespace Programming.View.Panels
+namespace Programming.View.Controls
 {
     /// <summary>
     /// Реализация перечислений.

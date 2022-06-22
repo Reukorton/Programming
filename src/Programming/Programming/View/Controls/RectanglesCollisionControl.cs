@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Rectangle = Programming.Model.Geometry.Rectangle;
 using Programming.Model.Classes;
 
-namespace Programming.View.Panels
+namespace Programming.View.Controls
 {
     public partial class RectanglesCollisionControl : UserControl
     {
@@ -122,8 +122,8 @@ namespace Programming.View.Panels
                 {
                     if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
                     {
-                        CanvasPanel.Controls[i].BackColor = AllColors.InCollisions;
-                        CanvasPanel.Controls[j].BackColor = AllColors.InCollisions;
+                        CanvasPanel.Controls[i].BackColor = AllColors.Collisions;
+                        CanvasPanel.Controls[j].BackColor = AllColors.Collisions;
                     }
                 }
             }

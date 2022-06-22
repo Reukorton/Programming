@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Programming.Model.Classes;
 
-namespace Programming.View.Panels
+namespace Programming.View.Controls
 {
     public partial class MoviesControl : UserControl
     {

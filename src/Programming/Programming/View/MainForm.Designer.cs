@@ -33,12 +33,12 @@ namespace Programming.View
             this.EnumsTabPage = new System.Windows.Forms.TabPage();
             this.seasonsHandleControl1 = new Programming.View.Controls.SeasonsHandleControl();
             this.weekdayParsingControl1 = new Programming.View.Controls.WeekdayParsingControl();
-            this.enumerationControl1 = new Programming.View.Panels.EnumerationControl();
+            this.enumerationControl1 = new Programming.View.Controls.EnumerationControl();
             this.ClassesTabPage = new System.Windows.Forms.TabPage();
-            this.moviesControl1 = new Programming.View.Panels.MoviesControl();
-            this.rectanglesControl1 = new Programming.View.Panels.RectanglesControl();
+            this.moviesControl1 = new Programming.View.Controls.MoviesControl();
+            this.rectanglesControl1 = new Programming.View.Controls.RectanglesControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.rectanglesCollisionControl1 = new Programming.View.Panels.RectanglesCollisionControl();
+            this.rectanglesCollisionControl1 = new Programming.View.Controls.RectanglesCollisionControl();
             this.IdTextBox.SuspendLayout();
             this.EnumsTabPage.SuspendLayout();
             this.ClassesTabPage.SuspendLayout();
@@ -167,10 +167,10 @@ namespace Programming.View
         private System.Windows.Forms.TabPage EnumsTabPage;
         private System.Windows.Forms.TabPage ClassesTabPage;
         private System.Windows.Forms.TabPage tabPage1;
-        private Panels.RectanglesCollisionControl rectanglesCollisionControl1;
-        private Panels.RectanglesControl rectanglesControl1;
-        private Panels.MoviesControl moviesControl1;
-        private Panels.EnumerationControl enumerationControl1;
+        private Controls.RectanglesCollisionControl rectanglesCollisionControl1;
+        private Controls.RectanglesControl rectanglesControl1;
+        private Controls.MoviesControl moviesControl1;
+        private Controls.EnumerationControl enumerationControl1;
         private Controls.SeasonsHandleControl seasonsHandleControl1;
         private Controls.WeekdayParsingControl weekdayParsingControl1;
     }

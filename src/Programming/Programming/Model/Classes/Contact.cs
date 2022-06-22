@@ -54,7 +54,6 @@
             set
             {
                 Validator.AssertStringNumberIsCorrect(_phoneNumber, nameof(PhoneNumber));
-
                 _phoneNumber = value;
             }
         }
@@ -90,7 +89,6 @@
             set
             {
                 Validator.AssertStringContainsOnlyLetters(value, nameof(LastName));
-
                 _lastName = value;
             }
         }

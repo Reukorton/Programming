@@ -1,5 +1,8 @@
 ﻿namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о песне.
+    /// </summary>
     public class Song
     {
         /// <summary>

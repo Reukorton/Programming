@@ -1,5 +1,8 @@
 ﻿namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о предмете.
+    /// </summary>
     public class Subject
     {
         /// <summary>

@@ -1,5 +1,8 @@
 ﻿namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Хранит координаты объекта.
+    /// </summary>
     public class Point2D
     {
         /// <summary>

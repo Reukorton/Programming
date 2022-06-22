@@ -1,5 +1,8 @@
 ﻿namespace Programming.Model.Geometry
 {
+    /// <summary>
+    /// Хранит данные о прямоугольнике.
+    /// </summary>
     public class Rectangle
     {
         /// <summary>

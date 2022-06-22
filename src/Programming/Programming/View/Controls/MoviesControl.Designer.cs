@@ -1,4 +1,4 @@
-﻿namespace Programming.View.Panels
+﻿namespace Programming.View.Controls
 {
     partial class MoviesControl
     {

@@ -3,6 +3,9 @@ using Programming.Model.Enums;
 
 namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Методы для создания фильмов.
+    /// </summary>
     public static class MovieFactory
     {
         /// <summary>
