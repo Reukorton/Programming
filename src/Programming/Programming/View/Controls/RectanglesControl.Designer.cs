@@ -87,6 +87,7 @@
             // XTextBox
             // 
             this.XTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XTextBox.Enabled = false;
             this.XTextBox.Location = new System.Drawing.Point(214, 255);
             this.XTextBox.Multiline = true;
             this.XTextBox.Name = "XTextBox";
@@ -97,6 +98,7 @@
             // YTextBox
             // 
             this.YTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.YTextBox.Enabled = false;
             this.YTextBox.Location = new System.Drawing.Point(307, 254);
             this.YTextBox.Multiline = true;
             this.YTextBox.Name = "YTextBox";
@@ -127,6 +129,7 @@
             // ColorTextBox
             // 
             this.ColorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ColorTextBox.Enabled = false;
             this.ColorTextBox.Location = new System.Drawing.Point(214, 192);
             this.ColorTextBox.Multiline = true;
             this.ColorTextBox.Name = "ColorTextBox";

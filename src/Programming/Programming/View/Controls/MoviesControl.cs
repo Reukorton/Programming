@@ -17,16 +17,13 @@ namespace Programming.View.Panels
         private Movie _currentMovie;
 
         /// <summary>
-        /// Массив названий фильмов.
-        /// </summary>
-        private string[] _titleMovies = { "Big Momma's House", "The Green Mile",
-                                          "Interstellar", "Finch", "Insidious" };
-
-        /// <summary>
         /// Массив фильмов.
         /// </summary>
         private Movie[] _movies;
 
+        /// <summary>
+        /// Создает экзепляр класса <see cref="MoviesControl"/>.
+        /// </summary>
         public MoviesControl()
         {
             InitializeComponent();
@@ -34,6 +31,11 @@ namespace Programming.View.Panels
             _movies = CreateMovie(NumberMovies);
         }
 
+        /// <summary>
+        /// Создание массива фильмов.
+        /// </summary>
+        /// <param name="count">Количество фильмов.</param>
+        /// <returns>Массив фильмов.</returns>
         private Movie[] CreateMovie(int count)
         {
             _movies = new Movie[count];
@@ -76,7 +78,6 @@ namespace Programming.View.Panels
             }
             catch
             {
-
                 RatingTextBox.BackColor = AllColors.ErrorColor;
             }
         }
@@ -107,11 +108,15 @@ namespace Programming.View.Panels
             }
             catch
             {
-
                 DurationTextBox.BackColor = AllColors.ErrorColor;
             }
         }
 
+        /// <summary>
+        /// Поиск наивысшего рейтинга.
+        /// </summary>
+        /// <param name="movies">Массив фильмов.</param>
+        /// <returns>Индекс фильма с наивысшим рейтингом.</returns>
         private int FindWithMaxRating(Movie[] movies)
         {
             var index = 0;

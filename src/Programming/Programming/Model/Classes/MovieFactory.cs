@@ -16,6 +16,12 @@ namespace Programming.Model.Classes
         private static Random _random;
 
         /// <summary>
+        /// Массив названий фильмов.
+        /// </summary>
+        private static string[] _titleMovies = { "Big Momma's House", "The Green Mile",
+                                          "Interstellar", "Finch", "Insidious" };
+
+        /// <summary>
         /// Создает пустой класс <see cref="MovieFactory">
         /// </summary>
         static MovieFactory()
@@ -29,13 +35,15 @@ namespace Programming.Model.Classes
         /// <returns>Возвращает объект Movie.</returns>
         public static Movie Randomize()
         {
-            Movie movie = new Movie();
+            Movie movie = new Movie
+            {
+                Rating = _random.Next(101) / 10.0,
+                ReleaseYear = _random.Next(1990, DateTime.Now.Year),
+                Genre = _genres.GetValue(_random.Next(0, _genres.Length)).ToString(),
+                Title = $"{_titleMovies[_random.Next(_titleMovies.Length)]}",
+                Duration = _random.Next(40, 200)
+            };
 
-            movie.Rating = _random.Next(101) / 10.0;
-            movie.ReleaseYear = _random.Next(1990, DateTime.Now.Year);
-            movie.Genre = _genres.GetValue(_random.Next(0, _genres.Length)).ToString();
-            movie.Title = $"Movie {movie.Genre} {movie.ReleaseYear}";
-            movie.Duration = _random.Next(40, 200);
             return movie;
         }
     }

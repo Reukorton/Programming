@@ -1,16 +1,12 @@
-﻿using System;
+﻿using RepositoryOfInstitutions.Model;
+using RepositoryOfInstitutions.Service;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Collections;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RepositoryOfInstitutions.Model;
-using RepositoryOfInstitutions.Service;
 
 namespace RepositoryOfInstitutions
 {

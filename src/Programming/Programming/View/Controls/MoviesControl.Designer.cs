@@ -146,6 +146,7 @@
             // GenreTextBox
             // 
             this.GenreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GenreTextBox.Enabled = false;
             this.GenreTextBox.Location = new System.Drawing.Point(214, 318);
             this.GenreTextBox.Multiline = true;
             this.GenreTextBox.Name = "GenreTextBox";
@@ -164,6 +165,7 @@
             // TitleTextBox
             // 
             this.TitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TitleTextBox.Enabled = false;
             this.TitleTextBox.Location = new System.Drawing.Point(214, 66);
             this.TitleTextBox.Multiline = true;
             this.TitleTextBox.Name = "TitleTextBox";

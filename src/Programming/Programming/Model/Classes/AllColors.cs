@@ -20,12 +20,12 @@ namespace Programming.Model.Classes
         /// <summary>
         /// Цвет пересечения фигур.
         /// </summary>
-        public static Color InContact = Color.FromArgb(127, 255, 127, 127);
+        public static Color InCollisions = Color.FromArgb(127, 255, 127, 127);
 
         /// <summary>
         /// Цвет не пересекаемых фигур.
         /// </summary>
-        public static Color UnContact = Color.FromArgb(127, 127, 255, 127);
+        public static Color UnCollisions = Color.FromArgb(127, 127, 255, 127);
 
         /// <summary>
         /// Цвет при выборе Winter в списке времен года.

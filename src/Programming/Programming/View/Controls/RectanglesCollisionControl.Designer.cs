@@ -79,7 +79,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 331);
+            this.label18.Location = new System.Drawing.Point(36, 331);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(129, 16);
             this.label18.TabIndex = 20;
@@ -88,6 +88,7 @@
             // IdRectanglesTextBox
             // 
             this.IdRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IdRectanglesTextBox.Enabled = false;
             this.IdRectanglesTextBox.Location = new System.Drawing.Point(113, 350);
             this.IdRectanglesTextBox.Name = "IdRectanglesTextBox";
             this.IdRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
@@ -123,7 +124,7 @@
             // HeightRectanglesTextBox
             // 
             this.HeightRectanglesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HeightRectanglesTextBox.Location = new System.Drawing.Point(113, 462);
+            this.HeightRectanglesTextBox.Location = new System.Drawing.Point(113, 463);
             this.HeightRectanglesTextBox.Name = "HeightRectanglesTextBox";
             this.HeightRectanglesTextBox.Size = new System.Drawing.Size(100, 22);
             this.HeightRectanglesTextBox.TabIndex = 25;
@@ -187,7 +188,7 @@
             this.RemoveRectangleButton.Image = global::Programming.Properties.Resources.rectangle_remove_24x24_uncolor;
             this.RemoveRectangleButton.Location = new System.Drawing.Point(193, 248);
             this.RemoveRectangleButton.Name = "RemoveRectangleButton";
-            this.RemoveRectangleButton.Size = new System.Drawing.Size(50, 50);
+            this.RemoveRectangleButton.Size = new System.Drawing.Size(65, 65);
             this.RemoveRectangleButton.TabIndex = 18;
             this.RemoveRectangleButton.UseVisualStyleBackColor = true;
             this.RemoveRectangleButton.Click += new System.EventHandler(this.RemoveRectangleButton_Click);
@@ -203,7 +204,7 @@
             this.AddRectangleButton.Location = new System.Drawing.Point(73, 248);
             this.AddRectangleButton.Name = "AddRectangleButton";
             this.AddRectangleButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AddRectangleButton.Size = new System.Drawing.Size(50, 50);
+            this.AddRectangleButton.Size = new System.Drawing.Size(65, 65);
             this.AddRectangleButton.TabIndex = 16;
             this.AddRectangleButton.UseVisualStyleBackColor = true;
             this.AddRectangleButton.Click += new System.EventHandler(this.AddRectangleButton_Click);

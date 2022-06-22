@@ -66,7 +66,7 @@ namespace Programming.View.Panels
         /// </summary>
         /// <param name="rectangle">Объект Rectangle</param>
         /// <returns>Значение типа string</returns>
-        private string RectangleParameters(Rectangle rectangle)
+        private string RectangleDescription(Rectangle rectangle)
         {
             return $"{rectangle.Id}: " +
                    $"(X: {rectangle.Center.X};" +
@@ -81,11 +81,11 @@ namespace Programming.View.Panels
         /// <param name="rectangle"></param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
-            int index = RectanglesPanelListBox.FindString(rectangle.Id.ToString());
+            int index = _rectangles.IndexOf(rectangle);
 
             if (index == -1) return;
 
-            RectanglesPanelListBox.Items[index] = RectangleParameters(rectangle);
+            RectanglesPanelListBox.Items[index] = RectangleDescription(rectangle);
         }
 
         /// <summary>
@@ -95,11 +95,13 @@ namespace Programming.View.Panels
         /// <returns>Значение типа Panel</returns>
         private Panel InitPanel(Rectangle rectangle)
         {
-            Panel rectanglePanel = new Panel();
-            rectanglePanel.Width = rectangle.Width;
-            rectanglePanel.Height = rectangle.Height;
-            rectanglePanel.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-            rectanglePanel.BackColor = AllColors.UnContact;
+            Panel rectanglePanel = new Panel
+            {
+                Width = rectangle.Width,
+                Height = rectangle.Height,
+                Location = new Point(rectangle.Center.X, rectangle.Center.Y),
+                BackColor = AllColors.UnCollisions
+            };
 
             return rectanglePanel;
         }
@@ -111,17 +113,17 @@ namespace Programming.View.Panels
         {
             for (int i = 0; i < _rectangles.Count; i++)
             {
-                CanvasPanel.Controls[i].BackColor = AllColors.UnContact;
+                CanvasPanel.Controls[i].BackColor = AllColors.UnCollisions;
             }
 
             for (int i = 0; i < _rectangles.Count - 1; i++)
             {
                 for (int j = i + 1; j < _rectangles.Count; j++)
                 {
-                    if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]) && (_rectangles[i] != _rectangles[j]))
+                    if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
                     {
-                        CanvasPanel.Controls[i].BackColor = AllColors.InContact;
-                        CanvasPanel.Controls[j].BackColor = AllColors.InContact;
+                        CanvasPanel.Controls[i].BackColor = AllColors.InCollisions;
+                        CanvasPanel.Controls[j].BackColor = AllColors.InCollisions;
                     }
                 }
             }
@@ -132,7 +134,7 @@ namespace Programming.View.Panels
             _currentRectangle = RectangleFactory.Randomize(CanvasPanel.Width, CanvasPanel.Height);
 
             _rectangles.Add(_currentRectangle);
-            RectanglesPanelListBox.Items.Add(RectangleParameters(_currentRectangle));
+            RectanglesPanelListBox.Items.Add(RectangleDescription(_currentRectangle));
 
             Panel rectanglePanel = InitPanel(_currentRectangle);
             _rectanglePanels.Add(rectanglePanel);
@@ -156,7 +158,7 @@ namespace Programming.View.Panels
 
             foreach (var rectangle in _rectangles)
             {
-                RectanglesPanelListBox.Items.Add($"{rectangle.Id}: (X: {rectangle.Center.X}; Y: {rectangle.Center.Y}; W: {rectangle.Width}; H: {rectangle.Height})");
+                RectanglesPanelListBox.Items.Add(RectangleDescription(rectangle));
                 RectanglesPanelListBox.SelectedIndex = 0;
             }
 

@@ -28,7 +28,7 @@ namespace Programming.Model.Classes
         private int _id;
 
         /// <summary>
-        /// Счетчик фильмов. <br/> <br/>
+        /// Счетчик фильмов. <br/>
         /// Нужен для создания идентификатора фильма.
         /// </summary>
         private static int _count;

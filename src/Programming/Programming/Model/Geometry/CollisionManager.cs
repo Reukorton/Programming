@@ -15,8 +15,6 @@ namespace Programming.Model.Geometry
         /// <returns></returns>
         public static bool IsCollision(Rectangle rectangle1, Rectangle rectangle2)
         {
-            int dX = Math.Abs(rectangle1.Center.X - rectangle2.Center.X);
-            int dY = Math.Abs(rectangle1.Center.Y - rectangle2.Center.Y);
             return rectangle1.Center.X < rectangle2.Center.X + rectangle2.Width &&
                    rectangle1.Center.X + rectangle1.Width > rectangle2.Center.X &&
                    rectangle1.Center.Y < rectangle2.Center.Y + rectangle2.Height &&

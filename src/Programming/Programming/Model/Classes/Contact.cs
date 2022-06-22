@@ -16,7 +16,7 @@
         private string _firstName;
 
         /// <summary>
-        /// Фамилия человка.
+        /// Фамилия человека.
         /// </summary>
         private string _lastName;
 
