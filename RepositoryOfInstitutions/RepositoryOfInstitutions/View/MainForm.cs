@@ -201,7 +201,7 @@ namespace RepositoryOfInstitutions.View
             UpdatingInformationInstitution();
         }
 
-        private List<Institution> SortCategory(List<Institution> institutions)
+        private List<Institution> Sorting(List<Institution> institutions)
         {
             var sortedInstitution = from value in institutions
                                  orderby value.Category, value.Title
@@ -220,7 +220,7 @@ namespace RepositoryOfInstitutions.View
 
             if (SearchTextBox.Text != "")
             {
-                _institutionSearch = SortCategory(_institutionSearch);
+                _institutionSearch = Sorting(_institutionSearch);
 
                 foreach (var value in _institutionSearch)
                 {
@@ -233,7 +233,7 @@ namespace RepositoryOfInstitutions.View
 
             if (SearchTextBox.Text == "")
             {
-                _institutions = SortCategory(_institutions);
+                _institutions = Sorting(_institutions);
 
                 foreach (var value in _institutions)
                 {
