@@ -1,4 +1,4 @@
-﻿namespace RepositoryOfInstitutions
+﻿namespace RepositoryOfInstitutions.View
 {
     partial class ListOfInstitution
     {
@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListOfInstitution));
             this.InstitutionsListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CurrentInstitutionGroupBox = new System.Windows.Forms.GroupBox();
             this.RatingTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
@@ -44,7 +44,7 @@
             this.RemoveInstitutionButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.CurrentInstitutionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // InstitutionsListBox
@@ -66,22 +66,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Institution:";
             // 
-            // groupBox1
+            // CurrentInstitutionGroupBox
             // 
-            this.groupBox1.Controls.Add(this.RatingTextBox);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.CategoryComboBox);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.AddressTextBox);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.TitleTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(556, 81);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(700, 311);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.CurrentInstitutionGroupBox.Controls.Add(this.RatingTextBox);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.label5);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.CategoryComboBox);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.label4);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.AddressTextBox);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.label3);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.label2);
+            this.CurrentInstitutionGroupBox.Controls.Add(this.TitleTextBox);
+            this.CurrentInstitutionGroupBox.Location = new System.Drawing.Point(556, 81);
+            this.CurrentInstitutionGroupBox.Name = "CurrentInstitutionGroupBox";
+            this.CurrentInstitutionGroupBox.Size = new System.Drawing.Size(700, 311);
+            this.CurrentInstitutionGroupBox.TabIndex = 2;
+            this.CurrentInstitutionGroupBox.TabStop = false;
+            this.CurrentInstitutionGroupBox.Text = "Current Institution";
             // 
             // RatingTextBox
             // 
@@ -210,7 +210,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.RemoveInstitutionButton);
             this.Controls.Add(this.AddInstitutionButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.CurrentInstitutionGroupBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.InstitutionsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -218,8 +218,8 @@
             this.Name = "ListOfInstitution";
             this.Text = "ListOfInstitution";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.CurrentInstitutionGroupBox.ResumeLayout(false);
+            this.CurrentInstitutionGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +229,7 @@
 
         private System.Windows.Forms.ListBox InstitutionsListBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox CurrentInstitutionGroupBox;
         private System.Windows.Forms.TextBox RatingTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CategoryComboBox;

@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RepositoryOfInstitutions
+namespace RepositoryOfInstitutions.View
 {
     public partial class ListOfInstitution : Form
     {
@@ -69,7 +69,7 @@ namespace RepositoryOfInstitutions
             _currentInstitution = new Institution();
 
             _institutions.Add(_currentInstitution);
-            InstitutionsListBox.Items.Add(_currentInstitution.InstitutionParameters());
+            InstitutionsListBox.Items.Add(_currentInstitution.InstitutionDescription());
 
             InstitutionsListBox.SelectedIndex = _institutions.Count - 1;
 
@@ -78,7 +78,11 @@ namespace RepositoryOfInstitutions
 
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (TitleTextBox.Text == "") return;
+            if (TitleTextBox.Text == "")
+            {
+                TitleTextBox.BackColor = _errorColor;
+                return;
+            }
 
             try
             {
@@ -115,7 +119,11 @@ namespace RepositoryOfInstitutions
 
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (AddressTextBox.Text == "") return;
+            if (AddressTextBox.Text == "")
+            {
+                AddressTextBox.BackColor = _errorColor;
+                return;
+            }
 
             try
             {
@@ -216,7 +224,7 @@ namespace RepositoryOfInstitutions
 
                 foreach (var value in _institutionSearch)
                 {
-                    InstitutionsListBox.Items.Add(value.InstitutionParameters());
+                    InstitutionsListBox.Items.Add(value.InstitutionDescription());
                 }
 
                 var index = _institutionSearch.IndexOf(_currentInstitution);
@@ -229,7 +237,7 @@ namespace RepositoryOfInstitutions
 
                 foreach (var value in _institutions)
                 {
-                    InstitutionsListBox.Items.Add(value.InstitutionParameters());
+                    InstitutionsListBox.Items.Add(value.InstitutionDescription());
                 }
 
                 var index = _institutions.IndexOf(_currentInstitution);

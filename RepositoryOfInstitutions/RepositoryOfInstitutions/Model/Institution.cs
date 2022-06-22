@@ -2,6 +2,9 @@
 
 namespace RepositoryOfInstitutions.Model
 {
+    /// <summary>
+    /// Хранит данные об учреждении.
+    /// </summary>
     public class Institution
     {
         /// <summary>
@@ -111,7 +114,7 @@ namespace RepositoryOfInstitutions.Model
         /// Создание строки из Id, Category и Title класса <see cref="Institution"/>.
         /// </summary>
         /// <returns></returns>
-        public string InstitutionParameters()
+        public string InstitutionDescription()
         {
             return $"{Id}: {Category} - {Title}";
         }

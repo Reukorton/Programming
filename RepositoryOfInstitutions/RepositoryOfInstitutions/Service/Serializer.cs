@@ -5,6 +5,9 @@ using Newtonsoft.Json;
 
 namespace RepositoryOfInstitutions.Service
 {
+    /// <summary>
+    /// Предоставляет методы для сериализации и десериализации.
+    /// </summary>
     public static class Serializer
     {
         /// <summary>
