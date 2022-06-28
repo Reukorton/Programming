@@ -181,7 +181,6 @@ namespace Programming.View.Controls
             }
             catch
             {
-
                 XRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
@@ -204,7 +203,6 @@ namespace Programming.View.Controls
             }
             catch
             {
-
                 YRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
@@ -226,7 +224,6 @@ namespace Programming.View.Controls
             }
             catch
             {
-
                 WidthRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
@@ -248,7 +245,6 @@ namespace Programming.View.Controls
             }
             catch
             {
-
                 HeightRectanglesTextBox.BackColor = AllColors.ErrorColor;
                 return;
             }
