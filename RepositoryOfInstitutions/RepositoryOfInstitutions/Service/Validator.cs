@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryOfInstitutions.Service
 {
@@ -23,7 +19,7 @@ namespace RepositoryOfInstitutions.Service
             if (value.Length > count)
             {
                 throw new ArgumentException(
-                    $"Значение \"{propertyName}\" не может иметь длину больше {count} знаков.");
+                    $"{propertyName} не может иметь длину больше {count} знаков.");
             }
         }
 
