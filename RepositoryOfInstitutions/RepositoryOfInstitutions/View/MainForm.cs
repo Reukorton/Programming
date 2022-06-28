@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,32 +15,27 @@ namespace RepositoryOfInstitutions.View
         /// Цвет коррекстного значения.
         /// </summary>
         private readonly Color _correctColor = Color.White;
-
+        
         /// <summary>
         /// Цвет некорректного значения.
         /// </summary>
         private readonly Color _errorColor = Color.LightPink;
-
+        
         /// <summary>
         /// Список учреждений.
         /// </summary>
         private List<Institution> _institutions = new List<Institution>();
-
-        /// <summary>
-        /// Список для поиска нужного учреждения.
-        /// </summary>
-        private List<Institution> _institutionSearch;
-
+        
         /// <summary>
         /// Выбранное учреждение.
         /// </summary>
         private Institution _currentInstitution;
-
+        
         /// <summary>
         /// Массив перечислений.
         /// </summary>
         private Array _categories = Enum.GetValues(typeof(Categories));
-
+        
         /// <summary>
         /// Создает экземпля класса <see cref="ListOfInstitution"/>.
         /// </summary>
@@ -73,6 +67,8 @@ namespace RepositoryOfInstitutions.View
 
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (InstitutionsListBox.SelectedIndex == -1) return;
+
             if (TitleTextBox.Text == "")
             {
                 TitleTextBox.BackColor = _errorColor;
@@ -84,7 +80,7 @@ namespace RepositoryOfInstitutions.View
                 _currentInstitution.Title = TitleTextBox.Text;
                 UpdateListBoxInfo();
             }
-            catch (Exception)
+            catch
             {
 
                 TitleTextBox.BackColor = _errorColor;
@@ -114,6 +110,8 @@ namespace RepositoryOfInstitutions.View
 
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (InstitutionsListBox.SelectedIndex == -1) return;
+
             if (AddressTextBox.Text == "")
             {
                 AddressTextBox.BackColor = _errorColor;
@@ -140,6 +138,82 @@ namespace RepositoryOfInstitutions.View
             UpdateListBoxInfo();
         }
 
+        private void RatingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (InstitutionsListBox.SelectedIndex == -1) return;
+
+            try
+            {
+                _currentInstitution.Rating = double.Parse(RatingTextBox.Text);
+            }
+            catch
+            {
+                RatingTextBox.BackColor = _errorColor;
+                return;
+            }
+            RatingTextBox.BackColor = _correctColor;
+        }
+
+        private void RemoveInstitutionButton_Click(object sender, EventArgs e)
+        {
+            if (InstitutionsListBox.SelectedIndex == -1) return;
+
+            InstitutionsListBox.Items.RemoveAt(_institutions.IndexOf(_currentInstitution));
+            _institutions.RemoveAt(_institutions.IndexOf(_currentInstitution));
+            InstitutionsListBox.SelectedIndex = _institutions.Count > 0 ? 0 : -1;
+
+            UpdatingInformationInstitution();
+
+            if (_institutions.Count == 0) ClearInformation();
+        }
+
+        /// <summary>
+        /// Сортировка по категории, а внутри по алфавиту.
+        /// </summary>
+        /// <param name="institutions">Искомое значение.</param>
+        /// <returns>Отсортированный список.</returns>
+        private List<Institution> Sort(List<Institution> institutions)
+        {
+            var sortedInstitution = from value in institutions
+                                    orderby value.Category, value.Title
+                                    select value;
+            institutions = sortedInstitution.ToList();
+
+            return institutions;
+        }
+
+        /// <summary>
+        /// Обновление лист бокса в зависимости от искомого учреждения.
+        /// </summary>
+        private void UpdateListBoxInfo()
+        {
+            InstitutionsListBox.Items.Clear();
+
+
+            _institutions = Sort(_institutions);
+
+            foreach (var value in _institutions)
+            {
+               InstitutionsListBox.Items.Add(value.InstitutionDescription());
+            }
+
+            var index = _institutions.IndexOf(_currentInstitution);
+            InstitutionsListBox.SelectedIndex = Convert.ToInt32(index);
+        }
+
+        private void ClearInformation()
+        {
+            TitleTextBox.Clear();
+            AddressTextBox.Clear();
+            CategoryComboBox.SelectedIndex = 0;
+            RatingTextBox.Clear();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Serializer.SaveInfo(_institutions);
+        }
+
         private void AddInstitutionButton_MouseEnter(object sender, EventArgs e)
         {
             AddInstitutionButton.BackgroundImage = Properties.Resources.AddUp;
@@ -158,121 +232,6 @@ namespace RepositoryOfInstitutions.View
         private void RemoveInstitutionButton_MouseLeave(object sender, EventArgs e)
         {
             RemoveInstitutionButton.BackgroundImage = Properties.Resources.RemoveDown;
-        }
-
-        private void RatingTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _currentInstitution.Rating = double.Parse(RatingTextBox.Text);
-            }
-            catch
-            {
-                RatingTextBox.BackColor = _errorColor;
-                return;
-            }
-            RatingTextBox.BackColor = _correctColor;
-        }
-
-        private void RemoveInstitutionButton_Click(object sender, EventArgs e)
-        {
-            if (InstitutionsListBox.SelectedIndex == -1) return;
-
-            if (SearchTextBox.Text != "" && _institutions.Count > 0)
-            {
-                InstitutionsListBox.Items.RemoveAt(_institutionSearch.IndexOf(_currentInstitution));
-                _institutionSearch.RemoveAt(_institutionSearch.IndexOf(_currentInstitution));
-                _institutions.Remove(_currentInstitution);
-                InstitutionsListBox.SelectedIndex = _institutionSearch.Count > 0 ? 0 : -1;
-            }
-
-            if (SearchTextBox.Text == "" && _institutions.Count > 0)
-            {
-                InstitutionsListBox.Items.RemoveAt(_institutions.IndexOf(_currentInstitution));
-                _institutions.RemoveAt(_institutions.IndexOf(_currentInstitution));
-                InstitutionsListBox.SelectedIndex = _institutions.Count > 0 ? 0 : -1;
-            }
-
-            UpdatingInformationInstitution();
-        }
-
-        private List<Institution> Sorting(List<Institution> institutions)
-        {
-            var sortedInstitution = from value in institutions
-                                 orderby value.Category, value.Title
-                                 select value;
-            institutions = sortedInstitution.ToList();
-
-            return institutions;
-        }
-
-        /// <summary>
-        /// Обновление лист бокса в зависимости от искомого учреждения.
-        /// </summary>
-        private void UpdateListBoxInfo()
-        {
-            InstitutionsListBox.Items.Clear();
-
-            if (SearchTextBox.Text != "")
-            {
-                _institutionSearch = Sorting(_institutionSearch);
-
-                foreach (var value in _institutionSearch)
-                {
-                    InstitutionsListBox.Items.Add(value.InstitutionDescription());
-                }
-
-                var index = _institutionSearch.IndexOf(_currentInstitution);
-                InstitutionsListBox.SelectedIndex = Convert.ToInt32(index);
-            }
-
-            if (SearchTextBox.Text == "")
-            {
-                _institutions = Sorting(_institutions);
-
-                foreach (var value in _institutions)
-                {
-                    InstitutionsListBox.Items.Add(value.InstitutionDescription());
-                }
-
-                var index = _institutions.IndexOf(_currentInstitution);
-                InstitutionsListBox.SelectedIndex = Convert.ToInt32(index);
-            }
-
-        }
-
-        private void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            _institutionSearch = Search(SearchTextBox.Text);
-
-            UpdateListBoxInfo();
-        }
-
-        /// <summary>
-        /// Сортировка по категории, а внутри по алфавиту.
-        /// </summary>
-        /// <param name="searchText">Искомое значение.</param>
-        /// <returns>Отсортированный список.</returns>
-        private List<Institution> Search(string searchText)
-        {
-            var result = from value in _institutions
-                         where value.Title.Contains(searchText) ||
-                         value.Category.ToString().Contains(searchText)
-                         select value;
-
-            return result.ToList();
-        }
-
-        /// <summary>
-        /// Сохранение данных при закрытие формы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var filePath = Path.Combine(appDataPath, "List Of institution\\save_institution.json");
-            Serializer.NotesToJson(_institutions, filePath);
         }
     }
 }

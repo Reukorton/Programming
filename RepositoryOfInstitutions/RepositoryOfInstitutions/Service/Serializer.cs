@@ -73,5 +73,12 @@ namespace RepositoryOfInstitutions.Service
 
             return institutions;
         }
+
+        public static void SaveInfo(List<Institution> institution)
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var filePath = Path.Combine(appDataPath, _filePath);
+            NotesToJson(institution, filePath);
+        }
     }
 }
