@@ -12,7 +12,7 @@ namespace RepositoryOfInstitutions.View
     public partial class ListOfInstitution : Form
     {
         /// <summary>
-        /// Цвет коррекстного значения.
+        /// Цвет корректного значения.
         /// </summary>
         private readonly Color _correctColor = Color.White;
         
@@ -37,7 +37,7 @@ namespace RepositoryOfInstitutions.View
         private Array _categories = Enum.GetValues(typeof(Categories));
         
         /// <summary>
-        /// Создает экземпля класса <see cref="ListOfInstitution"/>.
+        /// Создает экземпляр класса <see cref="ListOfInstitution"/>.
         /// </summary>
         public ListOfInstitution()
         {
@@ -68,12 +68,6 @@ namespace RepositoryOfInstitutions.View
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             if (InstitutionsListBox.SelectedIndex == -1) return;
-
-            if (TitleTextBox.Text == "")
-            {
-                TitleTextBox.BackColor = _errorColor;
-                return;
-            }
 
             try
             {
@@ -111,12 +105,6 @@ namespace RepositoryOfInstitutions.View
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
             if (InstitutionsListBox.SelectedIndex == -1) return;
-
-            if (AddressTextBox.Text == "")
-            {
-                AddressTextBox.BackColor = _errorColor;
-                return;
-            }
 
             try
             {
@@ -158,28 +146,15 @@ namespace RepositoryOfInstitutions.View
         {
             if (InstitutionsListBox.SelectedIndex == -1) return;
 
-            InstitutionsListBox.Items.RemoveAt(_institutions.IndexOf(_currentInstitution));
-            _institutions.RemoveAt(_institutions.IndexOf(_currentInstitution));
+            int index = _institutions.IndexOf(_currentInstitution);
+
+            InstitutionsListBox.Items.RemoveAt(index);
+            _institutions.RemoveAt(index);
             InstitutionsListBox.SelectedIndex = _institutions.Count > 0 ? 0 : -1;
 
             UpdatingInformationInstitution();
 
             if (_institutions.Count == 0) ClearInformation();
-        }
-
-        /// <summary>
-        /// Сортировка по категории, а внутри по алфавиту.
-        /// </summary>
-        /// <param name="institutions">Искомое значение.</param>
-        /// <returns>Отсортированный список.</returns>
-        private List<Institution> Sort(List<Institution> institutions)
-        {
-            var sortedInstitution = from value in institutions
-                                    orderby value.Category, value.Title
-                                    select value;
-            institutions = sortedInstitution.ToList();
-
-            return institutions;
         }
 
         /// <summary>
@@ -189,8 +164,7 @@ namespace RepositoryOfInstitutions.View
         {
             InstitutionsListBox.Items.Clear();
 
-
-            _institutions = Sort(_institutions);
+            _institutions = Sorting.Sort(_institutions);
 
             foreach (var value in _institutions)
             {

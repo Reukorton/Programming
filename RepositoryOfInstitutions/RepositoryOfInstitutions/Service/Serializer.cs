@@ -18,7 +18,7 @@ namespace RepositoryOfInstitutions.Service
         /// </summary>
         /// <param name="institutions">Учреждения.</param>
         /// <param name="filePath">Путь к файлу.</param>
-        public static void NotesToJson(List<Institution> institutions, string filePath)
+        public static void Serialize(List<Institution> institutions, string filePath)
         {
             var serializer = new JsonSerializer();
 
@@ -34,7 +34,7 @@ namespace RepositoryOfInstitutions.Service
         /// </summary>
         /// <param name="path">Путь к файлу.</param>
         /// <returns></returns>
-        public static List<Institution> FromJson(string path)
+        public static List<Institution> Deserialize(string path)
         {
             var serializer = new JsonSerializer();
 
@@ -69,16 +69,20 @@ namespace RepositoryOfInstitutions.Service
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var filePath = Path.Combine(appDataPath, _filePath);
-            var institutions = Serializer.FromJson(filePath);
+            var institutions = Serializer.Deserialize(filePath);
 
             return institutions;
         }
 
+        /// <summary>
+        /// Сохраняет значения списка.
+        /// </summary>
+        /// <param name="institution">Сохраняемый список.</param>
         public static void SaveInfo(List<Institution> institution)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var filePath = Path.Combine(appDataPath, _filePath);
-            NotesToJson(institution, filePath);
+            Serialize(institution, filePath);
         }
     }
 }
