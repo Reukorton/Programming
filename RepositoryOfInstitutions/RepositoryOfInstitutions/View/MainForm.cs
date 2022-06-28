@@ -286,9 +286,8 @@ namespace RepositoryOfInstitutions.View
                 if (File.Exists(filePath)) return;
                 File.Create(filePath);
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
                 throw;
             }
         }
