@@ -8,7 +8,7 @@ namespace RepositoryOfInstitutions.Model
     public class Institution
     {
         /// <summary>
-        /// Название усреждения.
+        /// Название учреждения.
         /// </summary>
         private string _title = "None";
 
@@ -33,7 +33,7 @@ namespace RepositoryOfInstitutions.Model
         public static int Count { get; set; }
 
         /// <summary>
-        /// Уникальный идентификатор фильма.
+        /// Уникальный идентификатор учреждения.
         /// </summary>
         public int Id { get; set; }
 

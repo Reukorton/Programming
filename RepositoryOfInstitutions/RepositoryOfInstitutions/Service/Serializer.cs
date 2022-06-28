@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using RepositoryOfInstitutions.Model;
 using Newtonsoft.Json;
@@ -10,6 +11,8 @@ namespace RepositoryOfInstitutions.Service
     /// </summary>
     public static class Serializer
     {
+        public const string _filePath = "List Of institution\\save_institution.json";
+
         /// <summary>
         /// Сериализует коллекцию <see cref="Institution"/> в файл json.
         /// </summary>
@@ -40,6 +43,35 @@ namespace RepositoryOfInstitutions.Service
             {
                 return serializer.Deserialize<List<Institution>>(reader) ?? new List<Institution>();
             }
+        }
+
+        /// <summary>
+        /// Создает мета-данные приложения в папке AppData.
+        /// </summary>
+        public static void CreateFilesToAppData()
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var directory = Path.Combine(appDataPath, "List Of institution");
+
+            if (Directory.Exists(directory)) return;
+            Directory.CreateDirectory(directory);
+
+            var filePath = Path.Combine(appDataPath, _filePath);
+
+            if (File.Exists(filePath)) return;
+            using (FileStream _ = File.Create(filePath)) { }  
+        }
+
+        /// <summary>
+        /// Загрузка данных из файла на форму.
+        /// </summary>
+        public static List<Institution> LoadInstitutionFromJson()
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var filePath = Path.Combine(appDataPath, _filePath);
+            var institutions = Serializer.FromJson(filePath);
+
+            return institutions;
         }
     }
 }

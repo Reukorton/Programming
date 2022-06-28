@@ -25,7 +25,7 @@ namespace RepositoryOfInstitutions.View
         /// <summary>
         /// Список учреждений.
         /// </summary>
-        private List<Institution> _institutions;
+        private List<Institution> _institutions = new List<Institution>();
 
         /// <summary>
         /// Список для поиска нужного учреждения.
@@ -40,7 +40,7 @@ namespace RepositoryOfInstitutions.View
         /// <summary>
         /// Массив перечислений.
         /// </summary>
-        private Array _categories;
+        private Array _categories = Enum.GetValues(typeof(Categories));
 
         /// <summary>
         /// Создает экземпля класса <see cref="ListOfInstitution"/>.
@@ -49,18 +49,13 @@ namespace RepositoryOfInstitutions.View
         {
             InitializeComponent();
 
-            _institutions = new List<Institution>();
-            _categories = Enum.GetValues(typeof(Categories));
-
             foreach (var item in _categories)
             {
                 CategoryComboBox.Items.Add(item);
             }
 
-            Icon = new Icon(@"university.ico");
-
-            CreateFilesToAppData();
-            LoadInstitutionFromJson();
+            Serializer.CreateFilesToAppData();
+            _institutions = Serializer.LoadInstitutionFromJson();
             UpdateListBoxInfo();
         }
 
@@ -247,7 +242,7 @@ namespace RepositoryOfInstitutions.View
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {;
+        {
             _institutionSearch = Search(SearchTextBox.Text);
 
             UpdateListBoxInfo();
@@ -269,40 +264,6 @@ namespace RepositoryOfInstitutions.View
         }
 
         /// <summary>
-        /// Создает мета-данные приложения в папке AppData.
-        /// </summary>
-        private static void CreateFilesToAppData()
-        {
-            try
-            {
-                var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                var directory = Path.Combine(appDataPath, "List Of institution");
-
-                if (Directory.Exists(directory)) return;
-                Directory.CreateDirectory(directory);
-
-                var filePath = Path.Combine(appDataPath, "List Of institution\\save_institution.json");
-
-                if (File.Exists(filePath)) return;
-                File.Create(filePath);
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Загрузка данных из файла на форму.
-        /// </summary>
-        private void LoadInstitutionFromJson()
-        {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var filePath = Path.Combine(appDataPath, "List Of institution\\save_institution.json");
-            _institutions = Serializer.FromJson(filePath);
-        }
-
-        /// <summary>
         /// Сохранение данных при закрытие формы.
         /// </summary>
         /// <param name="sender"></param>
@@ -311,8 +272,7 @@ namespace RepositoryOfInstitutions.View
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var filePath = Path.Combine(appDataPath, "List Of institution\\save_institution.json");
-            var institutions = _institutions;
-            Serializer.NotesToJson(institutions, filePath);
+            Serializer.NotesToJson(_institutions, filePath);
         }
     }
 }

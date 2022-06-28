@@ -42,8 +42,6 @@
             this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.AddInstitutionButton = new System.Windows.Forms.Button();
             this.RemoveInstitutionButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.CurrentInstitutionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +74,7 @@
             this.CurrentInstitutionGroupBox.Controls.Add(this.label3);
             this.CurrentInstitutionGroupBox.Controls.Add(this.label2);
             this.CurrentInstitutionGroupBox.Controls.Add(this.TitleTextBox);
-            this.CurrentInstitutionGroupBox.Location = new System.Drawing.Point(556, 81);
+            this.CurrentInstitutionGroupBox.Location = new System.Drawing.Point(556, 49);
             this.CurrentInstitutionGroupBox.Name = "CurrentInstitutionGroupBox";
             this.CurrentInstitutionGroupBox.Size = new System.Drawing.Size(700, 311);
             this.CurrentInstitutionGroupBox.TabIndex = 2;
@@ -184,30 +182,11 @@
             this.RemoveInstitutionButton.MouseEnter += new System.EventHandler(this.RemoveInstitutionButton_MouseEnter);
             this.RemoveInstitutionButton.MouseLeave += new System.EventHandler(this.RemoveInstitutionButton_MouseLeave);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(589, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Search:";
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Location = new System.Drawing.Point(661, 43);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(566, 22);
-            this.SearchTextBox.TabIndex = 13;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
             // ListOfInstitution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 520);
-            this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.RemoveInstitutionButton);
             this.Controls.Add(this.AddInstitutionButton);
             this.Controls.Add(this.CurrentInstitutionGroupBox);
@@ -240,8 +219,6 @@
         private System.Windows.Forms.TextBox TitleTextBox;
         private System.Windows.Forms.Button AddInstitutionButton;
         private System.Windows.Forms.Button RemoveInstitutionButton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }
 
