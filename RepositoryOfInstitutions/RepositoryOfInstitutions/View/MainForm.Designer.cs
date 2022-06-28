@@ -160,9 +160,9 @@
             this.AddInstitutionButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.AddInstitutionButton.FlatAppearance.BorderSize = 0;
             this.AddInstitutionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddInstitutionButton.Location = new System.Drawing.Point(556, 415);
+            this.AddInstitutionButton.Location = new System.Drawing.Point(556, 431);
             this.AddInstitutionButton.Name = "AddInstitutionButton";
-            this.AddInstitutionButton.Size = new System.Drawing.Size(70, 70);
+            this.AddInstitutionButton.Size = new System.Drawing.Size(54, 54);
             this.AddInstitutionButton.TabIndex = 10;
             this.AddInstitutionButton.UseVisualStyleBackColor = true;
             this.AddInstitutionButton.Click += new System.EventHandler(this.AddInstitutionButton_Click);
@@ -175,9 +175,9 @@
             this.RemoveInstitutionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RemoveInstitutionButton.FlatAppearance.BorderSize = 0;
             this.RemoveInstitutionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveInstitutionButton.Location = new System.Drawing.Point(673, 415);
+            this.RemoveInstitutionButton.Location = new System.Drawing.Point(643, 431);
             this.RemoveInstitutionButton.Name = "RemoveInstitutionButton";
-            this.RemoveInstitutionButton.Size = new System.Drawing.Size(70, 70);
+            this.RemoveInstitutionButton.Size = new System.Drawing.Size(54, 54);
             this.RemoveInstitutionButton.TabIndex = 11;
             this.RemoveInstitutionButton.UseVisualStyleBackColor = true;
             this.RemoveInstitutionButton.Click += new System.EventHandler(this.RemoveInstitutionButton_Click);
