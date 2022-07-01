@@ -159,7 +159,7 @@ namespace RepositoryOfInstitutions.View
         }
 
         /// <summary>
-        /// Обновление лист бокса в зависимости от искомого учреждения.
+        /// Обновление лист бокса.
         /// </summary>
         private void UpdateListBoxInfo()
         {

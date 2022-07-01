@@ -11,6 +11,9 @@ namespace RepositoryOfInstitutions.Service
     /// </summary>
     public static class Serializer
     {
+        /// <summary>
+        /// Относительный путь файла.
+        /// </summary>
         public const string _filePath = "List Of institution\\save_institution.json";
 
         /// <summary>
@@ -30,7 +33,7 @@ namespace RepositoryOfInstitutions.Service
         }
 
         /// <summary>
-        /// Сериализует файл json в <see cref="Institution"/>.
+        /// Десериализует файл json в <see cref="Institution"/>.
         /// </summary>
         /// <param name="path">Путь к файлу.</param>
         /// <returns></returns>

@@ -5,12 +5,12 @@ using RepositoryOfInstitutions.Model;
 namespace RepositoryOfInstitutions.Service
 {
     /// <summary>
-    /// Статистический класс хранящий методы для сортировки.
+    /// Статистический класс, хранящий методы для сортировки.
     /// </summary>
     public static class Sorting
     {
         /// <summary>
-        /// Сортировка по категории, а внутри по алфавиту.
+        /// Сортировка по категории, а внутри - по алфавиту.
         /// </summary>
         /// <param name="institutions">Искомое значение.</param>
         /// <returns>Отсортированный список.</returns>
