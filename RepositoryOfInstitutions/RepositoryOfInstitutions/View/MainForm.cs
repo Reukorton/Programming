@@ -2,9 +2,7 @@
 using RepositoryOfInstitutions.Service;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace RepositoryOfInstitutions.View
@@ -76,7 +74,6 @@ namespace RepositoryOfInstitutions.View
             }
             catch
             {
-
                 TitleTextBox.BackColor = _errorColor;
                 return;
             }
@@ -88,6 +85,10 @@ namespace RepositoryOfInstitutions.View
         /// </summary>
         private void UpdatingInformationInstitution()
         {
+            TitleTextBox.BackColor = _correctColor;
+            AddressTextBox.BackColor = _correctColor;
+            RatingTextBox.BackColor = _correctColor;
+
             TitleTextBox.Text = _currentInstitution.Title;
             AddressTextBox.Text = _currentInstitution.Address;
             CategoryComboBox.SelectedItem = _currentInstitution.Category;

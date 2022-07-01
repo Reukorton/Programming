@@ -1,10 +1,12 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RepositoryOfInstitutions.Model;
 
 namespace RepositoryOfInstitutions.Service
 {
+    /// <summary>
+    /// Статистический класс хранящий методы для сортировки.
+    /// </summary>
     public static class Sorting
     {
         /// <summary>
