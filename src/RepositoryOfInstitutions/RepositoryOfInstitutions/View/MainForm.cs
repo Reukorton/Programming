@@ -63,6 +63,7 @@ namespace RepositoryOfInstitutions.View
             UpdateListBoxInfo();
         }
 
+
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             if (InstitutionsListBox.SelectedIndex == -1) return;
@@ -173,7 +174,7 @@ namespace RepositoryOfInstitutions.View
             }
 
             var index = _institutions.IndexOf(_currentInstitution);
-            InstitutionsListBox.SelectedIndex = Convert.ToInt32(index);
+            InstitutionsListBox.SelectedIndex = index;
         }
 
         private void ClearInformation()

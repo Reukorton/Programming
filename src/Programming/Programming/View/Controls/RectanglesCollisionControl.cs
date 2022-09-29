@@ -66,7 +66,7 @@ namespace Programming.View.Controls
         /// </summary>
         /// <param name="rectangle">Объект Rectangle</param>
         /// <returns>Значение типа string</returns>
-        private string RectangleDescription(Rectangle rectangle)
+        private static string RectangleDescription(Rectangle rectangle)
         {
             return $"{rectangle.Id}: " +
                    $"(X: {rectangle.Center.X};" +

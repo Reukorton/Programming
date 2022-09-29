@@ -2,6 +2,9 @@
 
 namespace ObjectOrientedPractics.Model
 {
+    /// <summary>
+    /// Хранит данные о товаре.
+    /// </summary>
     public class Item
     {
         /// <summary>
