@@ -1,5 +1,4 @@
-﻿using ObjectOrientedPractics.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,20 +10,11 @@ using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
-    public partial class ItemsTab : UserControl
+    public partial class CustomersTab : UserControl
     {
-        List<Item> _items;
-
-        public ItemsTab()
+        public CustomersTab()
         {
             InitializeComponent();
-
-            _items = new List<Item>();
-        }
-
-        private void AddItemButton_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
