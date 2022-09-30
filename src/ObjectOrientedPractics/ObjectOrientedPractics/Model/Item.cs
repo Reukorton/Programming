@@ -40,6 +40,18 @@ namespace ObjectOrientedPractics.Model
             Info = info;
             Cost = cost;
         }
+         /// <summary>
+         /// Создает пустой экземпляр класса <see cref="Item"/>
+         /// </summary>
+        public Item() 
+        {
+            _id = IdGenerator.GetNextId();
+        }
+
+        public int Id
+        {
+            get => _id;
+        }
 
         /// <summary>
         /// Возвращает и задает название товара. <br/>
@@ -78,9 +90,14 @@ namespace ObjectOrientedPractics.Model
             get => _cost;
             set
             {
-                ValueValidator.AssertValueInRange(value, 0, 10^5, nameof(Cost));
+                ValueValidator.AssertValueInRange(value, 0, 100000, nameof(Cost));
                 _cost = value;
             }
+        }
+
+        public string ItemDescription()
+        {
+            return $"{_id}: {Name}, {Cost}$";
         }
     }
 }

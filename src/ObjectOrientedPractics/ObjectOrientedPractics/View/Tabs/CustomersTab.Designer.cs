@@ -110,6 +110,7 @@
             this.AddCustomerButton.TabIndex = 4;
             this.AddCustomerButton.Text = "Add";
             this.AddCustomerButton.UseVisualStyleBackColor = false;
+            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
             // panel4
             // 
