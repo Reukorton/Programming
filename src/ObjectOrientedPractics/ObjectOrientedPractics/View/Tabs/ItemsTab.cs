@@ -100,9 +100,28 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.Items[index] = _currentItem.ItemDescription(); 
         } 
 
+        public int CountChar(string str, char symbol)
+        {
+            int count = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == symbol)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
-            if ((CostTextBox.Text.Length > 0) && (CostTextBox.Text[CostTextBox.Text.Length - 1] == ',')) return;
+            if (
+                (CostTextBox.Text.Length > 0) && 
+                (CostTextBox.Text[CostTextBox.Text.Length - 1] == ',') &&
+                (CountChar(CostTextBox.Text, ',') < 2)
+                ) return;
 
             try
             {
