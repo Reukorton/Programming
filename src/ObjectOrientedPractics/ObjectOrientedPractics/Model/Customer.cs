@@ -42,6 +42,9 @@ namespace ObjectOrientedPractics.Model
             Address = address;
         }
 
+        /// <summary>
+        /// Возвращает Id покупателя.
+        /// </summary>
         public int Id
         {
             get => _id;
@@ -75,6 +78,10 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Возвращает строку из всех полей класса <see cref="Customer"/>.
+        /// </summary>
+        /// <returns>Строка.</returns>
         public string CustomerDescription()
         {
             return $"{Id}: {Fullname}, {Address}";

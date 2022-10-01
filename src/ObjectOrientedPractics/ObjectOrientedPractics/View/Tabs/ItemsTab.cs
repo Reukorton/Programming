@@ -14,10 +14,19 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
+        /// <summary>
+        /// Список товаров.
+        /// </summary>
         public List<Item> _items;
 
+        /// <summary>
+        /// Выбранный товар.
+        /// </summary>
         public Item _currentItem;
 
+        /// <summary>
+        /// Создание экземпляра класса <see cref="ItemTab"/>.
+        /// </summary>
         public ItemsTab()
         {
             InitializeComponent();
@@ -60,6 +69,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
+        /// <summary>
+        /// Обновление информации во всех TextBox.
+        /// </summary>
         public void UpdateInformationTextBox()
         {
             IDTextBox.Text = _currentItem.Id.ToString();
@@ -68,6 +80,9 @@ namespace ObjectOrientedPractics.View.Tabs
             DescriptionTextBox.Text = _currentItem.Info;
         }
 
+        /// <summary>
+        /// Очистка информации во всех TextBox.
+        /// </summary>
         public void ClearInformationTextBox()
         {
             IDTextBox.Clear();
@@ -81,6 +96,9 @@ namespace ObjectOrientedPractics.View.Tabs
             DescriptionTextBox.BackColor = Colors.CorrectColor;
         }
 
+        /// <summary>
+        /// Выгрузка списка товаров на ListBox.
+        /// </summary>
         public void UpdateListBox()
         {
             foreach (var item in _items)
@@ -97,6 +115,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
+        /// <summary>
+        /// Обновление строки в ListBox.
+        /// </summary>
         public void UpdateItemDescription()
         {
             var index = ItemsListBox.SelectedIndex;
@@ -104,6 +125,12 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.Items[index] = _currentItem.ItemDescription(); 
         } 
 
+        /// <summary>
+        /// Счетчик определенного символа в строке.
+        /// </summary>
+        /// <param name="str">Строка.</param>
+        /// <param name="symbol">Символ.</param>
+        /// <returns>Колличество symbol в str.</returns>
         public int CountChar(string str, char symbol)
         {
             int count = 0;

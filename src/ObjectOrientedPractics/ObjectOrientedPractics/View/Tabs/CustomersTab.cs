@@ -1,12 +1,6 @@
 ﻿using ObjectOrientedPractics.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Customer = ObjectOrientedPractics.Model.Customer;
 
@@ -14,10 +8,19 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CustomersTab : UserControl
     {
+        /// <summary>
+        /// Выбранный покупатель.
+        /// </summary>
         public Customer _currentCustomer;
 
+        /// <summary>
+        /// Список покупателей.
+        /// </summary>
         public List<Customer> _customers;
-
+        
+        /// <summary>
+        /// Создание экземпляра класса <see cref="CustomersTab"/>.
+        /// </summary>
         public CustomersTab()
         {
             InitializeComponent();
@@ -37,6 +40,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
+        /// <summary>
+        /// Обновление информации во всех TextBox.
+        /// </summary>
         public void UpdateInformationTextBox()
         {
             IDTextBox.Text = _currentCustomer.Id.ToString();
@@ -44,6 +50,9 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressTextBox.Text = _currentCustomer.Address;
         }
 
+        /// <summary>
+        /// Очистка информации во всех TextBox.
+        /// </summary>
         public void ClearInformationTextBox()
         {
             IDTextBox.Clear();
@@ -55,6 +64,9 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressTextBox.BackColor = Colors.CorrectColor;
         }
 
+        /// <summary>
+        /// Выгрузка списка покупателей на ListBox.
+        /// </summary>
         public void UpdateListBox()
         {
             foreach (var item in _customers)
@@ -71,6 +83,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
+        /// <summary>
+        /// Обновление строки в ListBox.
+        /// </summary>
         public void UpdateCustomerDescription()
         {
             var index = CustomersListBox.SelectedIndex;

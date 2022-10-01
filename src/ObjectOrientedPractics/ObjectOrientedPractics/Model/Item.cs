@@ -48,6 +48,9 @@ namespace ObjectOrientedPractics.Model
             _id = IdGenerator.GetNextId();
         }
 
+        /// <summary>
+        /// Возвращает Id товара.
+        /// </summary>
         public int Id
         {
             get => _id;
@@ -95,6 +98,10 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Возвращает строку из всех полей класса <see cref="Item"/>.
+        /// </summary>
+        /// <returns></returns>
         public string ItemDescription()
         {
             return $"{_id}: {Name}, {Cost}$";
