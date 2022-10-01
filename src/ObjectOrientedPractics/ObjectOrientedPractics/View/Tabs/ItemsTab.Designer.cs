@@ -53,6 +53,7 @@
             // 
             // AddItemButton
             // 
+            this.AddItemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddItemButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.AddItemButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AddItemButton.Location = new System.Drawing.Point(3, 3);
@@ -77,6 +78,9 @@
             // 
             // ItemsListBox
             // 
+            this.ItemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemsListBox.BackColor = System.Drawing.SystemColors.Menu;
             this.ItemsListBox.FormattingEnabled = true;
             this.ItemsListBox.Location = new System.Drawing.Point(3, 20);
@@ -97,6 +101,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.DescriptionTextBox);
             this.panel1.Controls.Add(this.label6);
@@ -108,12 +115,15 @@
             this.panel1.Controls.Add(this.IDTextBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(363, 3);
+            this.panel1.MinimumSize = new System.Drawing.Size(567, 603);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(567, 603);
             this.panel1.TabIndex = 0;
             // 
             // DescriptionTextBox
             // 
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DescriptionTextBox.Location = new System.Drawing.Point(8, 308);
             this.DescriptionTextBox.Multiline = true;
@@ -124,6 +134,8 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(5, 290);
@@ -134,6 +146,7 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NameTextBox.Location = new System.Drawing.Point(8, 145);
             this.NameTextBox.Multiline = true;
@@ -144,6 +157,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(5, 127);
@@ -154,6 +169,7 @@
             // 
             // CostTextBox
             // 
+            this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CostTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CostTextBox.Location = new System.Drawing.Point(62, 86);
             this.CostTextBox.Multiline = true;
@@ -164,6 +180,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(5, 88);
@@ -174,6 +191,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(5, 49);
@@ -184,6 +202,7 @@
             // 
             // IDTextBox
             // 
+            this.IDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.IDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IDTextBox.Location = new System.Drawing.Point(62, 47);
             this.IDTextBox.Multiline = true;
@@ -194,6 +213,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(5, 2);
@@ -205,6 +226,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.RemoveItemButton);
             this.panel2.Controls.Add(this.AddItemButton);
             this.panel2.Controls.Add(this.panel4);
@@ -231,6 +253,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.ItemsListBox);
@@ -247,6 +272,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(933, 609);
             this.Name = "ItemsTab";
             this.Size = new System.Drawing.Size(933, 609);
             this.panel1.ResumeLayout(false);

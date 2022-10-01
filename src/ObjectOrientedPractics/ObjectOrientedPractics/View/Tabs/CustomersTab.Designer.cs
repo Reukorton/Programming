@@ -51,6 +51,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.CustomersListBox);
@@ -71,6 +74,9 @@
             // 
             // CustomersListBox
             // 
+            this.CustomersListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CustomersListBox.BackColor = System.Drawing.SystemColors.Menu;
             this.CustomersListBox.FormattingEnabled = true;
             this.CustomersListBox.Location = new System.Drawing.Point(3, 20);
@@ -81,6 +87,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.RemoveCustomerButton);
             this.panel2.Controls.Add(this.AddCustomerButton);
             this.panel2.Controls.Add(this.panel4);
@@ -92,6 +99,7 @@
             // 
             // RemoveCustomerButton
             // 
+            this.RemoveCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveCustomerButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.RemoveCustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RemoveCustomerButton.Location = new System.Drawing.Point(121, 3);
@@ -104,6 +112,7 @@
             // 
             // AddCustomerButton
             // 
+            this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddCustomerButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.AddCustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AddCustomerButton.Location = new System.Drawing.Point(3, 3);
@@ -131,6 +140,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.AddressTextBox);
             this.panel1.Controls.Add(this.label5);
@@ -146,6 +157,8 @@
             // 
             // AddressTextBox
             // 
+            this.AddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AddressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddressTextBox.Location = new System.Drawing.Point(83, 127);
             this.AddressTextBox.Multiline = true;

@@ -45,6 +45,7 @@
             this.ItemsTabControl.Controls.Add(this.tabPage2);
             this.ItemsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ItemsTabControl.Location = new System.Drawing.Point(0, 0);
+            this.ItemsTabControl.MinimumSize = new System.Drawing.Size(567, 603);
             this.ItemsTabControl.Name = "ItemsTabControl";
             this.ItemsTabControl.SelectedIndex = 0;
             this.ItemsTabControl.Size = new System.Drawing.Size(955, 645);
@@ -79,6 +80,7 @@
             this.itemsTab1.BackColor = System.Drawing.SystemColors.Control;
             this.itemsTab1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemsTab1.Location = new System.Drawing.Point(3, 3);
+            this.itemsTab1.MinimumSize = new System.Drawing.Size(933, 609);
             this.itemsTab1.Name = "itemsTab1";
             this.itemsTab1.Size = new System.Drawing.Size(941, 613);
             this.itemsTab1.TabIndex = 0;
@@ -99,6 +101,7 @@
             this.ClientSize = new System.Drawing.Size(955, 645);
             this.Controls.Add(this.ItemsTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(971, 684);
             this.Name = "MainForm";
             this.Text = "Object Oriented Practics";
             this.ItemsTabControl.ResumeLayout(false);
