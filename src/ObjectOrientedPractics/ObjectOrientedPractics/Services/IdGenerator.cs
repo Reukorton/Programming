@@ -3,7 +3,7 @@
     /// <summary>
     /// Класс для генерации Id.
     /// </summary>
-    public class IdGenerator
+    public static class IdGenerator
     {
         /// <summary>
         /// Стартовый id.
