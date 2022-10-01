@@ -23,6 +23,14 @@ namespace ObjectOrientedPractics.Model
         private string _address;
 
         /// <summary>
+        /// Создает пустой экземпляр класса <see cref="Customer"/>
+        /// </summary>
+        public Customer() 
+        {
+            _id = IdGenerator.GetNextId();
+        }
+
+        /// <summary>
         /// Создает экземпляр класса <see cref="Customer"/>
         /// </summary>
         /// <param name="fullname">Имя покупателя.</param>
@@ -32,6 +40,11 @@ namespace ObjectOrientedPractics.Model
             _id = IdGenerator.GetNextId();
             Fullname = fullname;
             Address = address;
+        }
+
+        public int Id
+        {
+            get => _id;
         }
 
         /// <summary>
@@ -60,6 +73,11 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
                 _address = value;
             }
+        }
+
+        public string CustomerDescription()
+        {
+            return $"{Id}: {Fullname}, {Address}";
         }
     }
 }

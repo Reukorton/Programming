@@ -188,6 +188,7 @@
             this.IDTextBox.Location = new System.Drawing.Point(62, 47);
             this.IDTextBox.Multiline = true;
             this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.ReadOnly = true;
             this.IDTextBox.Size = new System.Drawing.Size(150, 24);
             this.IDTextBox.TabIndex = 3;
             // 

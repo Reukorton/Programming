@@ -14,13 +14,6 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
-        public static Color _correctColor = Color.White;
-
-        /// <summary>
-        /// Цвет некоректного значения.
-        /// </summary>
-        public static Color _errorColor = Color.LightPink;
-
         public List<Item> _items;
 
         public Item _currentItem;
@@ -46,6 +39,8 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
         {
+            if (ItemsListBox.SelectedIndex == -1) return;
+
             var index = ItemsListBox.SelectedIndex;
 
             _items.RemoveAt(index);
@@ -55,7 +50,11 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateListBox();
 
             ClearInformationTextBox();
-            if (_items.Count == 0) return;
+            if (_items.Count == 0)
+            { 
+                _currentItem = null;
+                return;
+            }
             ItemsListBox.SelectedIndex = 0;
 
             UpdateInformationTextBox();
@@ -75,6 +74,11 @@ namespace ObjectOrientedPractics.View.Tabs
             CostTextBox.Clear();
             NameTextBox.Clear();
             DescriptionTextBox.Clear();
+
+            IDTextBox.BackColor = Colors.CorrectColor;
+            CostTextBox.BackColor = Colors.CorrectColor;
+            NameTextBox.BackColor = Colors.CorrectColor;
+            DescriptionTextBox.BackColor = Colors.CorrectColor;
         }
 
         public void UpdateListBox()
@@ -117,10 +121,11 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (ItemsListBox.SelectedIndex == -1) return;
             if (
-                (CostTextBox.Text.Length > 0) && 
-                (CostTextBox.Text[CostTextBox.Text.Length - 1] == ',') &&
-                (CountChar(CostTextBox.Text, ',') < 2)
+                (((CostTextBox.Text.Length > 0) && 
+                (CostTextBox.Text[CostTextBox.Text.Length - 1] == ',')) &&
+                (CountChar(CostTextBox.Text, ',') == 1))
                 ) return;
 
             try
@@ -130,14 +135,16 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                CostTextBox.BackColor = _errorColor;
+                CostTextBox.BackColor = Colors.ErrorColor;
                 return;
             }
-            CostTextBox.BackColor = _correctColor;
+            CostTextBox.BackColor = Colors.CorrectColor;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (ItemsListBox.SelectedIndex == -1) return;
+
             try
             {
                 _currentItem.Name = NameTextBox.Text;
@@ -146,22 +153,26 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                NameTextBox.BackColor = _errorColor;
+                NameTextBox.BackColor = Colors.ErrorColor;
+                return;
             }
-            NameTextBox.BackColor = _correctColor;
+            NameTextBox.BackColor = Colors.CorrectColor;
         }
 
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (ItemsListBox.SelectedIndex == -1) return;
+
             try
             {
                 _currentItem.Info = DescriptionTextBox.Text;
             }
             catch
             {
-                DescriptionTextBox.BackColor = _errorColor;
+                DescriptionTextBox.BackColor = Colors.ErrorColor;
+                return;
             }
-            NameTextBox.BackColor = _correctColor;
+            NameTextBox.BackColor = Colors.CorrectColor;
         }
     }
 }

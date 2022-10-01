@@ -77,6 +77,7 @@
             this.CustomersListBox.Name = "CustomersListBox";
             this.CustomersListBox.Size = new System.Drawing.Size(351, 511);
             this.CustomersListBox.TabIndex = 0;
+            this.CustomersListBox.SelectedIndexChanged += new System.EventHandler(this.CustomersListBox_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -99,6 +100,7 @@
             this.RemoveCustomerButton.TabIndex = 4;
             this.RemoveCustomerButton.Text = "Remove";
             this.RemoveCustomerButton.UseVisualStyleBackColor = false;
+            this.RemoveCustomerButton.Click += new System.EventHandler(this.RemoveCustomerButton_Click);
             // 
             // AddCustomerButton
             // 
@@ -150,6 +152,7 @@
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(481, 149);
             this.AddressTextBox.TabIndex = 8;
+            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // label5
             // 
@@ -169,6 +172,7 @@
             this.FullNameTextBox.Name = "FullNameTextBox";
             this.FullNameTextBox.Size = new System.Drawing.Size(481, 24);
             this.FullNameTextBox.TabIndex = 6;
+            this.FullNameTextBox.TextChanged += new System.EventHandler(this.FullNameTextBox_TextChanged);
             // 
             // label4
             // 
@@ -196,6 +200,7 @@
             this.IDTextBox.Location = new System.Drawing.Point(83, 47);
             this.IDTextBox.Multiline = true;
             this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.ReadOnly = true;
             this.IDTextBox.Size = new System.Drawing.Size(129, 24);
             this.IDTextBox.TabIndex = 3;
             // 
