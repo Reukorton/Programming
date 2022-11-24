@@ -153,6 +153,7 @@ namespace Programming.View.Controls
             var selectedItem = RectanglesPanelListBox.SelectedIndex;
             _rectangles.RemoveAt(selectedItem);
             CanvasPanel.Controls.RemoveAt(selectedItem);
+            _rectanglePanels.RemoveAt(selectedItem);
 
             ClearRectangleInfo();
 

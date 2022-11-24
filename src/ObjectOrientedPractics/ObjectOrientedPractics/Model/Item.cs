@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.Enum;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -28,17 +29,23 @@ namespace ObjectOrientedPractics.Model
         private double _cost;
 
         /// <summary>
+        /// Возвращает и задает категорию товара.
+        /// </summary>
+        public Category Category { get; set; }
+
+        /// <summary>
         /// Создает экземпляр класса <see cref="Item"/>
         /// </summary>
         /// <param name="name">Название товара.</param>
         /// <param name="info">Информация о товаре.</param>
         /// <param name="cost">Цена товара.</param>
-        public Item(string name, string info, double cost)
+        public Item(string name, string info, double cost, Category category)
         {
             _id = IdGenerator.GetNextId();
             Name = name;
             Info = info;
             Cost = cost;
+            Category = category;
         }
          /// <summary>
          /// Создает пустой экземпляр класса <see cref="Item"/>
@@ -104,7 +111,7 @@ namespace ObjectOrientedPractics.Model
         /// <returns></returns>
         public string ItemDescription()
         {
-            return $"{_id}: {Name}, {Cost}$";
+            return $"{_id}: {Name}";
         }
     }
 }

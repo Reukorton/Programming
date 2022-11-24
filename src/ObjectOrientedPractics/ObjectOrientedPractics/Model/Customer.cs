@@ -84,7 +84,7 @@ namespace ObjectOrientedPractics.Model
         /// <returns>Строка.</returns>
         public string CustomerDescription()
         {
-            return $"{Id}: {Fullname}, {Address}";
+            return $"{Id}: {Fullname}";
         }
     }
 }

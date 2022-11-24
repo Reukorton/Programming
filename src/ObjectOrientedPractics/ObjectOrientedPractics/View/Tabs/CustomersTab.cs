@@ -83,16 +83,6 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
-        /// <summary>
-        /// Обновление строки в ListBox.
-        /// </summary>
-        public void UpdateCustomerDescription()
-        {
-            var index = CustomersListBox.SelectedIndex;
-
-            CustomersListBox.Items[index] = _currentCustomer.CustomerDescription();
-        }
-
         private void FullNameTextBox_TextChanged(object sender, EventArgs e)
         {
             if (CustomersListBox.SelectedIndex == -1) return;
@@ -101,7 +91,8 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.Fullname = FullNameTextBox.Text;
 
-                UpdateCustomerDescription();
+                CustomersListBox.Items[CustomersListBox.SelectedIndex] =
+                    _currentCustomer.CustomerDescription();
             }
             catch
             {
@@ -118,8 +109,6 @@ namespace ObjectOrientedPractics.View.Tabs
             try
             {
                 _currentCustomer.Address = AddressTextBox.Text;
-
-                UpdateCustomerDescription();
             }
             catch
             {

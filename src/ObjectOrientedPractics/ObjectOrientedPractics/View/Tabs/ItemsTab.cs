@@ -115,50 +115,13 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateInformationTextBox();
         }
 
-        /// <summary>
-        /// Обновление строки в ListBox.
-        /// </summary>
-        public void UpdateItemDescription()
-        {
-            var index = ItemsListBox.SelectedIndex;
-
-            ItemsListBox.Items[index] = _currentItem.ItemDescription(); 
-        } 
-
-        /// <summary>
-        /// Счетчик определенного символа в строке.
-        /// </summary>
-        /// <param name="str">Строка.</param>
-        /// <param name="symbol">Символ.</param>
-        /// <returns>Колличество symbol в str.</returns>
-        public int CountChar(string str, char symbol)
-        {
-            int count = 0;
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str[i] == symbol)
-                {
-                    count++;
-                }
-            }
-
-            return count;
-        }
-
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
             if (ItemsListBox.SelectedIndex == -1) return;
-            if (
-                (((CostTextBox.Text.Length > 0) && 
-                (CostTextBox.Text[CostTextBox.Text.Length - 1] == ',')) &&
-                (CountChar(CostTextBox.Text, ',') == 1))
-                ) return;
 
             try
             {
                 _currentItem.Cost = double.Parse(CostTextBox.Text);
-                UpdateItemDescription();
             }
             catch
             {
@@ -175,8 +138,7 @@ namespace ObjectOrientedPractics.View.Tabs
             try
             {
                 _currentItem.Name = NameTextBox.Text;
-
-                UpdateItemDescription();
+                ItemsListBox.Items[ItemsListBox.SelectedIndex] = _currentItem.ItemDescription();
             }
             catch
             {
@@ -199,7 +161,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 DescriptionTextBox.BackColor = Colors.ErrorColor;
                 return;
             }
-            NameTextBox.BackColor = Colors.CorrectColor;
+            DescriptionTextBox.BackColor = Colors.CorrectColor;
         }
     }
 }
