@@ -1,13 +1,6 @@
 ﻿using ObjectOrientedPractics.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
@@ -32,6 +25,12 @@ namespace ObjectOrientedPractics.View.Tabs
             InitializeComponent();
 
             _items = new List<Item>();
+
+            var categories = Enum.GetValues(typeof(Category));
+            foreach (var value in categories)
+            {
+                CategoryComboBox.Items.Add(value);
+            }
         }
 
         private void AddItemButton_Click(object sender, EventArgs e)
@@ -78,6 +77,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CostTextBox.Text = _currentItem.Cost.ToString();
             NameTextBox.Text = _currentItem.Name;
             DescriptionTextBox.Text = _currentItem.Info;
+            CategoryComboBox.SelectedItem = _currentItem.Category;
         }
 
         /// <summary>
@@ -162,6 +162,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
             DescriptionTextBox.BackColor = Colors.CorrectColor;
+        }
+
+        private void CategoryComboBox_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (ItemsListBox.SelectedIndex == -1) return;
+            if (CategoryComboBox.SelectedIndex == -1) return;
+
+            _currentItem.Category = (Category)CategoryComboBox.SelectedItem;
         }
     }
 }

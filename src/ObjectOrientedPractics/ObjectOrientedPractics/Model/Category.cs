@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractics.Enum
+﻿namespace ObjectOrientedPractics.Model
 {
     /// <summary>
     /// Перечисление категорий товара.

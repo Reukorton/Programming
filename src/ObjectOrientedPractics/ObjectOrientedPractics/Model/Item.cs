@@ -1,5 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
-using ObjectOrientedPractics.Enum;
+using ObjectOrientedPractics.Model;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -39,6 +39,7 @@ namespace ObjectOrientedPractics.Model
         /// <param name="name">Название товара.</param>
         /// <param name="info">Информация о товаре.</param>
         /// <param name="cost">Цена товара.</param>
+        /// <param name="category">Категория товара.</param>
         public Item(string name, string info, double cost, Category category)
         {
             _id = IdGenerator.GetNextId();
