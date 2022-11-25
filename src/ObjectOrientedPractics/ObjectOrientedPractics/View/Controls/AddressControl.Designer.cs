@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.StreetTextBox = new System.Windows.Forms.TextBox();
             this.ApartmentTextBox = new System.Windows.Forms.TextBox();
             this.BuildingTextBox = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -116,7 +118,7 @@
             // IndexTextBox
             // 
             this.IndexTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IndexTextBox.Location = new System.Drawing.Point(94, 59);
+            this.IndexTextBox.Location = new System.Drawing.Point(96, 59);
             this.IndexTextBox.Multiline = true;
             this.IndexTextBox.Name = "IndexTextBox";
             this.IndexTextBox.Size = new System.Drawing.Size(170, 29);
@@ -126,11 +128,12 @@
             // CountryTextBox
             // 
             this.CountryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CountryTextBox.Location = new System.Drawing.Point(94, 107);
+            this.CountryTextBox.Location = new System.Drawing.Point(96, 107);
             this.CountryTextBox.Multiline = true;
             this.CountryTextBox.Name = "CountryTextBox";
             this.CountryTextBox.Size = new System.Drawing.Size(282, 29);
             this.CountryTextBox.TabIndex = 8;
+            this.CountryTextBox.TextChanged += new System.EventHandler(this.CountryTextBox_TextChanged);
             // 
             // CityTextBox
             // 
@@ -140,33 +143,37 @@
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(282, 29);
             this.CityTextBox.TabIndex = 9;
+            this.CityTextBox.TextChanged += new System.EventHandler(this.CityTextBox_TextChanged);
             // 
             // StreetTextBox
             // 
             this.StreetTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StreetTextBox.Location = new System.Drawing.Point(94, 155);
+            this.StreetTextBox.Location = new System.Drawing.Point(96, 155);
             this.StreetTextBox.Multiline = true;
             this.StreetTextBox.Name = "StreetTextBox";
-            this.StreetTextBox.Size = new System.Drawing.Size(641, 29);
+            this.StreetTextBox.Size = new System.Drawing.Size(639, 29);
             this.StreetTextBox.TabIndex = 10;
+            this.StreetTextBox.TextChanged += new System.EventHandler(this.StreetTextBox_TextChanged);
             // 
             // ApartmentTextBox
             // 
             this.ApartmentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ApartmentTextBox.Location = new System.Drawing.Point(380, 204);
+            this.ApartmentTextBox.Location = new System.Drawing.Point(369, 203);
             this.ApartmentTextBox.Multiline = true;
             this.ApartmentTextBox.Name = "ApartmentTextBox";
             this.ApartmentTextBox.Size = new System.Drawing.Size(150, 29);
             this.ApartmentTextBox.TabIndex = 11;
+            this.ApartmentTextBox.TextChanged += new System.EventHandler(this.ApartmentTextBox_TextChanged);
             // 
             // BuildingTextBox
             // 
             this.BuildingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BuildingTextBox.Location = new System.Drawing.Point(94, 204);
+            this.BuildingTextBox.Location = new System.Drawing.Point(96, 203);
             this.BuildingTextBox.Multiline = true;
             this.BuildingTextBox.Name = "BuildingTextBox";
             this.BuildingTextBox.Size = new System.Drawing.Size(150, 29);
             this.BuildingTextBox.TabIndex = 12;
+            this.BuildingTextBox.TextChanged += new System.EventHandler(this.BuildingTextBox_TextChanged);
             // 
             // AddressControl
             // 
@@ -207,5 +214,6 @@
         private System.Windows.Forms.TextBox StreetTextBox;
         private System.Windows.Forms.TextBox ApartmentTextBox;
         private System.Windows.Forms.TextBox BuildingTextBox;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

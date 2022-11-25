@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Customer = ObjectOrientedPractics.Model.Customer;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -47,6 +46,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             IDTextBox.Text = _currentCustomer.Id.ToString();
             FullNameTextBox.Text = _currentCustomer.Fullname;
+            AddressControl.Address = _currentCustomer.Address;
         }
 
         /// <summary>

@@ -38,7 +38,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
+            this.AddressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.FullNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.addressControl1);
+            this.panel1.Controls.Add(this.AddressControl);
             this.panel1.Controls.Add(this.FullNameTextBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -164,7 +164,7 @@
             this.panel1.Size = new System.Drawing.Size(756, 742);
             this.panel1.TabIndex = 6;
             // 
-            // addressControl1
+            // AddressControl
             // 
             address1.Apartment = "";
             address1.Building = "";
@@ -172,11 +172,11 @@
             address1.Country = "";
             address1.Index = 100000;
             address1.Street = "";
-            this.addressControl1.Address = address1;
-            this.addressControl1.Location = new System.Drawing.Point(-2, 163);
-            this.addressControl1.Name = "addressControl1";
-            this.addressControl1.Size = new System.Drawing.Size(738, 265);
-            this.addressControl1.TabIndex = 7;
+            this.AddressControl.Address = address1;
+            this.AddressControl.Location = new System.Drawing.Point(0, 195);
+            this.AddressControl.Name = "AddressControl";
+            this.AddressControl.Size = new System.Drawing.Size(736, 265);
+            this.AddressControl.TabIndex = 7;
             // 
             // FullNameTextBox
             // 
@@ -268,6 +268,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.Label label2;
-        private Controls.AddressControl addressControl1;
+        private Controls.AddressControl AddressControl;
     }
 }

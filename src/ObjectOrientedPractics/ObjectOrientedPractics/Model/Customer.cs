@@ -20,7 +20,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Адрес покупателя
         /// </summary>
-        private string _address;
+        public Address Address { get; set; }
 
         /// <summary>
         /// Создает пустой экземпляр класса <see cref="Customer"/>
@@ -28,6 +28,8 @@ namespace ObjectOrientedPractics.Model
         public Customer() 
         {
             _id = IdGenerator.GetNextId();
+            Fullname = "";
+            Address = new Address();
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         /// <param name="fullname">Имя покупателя.</param>
         /// <param name="address">Адрес покупателя.</param>
-        public Customer(string fullname, string address)
+        public Customer(string fullname, Address address)
         {
             _id = IdGenerator.GetNextId();
             Fullname = fullname;
@@ -61,20 +63,6 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertStringOnLength(value, 200, nameof(Fullname));
                 _fullname = value;
-            }
-        }
-
-        /// <summary>
-        /// Задает и возвращает адрес покупателя. <br/>
-        /// Длина строки не должна привышать 200 символов.
-        /// </summary>
-        public string Address
-        {
-            get => _address;
-            set
-            {
-                ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
-                _address = value;
             }
         }
 
