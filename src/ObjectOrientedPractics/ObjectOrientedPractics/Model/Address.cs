@@ -46,7 +46,15 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Создает экзепляр класса <see cref="Address"/>
         /// </summary>
-        public Address() { }
+        public Address() 
+        {
+            Index = 100000;
+            Country = "";
+            City = "";
+            Street = "";
+            Building = "";
+            Apartment = "";
+        }
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Address"/>
