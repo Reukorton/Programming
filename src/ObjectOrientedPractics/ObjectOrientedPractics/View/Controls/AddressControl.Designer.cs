@@ -121,6 +121,7 @@
             this.IndexTextBox.Name = "IndexTextBox";
             this.IndexTextBox.Size = new System.Drawing.Size(170, 29);
             this.IndexTextBox.TabIndex = 7;
+            this.IndexTextBox.TextChanged += new System.EventHandler(this.IndexTextBox_TextChanged);
             // 
             // CountryTextBox
             // 

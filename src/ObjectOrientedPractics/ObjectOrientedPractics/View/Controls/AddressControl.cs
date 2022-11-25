@@ -19,7 +19,7 @@ namespace ObjectOrientedPractics.View.Controls
         {
             InitializeComponent();
 
-            _address = new Address();
+            Address = new Address();
         }
 
         public Address Address
@@ -31,6 +31,29 @@ namespace ObjectOrientedPractics.View.Controls
             set
             {
                 _address = value;
+                AddressUpdateTextBox();
+            }
+        }
+
+        private void AddressUpdateTextBox()
+        {
+            IndexTextBox.Text = Address.Index.ToString();
+            CountryTextBox.Text = Address.Country;
+            CityTextBox.Text = Address.City;
+            StreetTextBox.Text = Address.Street;
+            BuildingTextBox.Text = Address.Building;
+            ApartmentTextBox.Text = Address.Apartment;
+        }
+
+        private void IndexTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Address.Index = int.Parse(IndexTextBox.Text);
+            }
+            catch
+            {
+                
             }
         }
     }

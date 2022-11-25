@@ -38,12 +38,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.FullNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.addressControl1 = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -164,6 +164,20 @@
             this.panel1.Size = new System.Drawing.Size(756, 742);
             this.panel1.TabIndex = 6;
             // 
+            // addressControl1
+            // 
+            address1.Apartment = "";
+            address1.Building = "";
+            address1.City = "";
+            address1.Country = "";
+            address1.Index = 100000;
+            address1.Street = "";
+            this.addressControl1.Address = address1;
+            this.addressControl1.Location = new System.Drawing.Point(-2, 163);
+            this.addressControl1.Name = "addressControl1";
+            this.addressControl1.Size = new System.Drawing.Size(738, 265);
+            this.addressControl1.TabIndex = 7;
+            // 
             // FullNameTextBox
             // 
             this.FullNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -218,20 +232,6 @@
             this.label2.Size = new System.Drawing.Size(152, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Selected Customer";
-            // 
-            // addressControl1
-            // 
-            address1.Apartment = null;
-            address1.Building = null;
-            address1.City = null;
-            address1.Country = null;
-            address1.Index = 0;
-            address1.Street = null;
-            this.addressControl1.Address = address1;
-            this.addressControl1.Location = new System.Drawing.Point(-2, 143);
-            this.addressControl1.Name = "addressControl1";
-            this.addressControl1.Size = new System.Drawing.Size(738, 265);
-            this.addressControl1.TabIndex = 7;
             // 
             // CustomersTab
             // 
