@@ -1,6 +1,7 @@
 ﻿using ObjectOrientedPractics.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
@@ -121,5 +122,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             UpdateInformationTextBox();
         }
+
+        public List<Item> Items { get; set; }
     }
 }

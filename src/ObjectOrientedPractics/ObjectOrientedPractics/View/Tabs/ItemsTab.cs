@@ -171,5 +171,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _currentItem.Category = (Category)CategoryComboBox.SelectedItem;
         }
+
+        public List<Item> Items { get; set; }
     }
 }
