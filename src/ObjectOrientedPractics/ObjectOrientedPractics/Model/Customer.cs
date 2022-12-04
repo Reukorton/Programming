@@ -23,6 +23,11 @@ namespace ObjectOrientedPractics.Model
         private string _address;
 
         /// <summary>
+        /// Корзина товаров.
+        /// </summary>
+        private Cart _cart;
+
+        /// <summary>
         /// Создает пустой экземпляр класса <see cref="Customer"/>
         /// </summary>
         public Customer() 
@@ -75,6 +80,21 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
                 _address = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задает карзину товаров.
+        /// </summary>
+        public Cart Cart
+        {
+            get
+            {
+                return _cart;
+            }
+            set
+            {
+                _cart = value;
             }
         }
 
