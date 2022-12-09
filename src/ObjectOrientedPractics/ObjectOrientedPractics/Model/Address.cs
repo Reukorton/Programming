@@ -14,7 +14,7 @@ namespace ObjectOrientedPractics.Model
     public class Address
     {
         /// <summary>
-        /// Почтовый индекс.
+        /// Почтовый индекс..
         /// </summary>
         private int _index;
 
