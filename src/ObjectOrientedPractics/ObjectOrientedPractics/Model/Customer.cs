@@ -18,9 +18,15 @@ namespace ObjectOrientedPractics.Model
         private string _fullname;
 
         /// <summary>
+        /// Корзина покупателя.
+        /// </summary>
+        private Cart _cart;
+
+        /// <summary>
         /// Адрес покупателя
         /// </summary>
         public Address Address { get; set; }
+
 
         /// <summary>
         /// Создает пустой экземпляр класса <see cref="Customer"/>
@@ -30,6 +36,7 @@ namespace ObjectOrientedPractics.Model
             _id = IdGenerator.GetNextId();
             Fullname = "";
             Address = new Address();
+            Cart = new Cart();
         }
 
         /// <summary>
@@ -37,11 +44,12 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         /// <param name="fullname">Имя покупателя.</param>
         /// <param name="address">Адрес покупателя.</param>
-        public Customer(string fullname, Address address)
+        public Customer(string fullname, Address address, Cart cart)
         {
             _id = IdGenerator.GetNextId();
             Fullname = fullname;
             Address = address;
+            Cart = cart;
         }
 
         /// <summary>
@@ -63,6 +71,21 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertStringOnLength(value, 200, nameof(Fullname));
                 _fullname = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт корзину покупателя.
+        /// </summary>
+        public Cart Cart
+        {
+            get
+            {
+                return _cart;
+            }
+            set
+            {
+                _cart = value;
             }
         }
 
