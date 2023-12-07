@@ -32,7 +32,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _currentCustomer = new Customer();
 
-            _customers.Add(_currentCustomer);
+            Customers.Add(_currentCustomer);
             CustomersListBox.Items.Add(_currentCustomer.CustomerDescription());
 
             CustomersListBox.SelectedIndex = _customers.Count - 1;
@@ -77,7 +77,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             if (CustomersListBox.SelectedItem == null) return;
 
-            _currentCustomer = _customers[CustomersListBox.SelectedIndex];
+            _currentCustomer = Customers[CustomersListBox.SelectedIndex];
             UpdateInformationTextBox();
         }
 
@@ -106,7 +106,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             var index = CustomersListBox.SelectedIndex;
 
-            _customers.RemoveAt(index);
+            Customers.RemoveAt(index);
             CustomersListBox.Items.RemoveAt(index);
 
             CustomersListBox.Items.Clear();
@@ -124,5 +124,6 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         public List<Item> Items { get; set; }
+        public List<Customer> Customers { get; set; }
     }
 }

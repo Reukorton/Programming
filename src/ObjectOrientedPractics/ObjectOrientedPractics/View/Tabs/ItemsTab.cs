@@ -10,12 +10,12 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Список товаров.
         /// </summary>
-        public List<Item> _items;
+        private List<Item> _items;
 
         /// <summary>
         /// Выбранный товар.
         /// </summary>
-        public Item _currentItem;
+        private Item _currentItem;
 
         /// <summary>
         /// Создание экземпляра класса <see cref="ItemTab"/>.
@@ -37,7 +37,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _currentItem = new Item();
 
-            _items.Add(_currentItem);
+            Items.Add(_currentItem);
             ItemsListBox.Items.Add(_currentItem.ItemDescription());
 
             ItemsListBox.SelectedIndex = _items.Count - 1;
@@ -51,7 +51,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             var index = ItemsListBox.SelectedIndex;
 
-            _items.RemoveAt(index);
+            Items.RemoveAt(index);
             ItemsListBox.Items.RemoveAt(index);
 
             ItemsListBox.Items.Clear();
@@ -111,7 +111,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             if (ItemsListBox.SelectedItem == null) return;
 
-            _currentItem = _items[ItemsListBox.SelectedIndex];
+            _currentItem = Items[ItemsListBox.SelectedIndex];
             UpdateInformationTextBox();
         }
 

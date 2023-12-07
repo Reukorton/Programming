@@ -10,7 +10,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Уникальный идентификатор.
         /// </summary>
-        private int _id;
+        private readonly int _id;
 
         /// <summary>
         /// Дата заказа.

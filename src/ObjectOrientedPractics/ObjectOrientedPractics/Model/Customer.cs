@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+using System.Collections.Generic;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -26,6 +27,8 @@ namespace ObjectOrientedPractics.Model
         /// Адрес покупателя
         /// </summary>
         public Address Address { get; set; }
+
+        public List<Order> Orders { get; set; }
 
 
         /// <summary>
