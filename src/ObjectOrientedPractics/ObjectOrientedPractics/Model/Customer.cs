@@ -9,10 +9,24 @@ namespace ObjectOrientedPractics.Model
 {
     internal class Customer
     {
+        /// <summary>
+        /// Номер пользователя
+        /// </summary>
         private readonly int _id;
+
+        /// <summary>
+        /// ФИО пользователя
+        /// </summary>
         private string _fullname;
+
+        /// <summary>
+        /// Адрес пользователя
+        /// </summary>
         private string _address;
 
+        /// <summary>
+        /// Свойство поля _fullname
+        /// </summary>
         public string Fullname
         {
             get { return _fullname; }
@@ -24,6 +38,9 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Свойство поля _address
+        /// </summary>
         public string Address
         {
             get { return _address; }

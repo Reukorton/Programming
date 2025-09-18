@@ -10,11 +10,29 @@ namespace ObjectOrientedPractics.Model
 {
     internal class Item
     {
+        /// <summary>
+        /// Номер предмета
+        /// </summary>
         private readonly int _id;
+
+        /// <summary>
+        /// Название предмета
+        /// </summary>
         private string _name;
+
+        /// <summary>
+        /// Информация о товаре
+        /// </summary>
         private string _info;
+
+        /// <summary>
+        /// Цена товара
+        /// </summary>
         private double _cost;
 
+        /// <summary>
+        /// Свойства поля _name
+        /// </summary>
         public string Name
         {
             get { return _name; }
@@ -26,6 +44,9 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Свойства поля _info
+        /// </summary>
         public string Info
         {
             get { return _info; }
@@ -36,6 +57,9 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Свойства поля _cost
+        /// </summary>
         public double Cost
         {
             get { return _cost; }
@@ -46,6 +70,12 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Конструктор класса Item
+        /// </summary>
+        /// <param name="name">Название предмета</param>
+        /// <param name="info">Информация о предмете</param>
+        /// <param name="cost">Цена товара</param>
         public Item(string name, string info, double cost)
         {
             Name = name;

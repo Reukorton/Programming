@@ -8,6 +8,13 @@ namespace ObjectOrientedPractics.Services
 {
     public static class ValueValidator
     {
+        /// <summary>
+        /// Проверка, что строка не длинее maxLength
+        /// </summary>
+        /// <param name="value">Значение</param>
+        /// <param name="maxLength">Максимальная длина</param>
+        /// <param name="propertyName">Название метода из которого вызывается</param>
+        /// <exception cref="ArgumentException">Ошибка превышения длины строки</exception>
         public static void AssertStringOnLength(string value, int maxLength, string propertyName)
         {
             if (value.Length > maxLength)
@@ -17,6 +24,14 @@ namespace ObjectOrientedPractics.Services
             }
         }
 
+        /// <summary>
+        /// Проверка, что число входит в диапозон от min до max
+        /// </summary>
+        /// <param name="value">Значение</param>
+        /// <param name="min">Минимальное значение</param>
+        /// <param name="max">Максимальное значение</param>
+        /// <param name="propertyName">Название метода из которого вызывается</param>
+        /// <exception cref="ArgumentException">Ошибка выхода из диапозона</exception>
         public static void AssertValueInRange(double value, double min, double max, string propertyName)
         {
             if (value < min | value > max)
@@ -25,6 +40,12 @@ namespace ObjectOrientedPractics.Services
             }
         }
 
+        /// <summary>
+        /// Проверка, что поле не пустое
+        /// </summary>
+        /// <param name="value">Значение</param>
+        /// <param name="propertyName">Название метода из которого вызывается</param>
+        /// <exception cref="ArgumentException">Ошибка пустого поля</exception>
         public static void AssertEmptyValue(string value, string propertyName)
         {
             if (value == "")
