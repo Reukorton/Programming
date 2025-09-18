@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -15,13 +16,23 @@ namespace ObjectOrientedPractics.Model
         public string Fullname
         {
             get { return _fullname; }
-            set { _fullname = value; }
+            set 
+            {
+                ValueValidator.AssertEmptyValue(value, nameof(Fullname));
+                ValueValidator.AssertStringOnLength(value, 200, nameof(Fullname));
+                _fullname = value; 
+            }
         }
 
         public string Address
         {
             get { return _address; }
-            set { _address = value; }
+            set 
+            {
+                ValueValidator.AssertEmptyValue(value, nameof(Address));
+                ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
+                _address = value; 
+            }
         }
     }
 }
