@@ -13,7 +13,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Номер предмета
         /// </summary>
-        private readonly int _id;
+        private readonly int _id = 0;
 
         /// <summary>
         /// Название предмета
@@ -29,6 +29,11 @@ namespace ObjectOrientedPractics.Model
         /// Цена товара
         /// </summary>
         private double _cost;
+
+        public int ID
+        {
+            get { return _id; }
+        }
 
         /// <summary>
         /// Свойства поля _name
