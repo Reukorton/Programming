@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             itemsTab1 = new View.Tabs.ItemsTab();
@@ -58,7 +59,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(707, 554);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Items";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // itemsTab1
@@ -77,7 +78,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(707, 554);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Customers";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // customersTab1
@@ -94,8 +95,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(715, 582);
             Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Object Oriented Practics";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
