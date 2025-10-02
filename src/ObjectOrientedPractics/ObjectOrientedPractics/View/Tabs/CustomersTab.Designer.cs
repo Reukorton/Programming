@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CostTextBox = new TextBox();
+            FullNameTextBox = new TextBox();
             IDTextBox = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            NameTextBox = new TextBox();
+            AddressTextBox = new TextBox();
             label2 = new Label();
             label1 = new Label();
             button3 = new Button();
@@ -42,33 +42,34 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
             panel1 = new Panel();
-            ItemsListBox = new ListBox();
+            CustomersListBox = new ListBox();
             panel2 = new Panel();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // CostTextBox
+            // FullNameTextBox
             // 
-            CostTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CostTextBox.BorderStyle = BorderStyle.FixedSingle;
-            CostTextBox.Location = new Point(68, 70);
-            CostTextBox.Margin = new Padding(3, 3, 3, 10);
-            CostTextBox.Multiline = true;
-            CostTextBox.Name = "CostTextBox";
-            CostTextBox.Size = new Size(150, 20);
-            CostTextBox.TabIndex = 9;
+            FullNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            FullNameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            FullNameTextBox.Location = new Point(80, 70);
+            FullNameTextBox.Margin = new Padding(3, 3, 3, 10);
+            FullNameTextBox.Multiline = true;
+            FullNameTextBox.Name = "FullNameTextBox";
+            FullNameTextBox.Size = new Size(302, 20);
+            FullNameTextBox.TabIndex = 9;
+            FullNameTextBox.TextChanged += FullNameTextBox_TextChanged;
             // 
             // IDTextBox
             // 
             IDTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             IDTextBox.BorderStyle = BorderStyle.FixedSingle;
-            IDTextBox.Location = new Point(68, 37);
+            IDTextBox.Location = new Point(80, 37);
             IDTextBox.Margin = new Padding(3, 3, 3, 10);
             IDTextBox.Multiline = true;
             IDTextBox.Name = "IDTextBox";
-            IDTextBox.Size = new Size(150, 20);
+            IDTextBox.Size = new Size(138, 20);
             IDTextBox.TabIndex = 8;
             // 
             // label5
@@ -89,9 +90,9 @@
             label4.Location = new Point(3, 69);
             label4.Margin = new Padding(3, 0, 3, 15);
             label4.Name = "label4";
-            label4.Size = new Size(37, 17);
+            label4.Size = new Size(69, 17);
             label4.TabIndex = 4;
-            label4.Text = "Cost:";
+            label4.Text = "Full Name:";
             // 
             // label3
             // 
@@ -104,16 +105,17 @@
             label3.TabIndex = 3;
             label3.Text = "ID:";
             // 
-            // NameTextBox
+            // AddressTextBox
             // 
-            NameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            NameTextBox.BorderStyle = BorderStyle.FixedSingle;
-            NameTextBox.Location = new Point(68, 103);
-            NameTextBox.Margin = new Padding(3, 3, 3, 10);
-            NameTextBox.Multiline = true;
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(314, 91);
-            NameTextBox.TabIndex = 2;
+            AddressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            AddressTextBox.BorderStyle = BorderStyle.FixedSingle;
+            AddressTextBox.Location = new Point(80, 103);
+            AddressTextBox.Margin = new Padding(3, 3, 3, 10);
+            AddressTextBox.Multiline = true;
+            AddressTextBox.Name = "AddressTextBox";
+            AddressTextBox.Size = new Size(302, 91);
+            AddressTextBox.TabIndex = 2;
+            AddressTextBox.TextChanged += AddressTextBox_TextChanged;
             // 
             // label2
             // 
@@ -131,9 +133,9 @@
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(42, 17);
+            label1.Size = new Size(73, 17);
             label1.TabIndex = 0;
-            label1.Text = "Items";
+            label1.Text = "Customers";
             // 
             // button3
             // 
@@ -156,6 +158,7 @@
             AddButton.TabIndex = 0;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
             // RemoveButton
             // 
@@ -167,6 +170,7 @@
             RemoveButton.TabIndex = 1;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -189,12 +193,12 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.Window;
-            panel3.Controls.Add(CostTextBox);
+            panel3.Controls.Add(FullNameTextBox);
             panel3.Controls.Add(IDTextBox);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(NameTextBox);
+            panel3.Controls.Add(AddressTextBox);
             panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(300, 0);
@@ -207,7 +211,7 @@
             // panel1
             // 
             panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Controls.Add(ItemsListBox);
+            panel1.Controls.Add(CustomersListBox);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -215,15 +219,16 @@
             panel1.Size = new Size(300, 532);
             panel1.TabIndex = 3;
             // 
-            // ItemsListBox
+            // CustomersListBox
             // 
-            ItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ItemsListBox.FormattingEnabled = true;
-            ItemsListBox.ItemHeight = 15;
-            ItemsListBox.Location = new Point(5, 20);
-            ItemsListBox.Name = "ItemsListBox";
-            ItemsListBox.Size = new Size(288, 439);
-            ItemsListBox.TabIndex = 1;
+            CustomersListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CustomersListBox.FormattingEnabled = true;
+            CustomersListBox.ItemHeight = 15;
+            CustomersListBox.Location = new Point(5, 20);
+            CustomersListBox.Name = "CustomersListBox";
+            CustomersListBox.Size = new Size(288, 439);
+            CustomersListBox.TabIndex = 1;
+            CustomersListBox.SelectedIndexChanged += CustomersListBox_SelectedIndexChanged;
             // 
             // panel2
             // 
@@ -255,12 +260,12 @@
 
         #endregion
 
-        private TextBox CostTextBox;
+        private TextBox FullNameTextBox;
         private TextBox IDTextBox;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox NameTextBox;
+        private TextBox AddressTextBox;
         private Label label2;
         private Label label1;
         private Button button3;
@@ -269,7 +274,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel3;
         private Panel panel1;
-        private ListBox ItemsListBox;
+        private ListBox CustomersListBox;
         private Panel panel2;
     }
 }

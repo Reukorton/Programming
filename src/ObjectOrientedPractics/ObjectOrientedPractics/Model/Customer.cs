@@ -24,6 +24,11 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private string _address;
 
+        public int ID
+        {
+            get { return _id; }
+        }
+
         /// <summary>
         /// Свойство поля _fullname
         /// </summary>
@@ -50,6 +55,12 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
                 _address = value; 
             }
+        }
+
+        public Customer(string fullName, string address)
+        {
+            Fullname = fullName;
+            Address = address;
         }
     }
 }
