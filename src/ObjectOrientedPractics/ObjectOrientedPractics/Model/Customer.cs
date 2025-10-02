@@ -24,6 +24,9 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private string _address;
 
+        /// <summary>
+        /// Свойства пола _id
+        /// </summary>
         public int ID
         {
             get { return _id; }
@@ -57,6 +60,11 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
+        /// <summary>
+        /// Консруктор класса Customer
+        /// </summary>
+        /// <param name="fullName">Полное имя пользователя</param>
+        /// <param name="address">Адрес пользователя</param>
         public Customer(string fullName, string address)
         {
             Fullname = fullName;

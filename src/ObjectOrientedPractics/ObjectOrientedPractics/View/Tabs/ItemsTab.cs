@@ -14,8 +14,14 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
+        /// <summary>
+        /// Список товаров
+        /// </summary>
         private List<Item> _items = new List<Item>();
 
+        /// <summary>
+        /// Выбранный товар
+        /// </summary>
         private Item _currentItem;
 
         public ItemsTab()
@@ -23,6 +29,9 @@ namespace ObjectOrientedPractics.View.Tabs
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Добавление нового товара
+        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             _currentItem = new Item("None", "None", 0);
@@ -32,6 +41,10 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateTextBoxes(_currentItem);
         }
 
+        /// <summary>
+        /// Обновление текстбоксов
+        /// </summary>
+        /// <param name="item">Товар</param>
         private void UpdateTextBoxes(Item item)
         {
             IDTextBox.Text = item.ID.ToString();
@@ -40,6 +53,9 @@ namespace ObjectOrientedPractics.View.Tabs
             DescriptionTextBox.Text = item.Info;
         }
 
+        /// <summary>
+        /// Обновление данных при выборе товара в ItemsListBox
+        /// </summary>
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ItemsListBox.SelectedIndex;
@@ -48,6 +64,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateTextBoxes(_currentItem);
         }
 
+        /// <summary>
+        /// Удаление товара
+        /// </summary>
         private void RemoveButton_Click_1(object sender, EventArgs e)
         {
             if (ItemsListBox.Items.Count == 0) return;
@@ -68,6 +87,9 @@ namespace ObjectOrientedPractics.View.Tabs
                 ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Очистка текстбоксов
+        /// </summary>
         private void ClearTextBoxes()
         {
             IDTextBox.Text = "";
@@ -80,6 +102,9 @@ namespace ObjectOrientedPractics.View.Tabs
             DescriptionTextBox.BackColor = Colors.NormalColor;
         }
 
+        /// <summary>
+        /// Извенение цены товара, когда в CostTextBox меняется значение
+        /// </summary>
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
             if (CostTextBox.Text == "")
@@ -100,6 +125,9 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Извенение название товара, когда в NameTextBox меняется значение
+        /// </summary>
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -114,6 +142,11 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Извенение описания товара, когда в DescriptionTextBox меняется значение
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
             try

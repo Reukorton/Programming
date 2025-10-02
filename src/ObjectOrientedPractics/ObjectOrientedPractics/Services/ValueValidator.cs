@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObjectOrientedPractics.Services
 {
+    /// <summary>
+    /// Класс валидации значений
+    /// </summary>
     public static class ValueValidator
     {
         /// <summary>

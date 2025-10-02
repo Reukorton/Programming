@@ -30,6 +30,9 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private double _cost;
 
+        /// <summary>
+        /// Свойства поля _id
+        /// </summary>
         public int ID
         {
             get { return _id; }

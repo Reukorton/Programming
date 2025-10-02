@@ -15,8 +15,14 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CustomersTab : UserControl
     {
+        /// <summary>
+        /// Список всех пользователей
+        /// </summary>
         private List<Customer> _customers = new List<Customer>();
 
+        /// <summary>
+        /// Выбранный пользователь
+        /// </summary>
         private Customer _currentCustomer;
 
         public CustomersTab()
@@ -24,6 +30,9 @@ namespace ObjectOrientedPractics.View.Tabs
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Очистка тексбоксов
+        /// </summary>
         private void ClearTextBoxes()
         {
             IDTextBox.Clear();
@@ -34,6 +43,10 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressTextBox.BackColor = Colors.NormalColor;
         }
 
+        /// <summary>
+        /// Обновление текстбоксов в зависимости от выбранного пользователя
+        /// </summary>
+        /// <param name="customer">Пользователь</param>
         private void UpdateTextBoxes(Customer customer)
         {
             IDTextBox.Text = customer.ID.ToString();
@@ -41,6 +54,9 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressTextBox.Text = customer.Address;
         }
 
+        /// <summary>
+        /// Добавление нового пользователя
+        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             _currentCustomer = new Customer("None", "None");
@@ -50,6 +66,9 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateTextBoxes(_currentCustomer);
         }
 
+        /// <summary>
+        /// Удаление пользователя
+        /// </summary>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (CustomersListBox.Items.Count == 0) return;
@@ -70,6 +89,9 @@ namespace ObjectOrientedPractics.View.Tabs
                 ClearTextBoxes();
         }
 
+        /// <summary>
+        /// Изменение имени пользователя, когда изменяется имя в FullNameTextBox
+        /// </summary>
         private void FullNameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -85,6 +107,9 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Изменение адреса пользователя, когда изменяется адрес в AddressTextBox
+        /// </summary>
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -98,14 +123,14 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновление данных при выборе пользователя в CustomersListBox
+        /// </summary>
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = CustomersListBox.SelectedIndex;
-
             if (index == -1) return;
-
             _currentCustomer = _customers[index];
-
             UpdateTextBoxes(_currentCustomer);
         }
     }
