@@ -10,6 +10,11 @@ namespace ObjectOrientedPractics.Services.RandomData
 {
     public static class ItemFactory
     {
+        /// <summary>
+        /// Создание случайного товара с помощью пакета Bogus
+        /// </summary>
+        /// <param name="count">Количество товаров</param>
+        /// <returns>Список Item</returns>
         public static List<Item> GetItems(int count = 1)
         {
             List<Item> items = new List<Item>();

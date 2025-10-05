@@ -95,6 +95,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void FullNameTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (_customers.Count == 0) return;
+
             try
             {
                 FullNameTextBox.BackColor = Colors.NormalColor;
@@ -113,6 +115,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void AddressTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (_customers.Count == 0) return;
+
             try
             {
                 AddressTextBox.BackColor = Colors.NormalColor;

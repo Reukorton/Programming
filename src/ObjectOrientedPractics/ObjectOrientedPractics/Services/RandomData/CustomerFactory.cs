@@ -13,6 +13,11 @@ namespace ObjectOrientedPractics.Services.RandomData
 {
     public static class CustomerFactory
     {
+        /// <summary>
+        /// Генерация случайных пользователей
+        /// </summary>
+        /// <param name="count">Количество пользователей</param>
+        /// <returns>Список Customer</returns>
         public static List<Customer> GetCustomers(int count = 1)
         {
             List<Customer> customers = new List<Customer>();
@@ -54,6 +59,10 @@ namespace ObjectOrientedPractics.Services.RandomData
             return customers;
         }
 
+        /// <summary>
+        /// Создает Customer'a из полученных через api данных
+        /// </summary>
+        /// <returns>Customer</returns>
         private static Customer CreateCustomer(JsonNode node)
         {
             string firstName = node["FirstName"].ToString();

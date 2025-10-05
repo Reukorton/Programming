@@ -108,6 +108,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (_items.Count == 0) return;
+
             if (CostTextBox.Text == "")
             {
                 _currentItem.Cost = 0;
@@ -131,6 +133,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (_items.Count == 0) return;
+
             try
             {
                 NameTextBox.BackColor = Colors.NormalColor;
@@ -150,6 +154,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (_items.Count == 0) return;
+
             try
             {
                 DescriptionTextBox.BackColor = Colors.NormalColor;
