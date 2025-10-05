@@ -10,6 +10,11 @@ namespace ObjectOrientedPractics.Model
     public class Customer
     {
         /// <summary>
+        /// Общее количество покупателей.
+        /// </summary>
+        private static int _allCustomersCount;
+
+        /// <summary>
         /// Номер пользователя
         /// </summary>
         private readonly int _id;
@@ -67,6 +72,8 @@ namespace ObjectOrientedPractics.Model
         /// <param name="address">Адрес пользователя</param>
         public Customer(string fullName, string address)
         {
+            _allCustomersCount++;
+            _id = _allCustomersCount;
             Fullname = fullName;
             Address = address;
         }
