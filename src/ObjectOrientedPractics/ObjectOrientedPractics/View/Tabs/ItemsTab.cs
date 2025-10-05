@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.Services.RandomData;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -157,6 +158,16 @@ namespace ObjectOrientedPractics.View.Tabs
             catch
             {
                 DescriptionTextBox.BackColor = Colors.ErrorColor;
+            }
+        }
+
+        private void RandomItemButton_Click(object sender, EventArgs e)
+        {
+            List<Item> items = ItemFactory.GetItems();
+            foreach (Item item in items)
+            {
+                _items.Add(item);
+                ItemsListBox.Items.Add(item.Name);
             }
         }
     }

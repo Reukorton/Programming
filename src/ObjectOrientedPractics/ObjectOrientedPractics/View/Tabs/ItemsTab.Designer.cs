@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button3 = new Button();
+            RandomItemButton = new Button();
             AddButton = new Button();
             RemoveButton = new Button();
             ItemsListBox = new ListBox();
@@ -67,7 +67,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(button3, 2, 0);
+            tableLayoutPanel1.Controls.Add(RandomItemButton, 2, 0);
             tableLayoutPanel1.Controls.Add(AddButton, 0, 0);
             tableLayoutPanel1.Controls.Add(RemoveButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
@@ -79,16 +79,17 @@
             tableLayoutPanel1.Size = new Size(300, 55);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // button3
+            // RandomItemButton
             // 
-            button3.Dock = DockStyle.Fill;
-            button3.Location = new Point(200, 3);
-            button3.Margin = new Padding(0, 3, 5, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(95, 49);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            RandomItemButton.Dock = DockStyle.Fill;
+            RandomItemButton.Location = new Point(200, 3);
+            RandomItemButton.Margin = new Padding(0, 3, 5, 3);
+            RandomItemButton.Name = "RandomItemButton";
+            RandomItemButton.Size = new Size(95, 49);
+            RandomItemButton.TabIndex = 2;
+            RandomItemButton.Text = "Random Item";
+            RandomItemButton.UseVisualStyleBackColor = true;
+            RandomItemButton.Click += RandomItemButton_Click;
             // 
             // AddButton
             // 
@@ -286,7 +287,7 @@
         private Label label3;
         private TextBox CostTextBox;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button3;
+        private Button RandomItemButton;
         private Button AddButton;
         private Button RemoveButton;
     }

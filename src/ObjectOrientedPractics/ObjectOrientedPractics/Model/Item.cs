@@ -8,7 +8,7 @@ using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.Model
 {
-    internal class Item
+    public class Item
     {
         /// <summary>
         /// Общее количество предметов.
