@@ -36,7 +36,7 @@
             AddressTextBox = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            button3 = new Button();
+            RandomUserButton = new Button();
             AddButton = new Button();
             RemoveButton = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -137,16 +137,17 @@
             label1.TabIndex = 0;
             label1.Text = "Customers";
             // 
-            // button3
+            // RandomUserButton
             // 
-            button3.Dock = DockStyle.Fill;
-            button3.Location = new Point(200, 3);
-            button3.Margin = new Padding(0, 3, 5, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(95, 49);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            RandomUserButton.Dock = DockStyle.Fill;
+            RandomUserButton.Location = new Point(200, 3);
+            RandomUserButton.Margin = new Padding(0, 3, 5, 3);
+            RandomUserButton.Name = "RandomUserButton";
+            RandomUserButton.Size = new Size(95, 49);
+            RandomUserButton.TabIndex = 2;
+            RandomUserButton.Text = "Random user";
+            RandomUserButton.UseVisualStyleBackColor = true;
+            RandomUserButton.Click += RandomUserButton_Click;
             // 
             // AddButton
             // 
@@ -178,7 +179,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(button3, 2, 0);
+            tableLayoutPanel1.Controls.Add(RandomUserButton, 2, 0);
             tableLayoutPanel1.Controls.Add(AddButton, 0, 0);
             tableLayoutPanel1.Controls.Add(RemoveButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
@@ -268,7 +269,7 @@
         private TextBox AddressTextBox;
         private Label label2;
         private Label label1;
-        private Button button3;
+        private Button RandomUserButton;
         private Button AddButton;
         private Button RemoveButton;
         private TableLayoutPanel tableLayoutPanel1;

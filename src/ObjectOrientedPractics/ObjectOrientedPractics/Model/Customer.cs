@@ -7,7 +7,7 @@ using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.Model
 {
-    internal class Customer
+    public class Customer
     {
         /// <summary>
         /// Номер пользователя

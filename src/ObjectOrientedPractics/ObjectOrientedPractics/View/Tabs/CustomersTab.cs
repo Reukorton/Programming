@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.Services.RandomData;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ObjectOrientedPractics.View.Tabs
@@ -132,6 +133,16 @@ namespace ObjectOrientedPractics.View.Tabs
             if (index == -1) return;
             _currentCustomer = _customers[index];
             UpdateTextBoxes(_currentCustomer);
+        }
+
+        private void RandomUserButton_Click(object sender, EventArgs e)
+        {
+            List<Customer> randomCustomers = CustomerFactory.GetCustomers();
+            foreach (Customer customer in randomCustomers)
+            {
+                _customers.Add(customer);
+                CustomersListBox.Items.Add(customer.Fullname);
+            }
         }
     }
 }
